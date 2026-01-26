@@ -1,14 +1,17 @@
 import {
 	Ambulance,
+	ArrowRight,
 	CheckCircle,
 	Clock,
 	FileText,
 	HandCoins,
 	HeartPulse,
+	Send,
 	ShieldCheck,
 	Users,
 	Zap,
 } from "lucide-react";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -80,13 +83,18 @@ export default function Home() {
 								Unabhängigkeit.
 							</p>
 							<div className="flex flex-wrap gap-3">
-								<Button size="lg" className="gap-2">
-									<FileText className="size-4" />
-									Unverbindliche Anfrage
-								</Button>
-								<Button variant="outline" size="lg" className="gap-2">
-									Mehr erfahren
-								</Button>
+								<Link href="/kontakt">
+									<Button size="lg" className="gap-2">
+										<Send className="size-4" />
+										Unverbindliche Anfrage
+									</Button>
+								</Link>
+								<Link href="/abrechnung">
+									<Button variant="outline" size="lg" className="gap-2">
+										Mehr erfahren
+										<ArrowRight className="size-4" />
+									</Button>
+								</Link>
 							</div>
 						</div>
 						<div className="relative hidden md:block">
@@ -231,14 +239,16 @@ export default function Home() {
 						Wir freuen uns über Ihre unverbindliche Anfrage zum Thema
 						Abrechnung.
 					</p>
-					<Button
-						variant="secondary"
-						size="lg"
-						className="gap-2 bg-background text-foreground hover:bg-background/90"
-					>
-						<FileText className="size-4" />
-						Jetzt Kontakt aufnehmen
-					</Button>
+					<Link href="/kontakt">
+						<Button
+							variant="secondary"
+							size="lg"
+							className="gap-2 bg-background text-foreground hover:bg-background/90"
+						>
+							<Send className="size-4" />
+							Jetzt Kontakt aufnehmen
+						</Button>
+					</Link>
 				</div>
 			</section>
 

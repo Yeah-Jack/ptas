@@ -104,10 +104,12 @@ export default function VorfinanzierungPage() {
 								gedacht!
 							</p>
 							<div className="flex flex-wrap gap-3">
-								<Button size="lg" className="gap-2">
-									<Send className="size-4" />
-									Jetzt anfragen
-								</Button>
+								<Link href="/kontakt">
+									<Button size="lg" className="gap-2">
+										<Send className="size-4" />
+										Jetzt anfragen
+									</Button>
+								</Link>
 								<Link href="/abrechnung">
 									<Button variant="outline" size="lg" className="gap-2">
 										Zur Abrechnung
@@ -282,14 +284,16 @@ export default function VorfinanzierungPage() {
 						Kontaktieren Sie uns für eine unverbindliche Beratung zur
 						Vorfinanzierung.
 					</p>
-					<Button
-						variant="secondary"
-						size="lg"
-						className="gap-2 bg-background text-foreground hover:bg-background/90"
-					>
-						<Send className="size-4" />
-						Unverbindliche Anfrage
-					</Button>
+					<Link href="/kontakt">
+						<Button
+							variant="secondary"
+							size="lg"
+							className="gap-2 bg-background text-foreground hover:bg-background/90"
+						>
+							<Send className="size-4" />
+							Unverbindliche Anfrage
+						</Button>
+					</Link>
 				</div>
 			</section>
 

@@ -262,10 +262,12 @@ export default function LeistungenPage() {
 							Haben Sie Fragen?{" "}
 							<span className="font-medium">Melden Sie sich bei uns!</span>
 						</p>
-						<Button className="ml-4 gap-2">
-							<Send className="size-4" />
-							Kontakt
-						</Button>
+						<Link href="/kontakt">
+							<Button className="ml-4 gap-2">
+								<Send className="size-4" />
+								Kontakt
+							</Button>
+						</Link>
 					</div>
 				</div>
 			</section>
@@ -369,14 +371,16 @@ export default function LeistungenPage() {
 					<p className="mb-8 text-lg text-primary-foreground/80">
 						Kontaktieren Sie uns für ein individuelles Angebot.
 					</p>
-					<Button
-						variant="secondary"
-						size="lg"
-						className="gap-2 bg-background text-foreground hover:bg-background/90"
-					>
-						<Send className="size-4" />
-						Unverbindliche Anfrage
-					</Button>
+					<Link href="/kontakt">
+						<Button
+							variant="secondary"
+							size="lg"
+							className="gap-2 bg-background text-foreground hover:bg-background/90"
+						>
+							<Send className="size-4" />
+							Unverbindliche Anfrage
+						</Button>
+					</Link>
 				</div>
 			</section>
 

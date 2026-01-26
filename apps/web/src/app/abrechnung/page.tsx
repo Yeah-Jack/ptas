@@ -83,10 +83,12 @@ export default function AbrechnungPage() {
 										Krankentransporte!
 									</span>
 								</p>
-								<Button className="mt-4 gap-2">
-									<Send className="size-4" />
-									Jetzt beraten lassen
-								</Button>
+								<Link href="/kontakt">
+									<Button className="mt-4 gap-2">
+										<Send className="size-4" />
+										Jetzt beraten lassen
+									</Button>
+								</Link>
 							</CardContent>
 						</Card>
 
@@ -339,14 +341,16 @@ export default function AbrechnungPage() {
 					<p className="mb-8 text-primary-foreground/80">
 						Wir freuen uns über eine
 					</p>
-					<Button
-						variant="secondary"
-						size="lg"
-						className="gap-2 bg-background text-foreground hover:bg-background/90"
-					>
-						<Send className="size-4" />
-						Unverbindliche Anfrage
-					</Button>
+					<Link href="/kontakt">
+						<Button
+							variant="secondary"
+							size="lg"
+							className="gap-2 bg-background text-foreground hover:bg-background/90"
+						>
+							<Send className="size-4" />
+							Unverbindliche Anfrage
+						</Button>
+					</Link>
 				</div>
 			</section>
 

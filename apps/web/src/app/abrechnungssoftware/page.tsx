@@ -106,10 +106,12 @@ export default function AbrechnungssoftwarePage() {
 										Anfrage senden
 									</Button>
 								</Link>
-								<Button variant="outline" size="lg" className="gap-2">
-									Mehr erfahren
-									<ArrowRight className="size-4" />
-								</Button>
+								<Link href="/abrechnung">
+									<Button variant="outline" size="lg" className="gap-2">
+										Mehr erfahren
+										<ArrowRight className="size-4" />
+									</Button>
+								</Link>
 							</div>
 						</div>
 						<div className="relative hidden md:block">
