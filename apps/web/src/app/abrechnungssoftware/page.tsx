@@ -66,7 +66,7 @@ export default function AbrechnungssoftwarePage() {
 		},
 		{
 			icon: Cloud,
-			text: "Daten werden in einem Rechenzentrum innerhalb Deutschlands gehostet – datenschutzkonform",
+			text: "Daten werden in einem Rechenzentrum innerhalb Deutschlands gehostet - datenschutzkonform",
 		},
 	];
 

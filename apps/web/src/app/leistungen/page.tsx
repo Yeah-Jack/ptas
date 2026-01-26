@@ -40,7 +40,7 @@ export default function LeistungenPage() {
 			icon: Zap,
 			title: "Datenträgeraustausch",
 			description:
-				"Per Datenträgeraustausch nach §302 SGB – schnelle Bearbeitung, keine Rechnungskürzungen.",
+				"Per Datenträgeraustausch nach §302 SGB - schnelle Bearbeitung, keine Rechnungskürzungen.",
 		},
 		{
 			icon: PiggyBank,
@@ -173,7 +173,7 @@ export default function LeistungenPage() {
 									<span className="font-medium text-primary">
 										Ohne versteckte Kosten
 									</span>{" "}
-									– es wird nur die vereinbarte Gebühr fällig.
+									- es wird nur die vereinbarte Gebühr fällig.
 								</p>
 								<p>
 									Für die Buchhaltung bzw. Steuerberater bereiten wir die
