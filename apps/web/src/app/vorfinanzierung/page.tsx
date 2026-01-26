@@ -262,7 +262,7 @@ export default function VorfinanzierungPage() {
 						Frist von 3 Monaten auch wieder abmelden, wenn Sie das wünschen.
 					</p>
 					<div className="flex flex-wrap justify-center gap-4">
-						<Link href="/leistungspakete">
+						<Link href="/leistungen">
 							<Button variant="outline" className="gap-2">
 								Leistungs-Pakete ansehen
 								<ArrowRight className="size-4" />
