@@ -92,7 +92,7 @@ export default function Home() {
 						<div className="relative hidden md:block">
 							<div className="absolute inset-0 rounded-full bg-primary/10 blur-3xl" />
 							<div className="relative grid grid-cols-2 gap-4">
-								<Card className="translate-y-8">
+								<Card>
 									<CardContent className="flex flex-col items-center gap-2 py-6 text-center">
 										<HeartPulse className="size-8 text-primary" />
 										<span className="font-medium text-sm">
@@ -116,7 +116,7 @@ export default function Home() {
 										</span>
 									</CardContent>
 								</Card>
-								<Card className="translate-y-8">
+								<Card>
 									<CardContent className="flex flex-col items-center gap-2 py-6 text-center">
 										<Users className="size-8 text-primary" />
 										<span className="font-medium text-sm">
