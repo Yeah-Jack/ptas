@@ -17,8 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: "ptas",
-	description: "ptas",
+	title: "PTAS - Personentransport-Abrechnungsservice",
+	description:
+		"Günstige Abrechnung von Krankenfahrt-Belegen mit allen Kostenträgern. Schnell, zuverlässig und sicher.",
 };
 
 export default function RootLayout({
@@ -27,7 +28,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html lang="de" suppressHydrationWarning>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
