@@ -35,7 +35,7 @@ export default function Home() {
 			icon: Clock,
 			title: "Zeitersparnis",
 			description:
-				"Konzentrieren Sie sich auf Ihr Kerngeschäft – wir übernehmen die Abrechnung.",
+				"Konzentrieren Sie sich auf Ihr Kerngeschäft - wir übernehmen die Abrechnung.",
 		},
 		{
 			icon: HandCoins,
@@ -139,7 +139,7 @@ export default function Home() {
 								Abrechnung von Krankenfahrten
 							</h2>
 							<p className="mb-6 font-medium text-lg text-primary">
-								Unsere Erfahrung – Ihr Vorteil
+								Unsere Erfahrung - Ihr Vorteil
 							</p>
 							<div className="space-y-4 text-muted-foreground">
 								<p>

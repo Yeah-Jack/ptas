@@ -315,7 +315,7 @@ export default function AbrechnungPage() {
 								<ArrowRight className="size-4" />
 							</Button>
 						</Link>
-						<Link href="/leistungspakete">
+						<Link href="/leistungen">
 							<Button variant="outline" className="gap-2">
 								<Package className="size-4" />
 								Leistungs-Pakete
@@ -334,7 +334,7 @@ export default function AbrechnungPage() {
 					</h2>
 					<p className="mb-2 text-lg text-primary-foreground/80">
 						Wir bieten verschiedene Leistungs-Pakete für die Abrechnung von
-						Krankentransporten – ohne Aufpreis!
+						Krankentransporten - ohne Aufpreis!
 					</p>
 					<p className="mb-8 text-primary-foreground/80">
 						Wir freuen uns über eine
