@@ -3,7 +3,6 @@ import {
 	ArrowRight,
 	CheckCircle,
 	Clock,
-	FileText,
 	HandCoins,
 	HeartPulse,
 	Send,
