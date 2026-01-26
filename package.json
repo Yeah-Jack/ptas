@@ -30,6 +30,7 @@
 		"@biomejs/biome": "^2.2.0",
 		"@ptas/config": "workspace:*",
 		"lefthook": "^2.0.13",
+		"shadcn": "^3.7.0",
 		"turbo": "^2.6.3",
 		"typescript": "catalog:"
 	},
