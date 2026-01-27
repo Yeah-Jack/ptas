@@ -2,7 +2,6 @@
 
 [![DeepSource](https://app.deepsource.com/gh/Yeah-Jack/ptas.svg/?label=active+issues&show_trend=true&token=n9DpIqjD19HJCYoG1EkI-vBd)](https://app.deepsource.com/gh/Yeah-Jack/ptas/)
 
-
 This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines Next.js, and more.
 
 ## Features
