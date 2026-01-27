@@ -17,7 +17,7 @@ import {
 	Zap,
 } from "lucide-react";
 import Link from "next/link";
-
+import CTA from "@/components/cta";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -397,28 +397,11 @@ export default function AbrechnungssoftwarePage() {
 				</div>
 			</section>
 
-			{/* CTA Section */}
-			<section className="bg-primary py-16 text-primary-foreground md:py-24">
-				<div className="container mx-auto max-w-4xl px-4 text-center">
-					<h2 className="mb-4 font-bold text-2xl md:text-3xl">
-						Haben Sie noch Fragen zum Produkt?
-					</h2>
-					<p className="mb-8 text-lg text-primary-foreground/80">
-						Oder individuelle Problemstellungen? Zögern Sie nicht, schicken Sie
-						uns eine unverbindliche Anfrage.
-					</p>
-					<Link href="/kontakt">
-						<Button
-							variant="secondary"
-							size="lg"
-							className="gap-2 bg-background text-foreground hover:bg-background/90"
-						>
-							<Send className="size-4" />
-							Anfrage senden
-						</Button>
-					</Link>
-				</div>
-			</section>
+			<CTA
+				heading="Haben Sie noch Fragen zum Produkt?"
+				description="	Oder individuelle Problemstellungen? Zögern Sie nicht, schicken Sie uns eine unverbindliche Anfrage."
+				buttonText="Anfrage senden"
+			/>
 		</div>
 	);
 }

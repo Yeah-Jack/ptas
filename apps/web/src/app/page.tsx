@@ -11,7 +11,7 @@ import {
 	Zap,
 } from "lucide-react";
 import Link from "next/link";
-
+import CTA from "@/components/cta";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -232,28 +232,11 @@ export default function Home() {
 				</div>
 			</section>
 
-			{/* CTA Section */}
-			<section className="border-t bg-primary py-16 text-primary-foreground md:py-24">
-				<div className="container mx-auto max-w-4xl px-4 text-center">
-					<h2 className="mb-4 font-bold text-2xl md:text-3xl">
-						Bereit für mehr Unabhängigkeit?
-					</h2>
-					<p className="mb-8 text-lg text-primary-foreground/80">
-						Wir freuen uns über Ihre unverbindliche Anfrage zum Thema
-						Abrechnung.
-					</p>
-					<Link href="/kontakt">
-						<Button
-							variant="secondary"
-							size="lg"
-							className="gap-2 bg-background text-foreground hover:bg-background/90"
-						>
-							<Send className="size-4" />
-							Jetzt Kontakt aufnehmen
-						</Button>
-					</Link>
-				</div>
-			</section>
+			<CTA
+				heading="Bereit für mehr Unabhängigkeit?"
+				description="Wir freuen uns über Ihre unverbindliche Anfrage zum Thema Abrechnung."
+				buttonText="Jetzt Kontakt aufnehmen"
+			/>
 		</div>
 	);
 }

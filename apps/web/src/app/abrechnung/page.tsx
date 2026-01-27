@@ -12,7 +12,7 @@ import {
 	Users,
 } from "lucide-react";
 import Link from "next/link";
-
+import CTA from "@/components/cta";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -328,31 +328,11 @@ export default function AbrechnungPage() {
 				</div>
 			</section>
 
-			{/* CTA Section */}
-			<section className="bg-primary py-16 text-primary-foreground md:py-24">
-				<div className="container mx-auto max-w-4xl px-4 text-center">
-					<h2 className="mb-4 font-bold text-2xl md:text-3xl">
-						Umfassender Service ist bei uns Standard
-					</h2>
-					<p className="mb-2 text-lg text-primary-foreground/80">
-						Wir bieten verschiedene Leistungs-Pakete für die Abrechnung von
-						Krankentransporten - ohne Aufpreis!
-					</p>
-					<p className="mb-8 text-primary-foreground/80">
-						Wir freuen uns über eine
-					</p>
-					<Link href="/kontakt">
-						<Button
-							variant="secondary"
-							size="lg"
-							className="gap-2 bg-background text-foreground hover:bg-background/90"
-						>
-							<Send className="size-4" />
-							Unverbindliche Anfrage
-						</Button>
-					</Link>
-				</div>
-			</section>
+			<CTA
+				heading="Umfassender Service ist bei uns Standard"
+				description="Wir bieten verschiedene Leistungs-Pakete für die Abrechnung von Krankentransporten - ohne Aufpreis!"
+				buttonText="Unverbindliche Anfrage"
+			/>
 		</div>
 	);
 }
