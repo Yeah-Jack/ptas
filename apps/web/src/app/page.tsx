@@ -64,10 +64,10 @@ export default function Home() {
 			{/* Hero Section */}
 			<section className="relative overflow-hidden bg-linear-to-br from-primary/5 via-background to-primary/10 py-16 md:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
-					<div className="grid items-center gap-12 md:grid-cols-2">
-						<div className="flex flex-col gap-6">
+					<div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+						<div className="flex flex-col gap-4 md:gap-6">
 							<div className="flex items-center gap-2 text-primary">
-								<Ambulance className="size-6" />
+								<Ambulance className="size-5 md:size-6" />
 								<span className="font-medium text-sm uppercase tracking-wider">
 									Abrechnungsservice
 								</span>
@@ -81,52 +81,56 @@ export default function Home() {
 								Schnell, zuverlässig und sicher. Entscheiden Sie sich für mehr
 								Unabhängigkeit.
 							</p>
-							<div className="flex flex-wrap gap-3">
+							<div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
 								<Link href="/kontakt">
-									<Button size="lg" className="gap-2">
+									<Button size="lg" className="w-full gap-2 sm:w-auto">
 										<Send className="size-4" />
 										Unverbindliche Anfrage
 									</Button>
 								</Link>
 								<Link href="/abrechnung">
-									<Button variant="outline" size="lg" className="gap-2">
+									<Button
+										variant="outline"
+										size="lg"
+										className="w-full gap-2 sm:w-auto"
+									>
 										Mehr erfahren
 										<ArrowRight className="size-4" />
 									</Button>
 								</Link>
 							</div>
 						</div>
-						<div className="relative hidden md:block">
-							<div className="absolute inset-0 rounded-full bg-primary/10 blur-3xl" />
-							<div className="relative grid grid-cols-2 gap-4">
+						<div className="relative mt-8 md:mt-0">
+							<div className="absolute inset-0 hidden rounded-full bg-primary/10 blur-3xl md:block" />
+							<div className="relative grid grid-cols-2 gap-3 md:gap-4">
 								<Card>
-									<CardContent className="flex flex-col items-center gap-2 py-6 text-center">
-										<HeartPulse className="size-8 text-primary" />
-										<span className="font-medium text-sm">
+									<CardContent className="flex flex-col items-center gap-2 px-3 py-4 text-center md:px-4 md:py-6">
+										<HeartPulse className="size-6 text-primary md:size-8" />
+										<span className="font-medium text-xs md:text-sm">
 											Alle Kostenträger
 										</span>
 									</CardContent>
 								</Card>
 								<Card>
-									<CardContent className="flex flex-col items-center gap-2 py-6 text-center">
-										<Clock className="size-8 text-primary" />
-										<span className="font-medium text-sm">
+									<CardContent className="flex flex-col items-center gap-2 px-3 py-4 text-center md:px-4 md:py-6">
+										<Clock className="size-6 text-primary md:size-8" />
+										<span className="font-medium text-xs md:text-sm">
 											Schnelle Abwicklung
 										</span>
 									</CardContent>
 								</Card>
 								<Card>
-									<CardContent className="flex flex-col items-center gap-2 py-6 text-center">
-										<ShieldCheck className="size-8 text-primary" />
-										<span className="font-medium text-sm">
+									<CardContent className="flex flex-col items-center gap-2 px-3 py-4 text-center md:px-4 md:py-6">
+										<ShieldCheck className="size-6 text-primary md:size-8" />
+										<span className="font-medium text-xs md:text-sm">
 											Sichere Verarbeitung
 										</span>
 									</CardContent>
 								</Card>
 								<Card>
-									<CardContent className="flex flex-col items-center gap-2 py-6 text-center">
-										<Users className="size-8 text-primary" />
-										<span className="font-medium text-sm">
+									<CardContent className="flex flex-col items-center gap-2 px-3 py-4 text-center md:px-4 md:py-6">
+										<Users className="size-6 text-primary md:size-8" />
+										<span className="font-medium text-xs md:text-sm">
 											Persönlicher Service
 										</span>
 									</CardContent>
@@ -138,9 +142,9 @@ export default function Home() {
 			</section>
 
 			{/* Experience Section */}
-			<section className="border-y bg-muted/30 py-16 md:py-24">
+			<section className="border-y bg-muted/30 py-12 md:py-16 lg:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
-					<div className="grid items-center gap-12 md:grid-cols-2">
+					<div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
 						<div>
 							<h2 className="mb-4 font-bold text-2xl md:text-3xl">
 								Abrechnung von Krankenfahrten

@@ -129,11 +129,11 @@ export default function LeistungenPage() {
 						</p>
 					</div>
 
-					<div className="grid gap-6 md:grid-cols-4">
+					<div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
 						{processSteps.map((step, index) => (
 							<div key={step.title} className="relative">
 								{index < processSteps.length - 1 && (
-									<div className="absolute top-8 right-0 hidden h-0.5 w-full translate-x-1/2 bg-border md:block" />
+									<div className="absolute top-8 right-0 hidden h-0.5 w-full translate-x-1/2 bg-border lg:block" />
 								)}
 								<Card className="relative h-full">
 									<CardHeader className="text-center">
@@ -149,9 +149,9 @@ export default function LeistungenPage() {
 			</section>
 
 			{/* Details Section */}
-			<section className="border-y bg-muted/30 py-16 md:py-24">
+			<section className="border-y bg-muted/30 py-12 md:py-16 lg:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
-					<div className="grid items-start gap-12 md:grid-cols-2">
+					<div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
 						<div>
 							<h2 className="mb-6 font-bold text-2xl md:text-3xl">
 								Was wir für Sie übernehmen
@@ -254,16 +254,16 @@ export default function LeistungenPage() {
 			</section>
 
 			{/* Contact CTA */}
-			<section className="border-y bg-muted/30 py-12">
+			<section className="border-y bg-muted/30 py-8 md:py-12">
 				<div className="container mx-auto max-w-4xl px-4 text-center">
-					<div className="flex items-center justify-center gap-3">
+					<div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-3">
 						<Headphones className="size-8 text-primary" />
-						<p className="text-lg">
+						<p className="text-base md:text-lg">
 							Haben Sie Fragen?{" "}
 							<span className="font-medium">Melden Sie sich bei uns!</span>
 						</p>
 						<Link href="/kontakt">
-							<Button className="ml-4 gap-2">
+							<Button className="gap-2 sm:ml-4">
 								<Send className="size-4" />
 								Kontakt
 							</Button>
@@ -285,7 +285,7 @@ export default function LeistungenPage() {
 						</p>
 					</div>
 
-					<div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
+					<div className="mx-auto grid max-w-4xl gap-6 md:gap-8 lg:grid-cols-2">
 						{/* Abrechnung Package */}
 						<Card className="flex flex-col">
 							<CardHeader>

@@ -82,8 +82,8 @@ export default function VorfinanzierungPage() {
 			{/* Hero Section */}
 			<section className="border-b bg-linear-to-br from-primary/5 via-background to-primary/10 py-16 md:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
-					<div className="grid items-center gap-12 md:grid-cols-2">
-						<div className="flex flex-col gap-6">
+					<div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+						<div className="flex flex-col gap-4 md:gap-6">
 							<div className="flex items-center gap-2 text-primary">
 								<Banknote className="size-6" />
 								<span className="font-medium text-sm uppercase tracking-wider">
@@ -103,23 +103,27 @@ export default function VorfinanzierungPage() {
 								Unsere Vorfinanzierung für Krankenfahrten ist einfacher als
 								gedacht!
 							</p>
-							<div className="flex flex-wrap gap-3">
+							<div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
 								<Link href="/kontakt">
-									<Button size="lg" className="gap-2">
+									<Button size="lg" className="w-full gap-2 sm:w-auto">
 										<Send className="size-4" />
 										Jetzt anfragen
 									</Button>
 								</Link>
 								<Link href="/abrechnung">
-									<Button variant="outline" size="lg" className="gap-2">
+									<Button
+										variant="outline"
+										size="lg"
+										className="w-full gap-2 sm:w-auto"
+									>
 										Zur Abrechnung
 										<ArrowRight className="size-4" />
 									</Button>
 								</Link>
 							</div>
 						</div>
-						<div className="relative hidden md:block">
-							<div className="absolute inset-0 rounded-full bg-primary/10 blur-3xl" />
+						<div className="relative mt-6 lg:mt-0">
+							<div className="absolute inset-0 hidden rounded-full bg-primary/10 blur-3xl lg:block" />
 							<Card className="relative border-primary/20 bg-primary/5">
 								<CardContent className="py-8">
 									<div className="mb-6 flex items-center justify-center">
@@ -178,11 +182,11 @@ export default function VorfinanzierungPage() {
 						</p>
 					</div>
 
-					<div className="grid gap-6 md:grid-cols-4">
+					<div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
 						{steps.map((step, index) => (
 							<div key={step.title} className="relative">
 								{index < steps.length - 1 && (
-									<div className="absolute top-8 right-0 hidden h-0.5 w-full translate-x-1/2 bg-border md:block" />
+									<div className="absolute top-8 right-0 hidden h-0.5 w-full translate-x-1/2 bg-border lg:block" />
 								)}
 								<Card className="relative h-full">
 									<CardHeader>
@@ -200,9 +204,9 @@ export default function VorfinanzierungPage() {
 			</section>
 
 			{/* Portal Section */}
-			<section className="py-16 md:py-24">
+			<section className="py-12 md:py-16 lg:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
-					<div className="grid items-center gap-12 md:grid-cols-2">
+					<div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
 						<div>
 							<div className="mb-4 flex items-center gap-2 text-primary">
 								<Eye className="size-5" />

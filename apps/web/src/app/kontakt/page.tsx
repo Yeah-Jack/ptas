@@ -72,7 +72,7 @@ export default function KontaktPage() {
 			{/* Contact Info Section */}
 			<section className="py-16 md:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
-					<div className="mb-12 grid gap-6 md:grid-cols-3">
+					<div className="mb-8 grid gap-4 sm:grid-cols-2 md:mb-12 md:gap-6 lg:grid-cols-3">
 						<Card>
 							<CardHeader className="text-center">
 								<Mail className="mx-auto mb-2 size-10 text-primary" />

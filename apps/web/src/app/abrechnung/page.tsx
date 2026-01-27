@@ -53,7 +53,7 @@ export default function AbrechnungPage() {
 						</p>
 					</div>
 
-					<div className="grid gap-8 md:grid-cols-2">
+					<div className="grid gap-6 md:gap-8 lg:grid-cols-2">
 						{/* Delegieren Card */}
 						<Card className="relative overflow-hidden border-primary/20 bg-primary/5">
 							<div className="absolute top-0 right-0 h-32 w-32 translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-2xl" />
@@ -124,9 +124,9 @@ export default function AbrechnungPage() {
 			</section>
 
 			{/* Success Section */}
-			<section className="border-y bg-muted/30 py-16 md:py-24">
+			<section className="border-y bg-muted/30 py-12 md:py-16 lg:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
-					<div className="grid items-center gap-12 md:grid-cols-2">
+					<div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
 						<div>
 							<h2 className="mb-6 font-bold text-2xl md:text-3xl">
 								Die Abrechnung Ihrer Krankentransporte entscheidet mit über den
@@ -198,7 +198,7 @@ export default function AbrechnungPage() {
 			{/* Contracts Section */}
 			<section className="py-16 md:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
-					<div className="grid items-start gap-12 md:grid-cols-2">
+					<div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
 						<div>
 							<h2 className="mb-6 font-bold text-2xl md:text-3xl">
 								Verträge und Codieren
@@ -277,7 +277,7 @@ export default function AbrechnungPage() {
 						</p>
 					</div>
 
-					<div className="grid gap-6 md:grid-cols-3">
+					<div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3">
 						<Card>
 							<CardHeader className="text-center">
 								<Headphones className="mx-auto mb-2 size-10 text-primary" />
@@ -309,7 +309,7 @@ export default function AbrechnungPage() {
 						</Card>
 					</div>
 
-					<div className="mt-12 flex flex-wrap justify-center gap-4">
+					<div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 md:mt-12">
 						<Link href="/vorfinanzierung">
 							<Button variant="outline" className="gap-2">
 								<Banknote className="size-4" />
