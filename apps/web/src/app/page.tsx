@@ -254,26 +254,6 @@ export default function Home() {
 					</Link>
 				</div>
 			</section>
-
-			{/* Footer */}
-			<footer className="border-t py-8">
-				<div className="container mx-auto max-w-6xl px-4">
-					<div className="flex flex-col items-center justify-between gap-4 text-center text-muted-foreground text-sm sm:flex-row sm:text-left">
-						<p>© 2026 Personentransport-Abrechnungsservice</p>
-						<div className="flex gap-6">
-							<a href="/impressum" className="hover:text-foreground">
-								Impressum
-							</a>
-							<a href="/datenschutz" className="hover:text-foreground">
-								Datenschutz
-							</a>
-							<a href="/kontakt" className="hover:text-foreground">
-								Kontakt
-							</a>
-						</div>
-					</div>
-				</div>
-			</footer>
 		</div>
 	);
 }

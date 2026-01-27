@@ -72,7 +72,7 @@ export default function KontaktPage() {
 			{/* Contact Info Section */}
 			<section className="py-16 md:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
-					<div className="mb-8 grid gap-4 sm:grid-cols-2 md:mb-12 md:gap-6 lg:grid-cols-3">
+					<div className="mb-12 grid gap-6 md:grid-cols-3">
 						<Card>
 							<CardHeader className="text-center">
 								<Mail className="mx-auto mb-2 size-10 text-primary" />
@@ -292,26 +292,6 @@ export default function KontaktPage() {
 					</Card>
 				</div>
 			</section>
-
-			{/* Footer */}
-			<footer className="border-t py-8">
-				<div className="container mx-auto max-w-6xl px-4">
-					<div className="flex flex-col items-center justify-between gap-4 text-center text-muted-foreground text-sm sm:flex-row sm:text-left">
-						<p>© 2026 Personentransport-Abrechnungsservice</p>
-						<div className="flex gap-6">
-							<a href="/impressum" className="hover:text-foreground">
-								Impressum
-							</a>
-							<a href="/datenschutz" className="hover:text-foreground">
-								Datenschutz
-							</a>
-							<a href="/kontakt" className="hover:text-foreground">
-								Kontakt
-							</a>
-						</div>
-					</div>
-				</div>
-			</footer>
 		</div>
 	);
 }
