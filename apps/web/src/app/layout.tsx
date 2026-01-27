@@ -36,7 +36,7 @@ export default function RootLayout({
 				<Providers>
 					<div className="grid min-h-svh grid-rows-[auto_1fr_auto]">
 						<Header />
-						{children}
+						<main>{children}</main>
 						<Footer />
 					</div>
 				</Providers>
