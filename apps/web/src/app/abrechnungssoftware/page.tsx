@@ -243,7 +243,7 @@ export default function AbrechnungssoftwarePage() {
 
 					<div className="mx-auto mt-8 max-w-2xl rounded-lg border bg-background p-4 text-center">
 						<div className="flex items-center justify-center gap-2 text-muted-foreground">
-							<Shield className="size-5 text-primary" />
+							<Shield className="size-10 text-primary" />
 							<p className="text-sm">
 								Die Daten werden durch einen Cloudanbieter in einem
 								Rechenzentrum innerhalb Deutschlands gehostet. So werden die
