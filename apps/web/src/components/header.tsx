@@ -8,17 +8,17 @@ import { Button } from "@/components/ui/button";
 
 import { ModeToggle } from "./mode-toggle";
 
+const links = [
+	{ to: "/", label: "Home" },
+	{ to: "/leistungen", label: "Leistungen" },
+	{ to: "/abrechnung", label: "Abrechnung" },
+	{ to: "/vorfinanzierung", label: "Vorfinanzierung" },
+	{ to: "/abrechnungssoftware", label: "Software" },
+	{ to: "/kontakt", label: "Kontakt" },
+] as const;
+
 export default function Header() {
 	const [isOpen, setIsOpen] = useState(false);
-
-	const links = [
-		{ to: "/", label: "Home" },
-		{ to: "/leistungen", label: "Leistungen" },
-		{ to: "/abrechnung", label: "Abrechnung" },
-		{ to: "/vorfinanzierung", label: "Vorfinanzierung" },
-		{ to: "/abrechnungssoftware", label: "Software" },
-		{ to: "/kontakt", label: "Kontakt" },
-	] as const;
 
 	return (
 		<header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
@@ -61,7 +61,7 @@ export default function Header() {
 			</div>
 
 			{/* Mobile Navigation */}
-			{isOpen && (
+			{isOpen ? (
 				<nav className="border-t bg-background px-4 py-4 md:hidden">
 					<div className="flex flex-col gap-3">
 						{links.map(({ to, label }) => (
@@ -76,7 +76,7 @@ export default function Header() {
 						))}
 					</div>
 				</nav>
-			)}
+			) : null}
 		</header>
 	);
 }

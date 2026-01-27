@@ -22,61 +22,60 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 
+const benefits = [
+	{
+		icon: Clock,
+		title: "24 Stunden",
+		description:
+			"Wenn Sie möchten, ist das Geld innerhalb von 24 Stunden auf Ihrem Bankkonto.",
+	},
+	{
+		icon: HandCoins,
+		title: "Flexible Tarife",
+		description:
+			"Verschiedene Tarife und Zahlungsziele. Ganz nach Ihren Vorstellungen!",
+	},
+	{
+		icon: ShieldCheck,
+		title: "Liquidität gesichert",
+		description:
+			"Ihre Liquidität und die rechtzeitige Bezahlung der Mitarbeiter ist gesichert.",
+	},
+	{
+		icon: Handshake,
+		title: "Erfahrener Partner",
+		description:
+			"Setzen Sie auf einen Finanzierungspartner mit langjähriger Erfahrung und den nötigen Ressourcen!",
+	},
+] as const;
+
+const steps = [
+	{
+		number: "1",
+		title: "Anmeldung",
+		description:
+			"Wenn Sie die Vorfinanzierung für Krankenfahrten wünschen, melden wir Sie dafür an.",
+	},
+	{
+		number: "2",
+		title: "Datenübertragung",
+		description:
+			"Wir übertragen zusätzlich noch Informationen aus den Abrechnungen an die SozialFactoring.",
+	},
+	{
+		number: "3",
+		title: "Auszahlung",
+		description:
+			"Je nach vereinbartem Zahlungsziel erhalten Sie das Geld ausgezahlt.",
+	},
+	{
+		number: "4",
+		title: "Rechnungsabschluss",
+		description: "Der laufende Rechnungsabschluss erfolgt dann nach 60 Tagen.",
+	},
+] as const;
+
 export default function VorfinanzierungPage() {
-	const benefits = [
-		{
-			icon: Clock,
-			title: "24 Stunden",
-			description:
-				"Wenn Sie möchten, ist das Geld innerhalb von 24 Stunden auf Ihrem Bankkonto.",
-		},
-		{
-			icon: HandCoins,
-			title: "Flexible Tarife",
-			description:
-				"Verschiedene Tarife und Zahlungsziele. Ganz nach Ihren Vorstellungen!",
-		},
-		{
-			icon: ShieldCheck,
-			title: "Liquidität gesichert",
-			description:
-				"Ihre Liquidität und die rechtzeitige Bezahlung der Mitarbeiter ist gesichert.",
-		},
-		{
-			icon: Handshake,
-			title: "Erfahrener Partner",
-			description:
-				"Setzen Sie auf einen Finanzierungspartner mit langjähriger Erfahrung und den nötigen Ressourcen!",
-		},
-	];
-
-	const steps = [
-		{
-			number: "1",
-			title: "Anmeldung",
-			description:
-				"Wenn Sie die Vorfinanzierung für Krankenfahrten wünschen, melden wir Sie dafür an.",
-		},
-		{
-			number: "2",
-			title: "Datenübertragung",
-			description:
-				"Wir übertragen zusätzlich noch Informationen aus den Abrechnungen an die SozialFactoring.",
-		},
-		{
-			number: "3",
-			title: "Auszahlung",
-			description:
-				"Je nach vereinbartem Zahlungsziel erhalten Sie das Geld ausgezahlt.",
-		},
-		{
-			number: "4",
-			title: "Rechnungsabschluss",
-			description:
-				"Der laufende Rechnungsabschluss erfolgt dann nach 60 Tagen.",
-		},
-	];
-
 	return (
 		<div className="flex flex-col">
 			{/* Hero Section */}

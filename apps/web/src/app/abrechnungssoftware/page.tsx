@@ -27,57 +27,57 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 
+const features = [
+	{
+		icon: FileText,
+		title: "Rechnungsfahrten",
+		description:
+			"Alle Leistungen für Ihre Kunden, Patienten bzw. deren Krankenkassen. Tarife, Strecken und Berechnungsarten individuell definierbar.",
+	},
+	{
+		icon: Calendar,
+		title: "Dauer- und wiederkehrende Fahrten",
+		description:
+			"Mit minimalem Aufwand bearbeiten und abrechnen. Praktische Kalenderfunktion für z.B. Dialysefahrten.",
+	},
+	{
+		icon: Lock,
+		title: "Datenträgeraustausch",
+		description:
+			"Verschlüsselte Übermittlung nach §302 SGB an die Abrechnungsstellen der Kassen.",
+	},
+	{
+		icon: Settings,
+		title: "Flexible Abrechnung",
+		description:
+			"Abrechnungsmethode pro Kostenträger einstellbar. Private Kostenträger per Standard-Rechnung.",
+	},
+] as const;
+
+const requirements = [
+	{
+		icon: Laptop,
+		text: "Rechner/Laptop/Notebook mit Windows 10 und guter Internetverbindung",
+	},
+	{
+		icon: Printer,
+		text: "Drucker (für Rechnungen, Listen etc.)",
+	},
+	{
+		icon: Cloud,
+		text: "Daten werden in einem Rechenzentrum innerhalb Deutschlands gehostet - datenschutzkonform",
+	},
+] as const;
+
+const pricingDetails = [
+	"Erster Arbeitsplatz: € 63,- zzgl. MwSt. pro Monat",
+	"Jeder weitere Arbeitsplatz: € 15,- zzgl. MwSt. pro Monat",
+	"Einrichtung: einmalig € 150,- plus € 30,- pro zusätzlichem Arbeitsplatz",
+	"Individuelle Formulare (z.B. mit Firmenlogo): € 60,- pro Formular",
+	"DTA-Zertifikat: ca. € 60,- (extern, Erneuerung alle 3 Jahre)",
+] as const;
+
 export default function AbrechnungssoftwarePage() {
-	const features = [
-		{
-			icon: FileText,
-			title: "Rechnungsfahrten",
-			description:
-				"Alle Leistungen für Ihre Kunden, Patienten bzw. deren Krankenkassen. Tarife, Strecken und Berechnungsarten individuell definierbar.",
-		},
-		{
-			icon: Calendar,
-			title: "Dauer- und wiederkehrende Fahrten",
-			description:
-				"Mit minimalem Aufwand bearbeiten und abrechnen. Praktische Kalenderfunktion für z.B. Dialysefahrten.",
-		},
-		{
-			icon: Lock,
-			title: "Datenträgeraustausch",
-			description:
-				"Verschlüsselte Übermittlung nach §302 SGB an die Abrechnungsstellen der Kassen.",
-		},
-		{
-			icon: Settings,
-			title: "Flexible Abrechnung",
-			description:
-				"Abrechnungsmethode pro Kostenträger einstellbar. Private Kostenträger per Standard-Rechnung.",
-		},
-	];
-
-	const requirements = [
-		{
-			icon: Laptop,
-			text: "Rechner/Laptop/Notebook mit Windows 10 und guter Internetverbindung",
-		},
-		{
-			icon: Printer,
-			text: "Drucker (für Rechnungen, Listen etc.)",
-		},
-		{
-			icon: Cloud,
-			text: "Daten werden in einem Rechenzentrum innerhalb Deutschlands gehostet - datenschutzkonform",
-		},
-	];
-
-	const pricingDetails = [
-		"Erster Arbeitsplatz: € 63,- zzgl. MwSt. pro Monat",
-		"Jeder weitere Arbeitsplatz: € 15,- zzgl. MwSt. pro Monat",
-		"Einrichtung: einmalig € 150,- plus € 30,- pro zusätzlichem Arbeitsplatz",
-		"Individuelle Formulare (z.B. mit Firmenlogo): € 60,- pro Formular",
-		"DTA-Zertifikat: ca. € 60,- (extern, Erneuerung alle 3 Jahre)",
-	];
-
 	return (
 		<div className="flex flex-col">
 			{/* Hero Section */}

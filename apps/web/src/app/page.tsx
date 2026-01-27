@@ -21,44 +21,44 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 
+const services = [
+	"Krankenfahrten zur ambulanten Behandlung (Arztbesuche)",
+	"Krankenfahrten zur stationären Behandlung oder Verlegung",
+	"Rollstuhl-, Tragestuhl und Liegendtransporte",
+	"Dialysefahrten (Serienfahrten)",
+	"Fahrten zur Chemo- und Strahlentherapie (Serienfahrten)",
+	"Sammelfahrten",
+	"Behinderten- und Schülertransporte",
+] as const;
+
+const benefits = [
+	{
+		icon: Clock,
+		title: "Zeitersparnis",
+		description:
+			"Konzentrieren Sie sich auf Ihr Kerngeschäft - wir übernehmen die Abrechnung.",
+	},
+	{
+		icon: HandCoins,
+		title: "Kostenersparnis",
+		description:
+			"Reduzieren Sie Personal- und Verwaltungskosten durch unsere effiziente Abwicklung.",
+	},
+	{
+		icon: Zap,
+		title: "Schnelle Auszahlung",
+		description:
+			"Verbessern Sie Ihre Liquidität durch individuelle Zahlungsziele.",
+	},
+	{
+		icon: ShieldCheck,
+		title: "Zuverlässig & Sicher",
+		description:
+			"Profitieren Sie von unserer jahrelangen Erfahrung und eigener Software-Entwicklung.",
+	},
+] as const;
+
 export default function Home() {
-	const services = [
-		"Krankenfahrten zur ambulanten Behandlung (Arztbesuche)",
-		"Krankenfahrten zur stationären Behandlung oder Verlegung",
-		"Rollstuhl-, Tragestuhl und Liegendtransporte",
-		"Dialysefahrten (Serienfahrten)",
-		"Fahrten zur Chemo- und Strahlentherapie (Serienfahrten)",
-		"Sammelfahrten",
-		"Behinderten- und Schülertransporte",
-	];
-
-	const benefits = [
-		{
-			icon: Clock,
-			title: "Zeitersparnis",
-			description:
-				"Konzentrieren Sie sich auf Ihr Kerngeschäft - wir übernehmen die Abrechnung.",
-		},
-		{
-			icon: HandCoins,
-			title: "Kostenersparnis",
-			description:
-				"Reduzieren Sie Personal- und Verwaltungskosten durch unsere effiziente Abwicklung.",
-		},
-		{
-			icon: Zap,
-			title: "Schnelle Auszahlung",
-			description:
-				"Verbessern Sie Ihre Liquidität durch individuelle Zahlungsziele.",
-		},
-		{
-			icon: ShieldCheck,
-			title: "Zuverlässig & Sicher",
-			description:
-				"Profitieren Sie von unserer jahrelangen Erfahrung und eigener Software-Entwicklung.",
-		},
-	];
-
 	return (
 		<div className="flex flex-col">
 			{/* Hero Section */}

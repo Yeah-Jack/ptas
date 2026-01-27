@@ -1,7 +1,7 @@
 "use client";
 
 import { Clock, Mail, Phone, Send } from "lucide-react";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -15,36 +15,55 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
+const initialFormData = {
+	name: "",
+	unternehmen: "",
+	adresse: "",
+	plz: "",
+	ort: "",
+	email: "",
+	telefon: "",
+	abrechnungInteresse: false,
+	vorfinanzierungInteresse: false,
+	nachricht: "",
+} as const;
+
+type FormData = {
+	name: string;
+	unternehmen: string;
+	adresse: string;
+	plz: string;
+	ort: string;
+	email: string;
+	telefon: string;
+	abrechnungInteresse: boolean;
+	vorfinanzierungInteresse: boolean;
+	nachricht: string;
+};
+
 export default function KontaktPage() {
-	const [formData, setFormData] = useState({
-		name: "",
-		unternehmen: "",
-		adresse: "",
-		plz: "",
-		ort: "",
-		email: "",
-		telefon: "",
-		abrechnungInteresse: false,
-		vorfinanzierungInteresse: false,
-		nachricht: "",
-	});
+	const [formData, setFormData] = useState<FormData>({ ...initialFormData });
 
-	const handleInputChange = (
-		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-	) => {
-		const { name, value } = e.target;
-		setFormData((prev) => ({ ...prev, [name]: value }));
-	};
+	// Memoized handlers using functional setState (rerender-functional-setstate)
+	const handleInputChange = useCallback(
+		(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+			const { name, value } = e.target;
+			setFormData((prev) => ({ ...prev, [name]: value }));
+		},
+		[],
+	);
 
-	const handleCheckboxChange = (name: string, checked: boolean) => {
+	const handleCheckboxChange = useCallback((name: string, checked: boolean) => {
 		setFormData((prev) => ({ ...prev, [name]: checked }));
-	};
+	}, []);
 
-	const handleSubmit = (e: React.FormEvent) => {
-		e.preventDefault();
-		// Handle form submission
-		console.log("Form submitted:", formData);
-	};
+	const handleSubmit = useCallback(
+		(e: React.FormEvent) => {
+			e.preventDefault();
+			console.log("Form submitted:", formData);
+		},
+		[formData],
+	);
 
 	return (
 		<div className="flex flex-col">

@@ -1,24 +1,22 @@
-"use client";
-
 import { Ambulance, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 
+const navigationLinks = [
+	{ to: "/", label: "Home" },
+	{ to: "/leistungen", label: "Leistungen" },
+	{ to: "/abrechnung", label: "Abrechnung" },
+	{ to: "/vorfinanzierung", label: "Vorfinanzierung" },
+	{ to: "/abrechnungssoftware", label: "Software" },
+	{ to: "/kontakt", label: "Kontakt" },
+] as const;
+
+const legalLinks = [
+	{ to: "/impressum", label: "Impressum" },
+	{ to: "/datenschutz", label: "Datenschutz" },
+	{ to: "/agb", label: "AGB" },
+] as const;
+
 export default function Footer() {
-	const navigationLinks = [
-		{ to: "/", label: "Home" },
-		{ to: "/leistungen", label: "Leistungen" },
-		{ to: "/abrechnung", label: "Abrechnung" },
-		{ to: "/vorfinanzierung", label: "Vorfinanzierung" },
-		{ to: "/abrechnungssoftware", label: "Software" },
-		{ to: "/kontakt", label: "Kontakt" },
-	] as const;
-
-	const legalLinks: { to: string; label: string }[] = [
-		{ to: "/impressum", label: "Impressum" },
-		{ to: "/datenschutz", label: "Datenschutz" },
-		{ to: "/agb", label: "AGB" },
-	];
-
 	return (
 		<footer className="border-t bg-muted/30">
 			<div className="container mx-auto max-w-6xl px-4 py-12 md:py-16">

@@ -24,73 +24,73 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 
+const processSteps = [
+	{
+		icon: FileText,
+		title: "Belege zusenden",
+		description: "Sie schicken uns Ihre Verordnungen zu.",
+	},
+	{
+		icon: Shield,
+		title: "Prüfung & Erfassung",
+		description:
+			"Nach Prüfung und Erfassung der Belege fakturieren wir die Forderungen an die Kostenträger.",
+	},
+	{
+		icon: Zap,
+		title: "Datenträgeraustausch",
+		description:
+			"Per Datenträgeraustausch nach §302 SGB - schnelle Bearbeitung, keine Rechnungskürzungen.",
+	},
+	{
+		icon: PiggyBank,
+		title: "Auszahlung",
+		description:
+			"Auszahlung über unseren Factoring-Partner oder direkt von den Kostenträgern.",
+	},
+] as const;
+
+const benefits = [
+	{
+		icon: Clock,
+		title: "Zeitersparnis",
+		description:
+			"Wir ersparen wertvolle Zeit, da wir die komplette Abwicklung übernehmen.",
+	},
+	{
+		icon: HandCoins,
+		title: "Kostenersparnis",
+		description:
+			"Hohe Verwaltungs- und Personalkosten können damit gespart werden.",
+	},
+	{
+		icon: Package,
+		title: "Keine Vorbereitung",
+		description:
+			"Es ist keine Vorbereitung oder Aufbereitung der Unterlagen erforderlich.",
+	},
+	{
+		icon: Zap,
+		title: "Zügige Auszahlung",
+		description:
+			"Wir gewährleisten einen unkomplizierten Ablauf und zügige Auszahlung Ihres Guthabens.",
+	},
+] as const;
+
+const abrechnungFeatures = [
+	"Sie schicken uns Ihre Belege",
+	"Wir rechnen für Sie ab",
+	"Sie erhalten Ihr Geld wie gewohnt auf Ihr Konto",
+] as const;
+
+const vorfinanzierungFeatures = [
+	"Sie schicken uns Ihre Belege",
+	"Wir rechnen für Sie ab",
+	"Sie erhalten Ihr Geld nach vereinbarter Zeit auf Ihr Konto",
+	"Individuelle Zahlungsziele",
+] as const;
+
 export default function LeistungenPage() {
-	const processSteps = [
-		{
-			icon: FileText,
-			title: "Belege zusenden",
-			description: "Sie schicken uns Ihre Verordnungen zu.",
-		},
-		{
-			icon: Shield,
-			title: "Prüfung & Erfassung",
-			description:
-				"Nach Prüfung und Erfassung der Belege fakturieren wir die Forderungen an die Kostenträger.",
-		},
-		{
-			icon: Zap,
-			title: "Datenträgeraustausch",
-			description:
-				"Per Datenträgeraustausch nach §302 SGB - schnelle Bearbeitung, keine Rechnungskürzungen.",
-		},
-		{
-			icon: PiggyBank,
-			title: "Auszahlung",
-			description:
-				"Auszahlung über unseren Factoring-Partner oder direkt von den Kostenträgern.",
-		},
-	];
-
-	const benefits = [
-		{
-			icon: Clock,
-			title: "Zeitersparnis",
-			description:
-				"Wir ersparen wertvolle Zeit, da wir die komplette Abwicklung übernehmen.",
-		},
-		{
-			icon: HandCoins,
-			title: "Kostenersparnis",
-			description:
-				"Hohe Verwaltungs- und Personalkosten können damit gespart werden.",
-		},
-		{
-			icon: Package,
-			title: "Keine Vorbereitung",
-			description:
-				"Es ist keine Vorbereitung oder Aufbereitung der Unterlagen erforderlich.",
-		},
-		{
-			icon: Zap,
-			title: "Zügige Auszahlung",
-			description:
-				"Wir gewährleisten einen unkomplizierten Ablauf und zügige Auszahlung Ihres Guthabens.",
-		},
-	];
-
-	const abrechnungFeatures = [
-		"Sie schicken uns Ihre Belege",
-		"Wir rechnen für Sie ab",
-		"Sie erhalten Ihr Geld wie gewohnt auf Ihr Konto",
-	];
-
-	const vorfinanzierungFeatures = [
-		"Sie schicken uns Ihre Belege",
-		"Wir rechnen für Sie ab",
-		"Sie erhalten Ihr Geld nach vereinbarter Zeit auf Ihr Konto",
-		"Individuelle Zahlungsziele",
-	];
-
 	return (
 		<div className="flex flex-col">
 			{/* Hero Section */}
