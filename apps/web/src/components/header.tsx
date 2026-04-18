@@ -1,6 +1,6 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { Menu, Send, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -49,6 +49,12 @@ export default function Header() {
 
 				{/* Desktop Actions */}
 				<div className="hidden items-center gap-2 md:flex">
+					<Link href="/kontakt" className="hidden lg:flex">
+						<Button size="lg" className="w-full gap-2 sm:w-auto">
+							<Send className="size-4" />
+							Unverbindliche Anfrage
+						</Button>
+					</Link>
 					<ModeToggle />
 				</div>
 
