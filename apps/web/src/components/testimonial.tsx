@@ -51,9 +51,9 @@ const testimonials: TestimonialItem[] = [
 		content:
 			"PTAS hat uns unzählige Stunden Abrechnungszeit eingespart. Die Webseite ist umfassend und gut dokumentiert.",
 	},
-];
+] as const;
 
-const Testimonial = () => {
+export default function Testimonial() {
 	return (
 		<section className="py-8 sm:py-16 lg:py-24">
 			<Carousel
@@ -122,6 +122,4 @@ const Testimonial = () => {
 			</Carousel>
 		</section>
 	);
-};
-
-export default Testimonial;
+}
