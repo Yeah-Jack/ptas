@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { ModeToggle } from "./mode-toggle";
 
 const links = [
-	{ to: "/", label: "Home" },
+	{ to: "/", label: "Startseite" },
 	{ to: "/leistungen", label: "Leistungen" },
 	{ to: "/abrechnung", label: "Abrechnung" },
 	{ to: "/vorfinanzierung", label: "Vorfinanzierung" },
@@ -31,7 +31,7 @@ export default function Header() {
 					href="/"
 					className="flex items-center gap-2 font-bold text-lg text-primary"
 				>
-					<Image src={icon} alt="PTAS Logo" width={32} height={32} />
+					<Image src={icon} alt="PTAS Logo" width={64} height={64} />
 				</Link>
 
 				{/* Desktop Navigation */}
