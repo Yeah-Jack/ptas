@@ -25,7 +25,7 @@ export default function Header() {
 			<div className="container mx-auto flex items-center justify-between px-4 py-3">
 				{/* Logo */}
 				<Link href="/">
-					<Image src={icon} alt="PTAS Logo" width={128} height={128} />
+					<Image src={icon} width={128} alt="PTAS Logo" />
 				</Link>
 
 				{/* Desktop Navigation */}
