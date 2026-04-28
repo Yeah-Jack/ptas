@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import CTA from "@/components/cta";
+import Testimonial from "@/components/testimonial";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -190,6 +191,8 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
+
+			<Testimonial />
 
 			{/* Services Section */}
 			<section className="py-16 md:py-24">
