@@ -277,11 +277,7 @@ export default function VorfinanzierungPage() {
 				</div>
 			</section>
 
-			<CTA
-				heading="Interessiert an schnelleren Zahlungseingängen?"
-				description="Kontaktieren Sie uns für eine unverbindliche Beratung zur Vorfinanzierung."
-				buttonText="Unverbindliche Anfrage"
-			/>
+			<CTA />
 		</div>
 	);
 }

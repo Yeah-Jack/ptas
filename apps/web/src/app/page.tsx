@@ -232,11 +232,7 @@ export default function Home() {
 				</div>
 			</section>
 
-			<CTA
-				heading="Bereit für mehr Unabhängigkeit?"
-				description="Wir freuen uns über Ihre unverbindliche Anfrage zum Thema Abrechnung."
-				buttonText="Jetzt Kontakt aufnehmen"
-			/>
+			<CTA />
 		</div>
 	);
 }

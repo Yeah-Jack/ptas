@@ -363,11 +363,7 @@ export default function LeistungenPage() {
 				</div>
 			</section>
 
-			<CTA
-				heading="Bereit für eine unkomplizierte Abrechnung?"
-				description="Kontaktieren Sie uns für ein individuelles Angebot."
-				buttonText="Unverbindliche Anfrage"
-			/>
+			<CTA />
 		</div>
 	);
 }

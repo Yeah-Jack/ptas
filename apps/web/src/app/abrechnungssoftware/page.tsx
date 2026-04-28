@@ -397,11 +397,7 @@ export default function AbrechnungssoftwarePage() {
 				</div>
 			</section>
 
-			<CTA
-				heading="Haben Sie noch Fragen zum Produkt?"
-				description="	Oder individuelle Problemstellungen? Zögern Sie nicht, schicken Sie uns eine unverbindliche Anfrage."
-				buttonText="Anfrage senden"
-			/>
+			<CTA />
 		</div>
 	);
 }

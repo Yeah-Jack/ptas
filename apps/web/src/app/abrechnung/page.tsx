@@ -328,11 +328,7 @@ export default function AbrechnungPage() {
 				</div>
 			</section>
 
-			<CTA
-				heading="Umfassender Service ist bei uns Standard"
-				description="Wir bieten verschiedene Leistungs-Pakete für die Abrechnung von Krankentransporten - ohne Aufpreis!"
-				buttonText="Unverbindliche Anfrage"
-			/>
+			<CTA />
 		</div>
 	);
 }
