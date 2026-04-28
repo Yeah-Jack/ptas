@@ -33,17 +33,29 @@ yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
 
+# next.js
+/.next/
+/out/
+
 # Turbo
 .turbo
 
 # Better-T-Stack
 .alchemy
 
+# production
+/build
+
 # Testing
 coverage
 .nyc_output
 
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
 # Misc
+*.pem
 *.tgz
 .cache
 tmp
