@@ -4,11 +4,8 @@ import { Menu, Send, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-
 import icon from "@/app/icon.svg";
-
 import { Button } from "@/components/ui/button";
-
 import { ModeToggle } from "./mode-toggle";
 
 const links = [
@@ -31,7 +28,7 @@ export default function Header() {
 					href="/"
 					className="flex items-center gap-2 font-bold text-lg text-primary"
 				>
-					<Image src={icon} alt="PTAS Logo" width={64} height={64} />
+					<Image src={icon} alt="PTAS Logo" width={96} height={96} />
 				</Link>
 
 				{/* Desktop Navigation */}
