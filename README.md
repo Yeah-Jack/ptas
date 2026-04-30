@@ -35,17 +35,9 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the w
 
 - Format and lint fix: `bun run check`
 
-## Project Structure
-
-```
-ptas/
-├── apps/
-│   ├── web/         # Frontend application (Next.js)
-```
-
 ## Available Scripts
 
 - `bun run dev`: Start in development mode
 - `bun run build`: Build for production
-- `bun run check-types`: Check TypeScript types across all apps
+- `bun run check-types`: Check TypeScript types
 - `bun run check`: Run Biome formatting and linting

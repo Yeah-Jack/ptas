@@ -19,7 +19,7 @@
         "typescript": "^5.9.3",
       },
     },
-    "apps/web": {
+    "app": {
       "name": "web",
       "version": "0.1.0",
       "dependencies": {
@@ -1115,7 +1115,7 @@
 
     "vary": ["vary@1.1.2", "", {}, "sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg=="],
 
-    "web": ["web@workspace:apps/web"],
+    "web": ["web@workspace:app"],
 
     "web-streams-polyfill": ["web-streams-polyfill@3.3.3", "", {}, "sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw=="],
 
