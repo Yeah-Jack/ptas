@@ -1,4 +1,4 @@
-# ptas
+# PTAS
 
 [![DeepSource](https://app.deepsource.com/gh/Yeah-Jack/ptas.svg/?label=active+issues&show_trend=true&token=n9DpIqjD19HJCYoG1EkI-vBd)](https://app.deepsource.com/gh/Yeah-Jack/ptas/)
 
@@ -45,8 +45,7 @@ ptas/
 
 ## Available Scripts
 
-- `bun run dev`: Start all applications in development mode
-- `bun run build`: Build all applications
-- `bun run dev:web`: Start only the web application
+- `bun run dev`: Start in development mode
+- `bun run build`: Build for production
 - `bun run check-types`: Check TypeScript types across all apps
 - `bun run check`: Run Biome formatting and linting
