@@ -2,7 +2,7 @@ import { Ambulance, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 
 const navigationLinks = [
-	{ to: "/", label: "Home" },
+	{ to: "/", label: "Startseite" },
 	{ to: "/leistungen", label: "Leistungen" },
 	{ to: "/abrechnung", label: "Abrechnung" },
 	{ to: "/vorfinanzierung", label: "Vorfinanzierung" },
