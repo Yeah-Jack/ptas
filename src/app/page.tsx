@@ -21,16 +21,11 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-
-const services = [
-	"Krankenfahrten zur ambulanten Behandlung (Arztbesuche)",
-	"Krankenfahrten zur stationären Behandlung oder Verlegung",
-	"Rollstuhl-, Tragestuhl und Liegendtransporte",
-	"Dialysefahrten (Serienfahrten)",
-	"Fahrten zur Chemo- und Strahlentherapie (Serienfahrten)",
-	"Sammelfahrten",
-	"Behinderten- und Schülertransporte",
-] as const;
+import {
+	HoverCard,
+	HoverCardContent,
+	HoverCardTrigger,
+} from "@/components/ui/hover-card";
 
 const benefits = [
 	{
@@ -57,6 +52,39 @@ const benefits = [
 		description:
 			"Profitieren Sie von unserer jahrelangen Erfahrung und eigener Software-Entwicklung.",
 	},
+] as const;
+
+const promises = [
+	{
+		icon: HeartPulse,
+		content: "Alle Kostenträger",
+		hover: "Wir bearbeiten Abrechnungen für alle Kostenträger.",
+	},
+	{
+		icon: Clock,
+		content: "Schnelle Abwicklung",
+		hover: "Wir garantieren eine schnelle und unkomplizierte Abwicklung.",
+	},
+	{
+		icon: ShieldCheck,
+		content: "Sichere Verarbeitung",
+		hover: "Wir stellen sicher, dass Ihre Daten geschützt sind.",
+	},
+	{
+		icon: Users,
+		content: "Persönlicher Service",
+		hover: "Wir bieten individuelle Betreuung und Unterstützung.",
+	},
+];
+
+const services = [
+	"Krankenfahrten zur ambulanten Behandlung (Arztbesuche)",
+	"Krankenfahrten zur stationären Behandlung oder Verlegung",
+	"Rollstuhl-, Tragestuhl und Liegendtransporte",
+	"Dialysefahrten (Serienfahrten)",
+	"Fahrten zur Chemo- und Strahlentherapie (Serienfahrten)",
+	"Sammelfahrten",
+	"Behinderten- und Schülertransporte",
 ] as const;
 
 export default function Home() {
@@ -104,38 +132,19 @@ export default function Home() {
 						<div className="relative mt-8 md:mt-0">
 							<div className="absolute inset-0 hidden rounded-full bg-primary/10 blur-3xl md:block" />
 							<div className="relative grid grid-cols-2 gap-3 md:gap-4">
-								<Card>
-									<CardContent className="flex flex-col items-center gap-2 px-3 py-4 text-center md:px-4 md:py-6">
-										<HeartPulse className="size-6 text-primary md:size-8" />
-										<span className="font-medium text-xs md:text-sm">
-											Alle Kostenträger
-										</span>
-									</CardContent>
-								</Card>
-								<Card>
-									<CardContent className="flex flex-col items-center gap-2 px-3 py-4 text-center md:px-4 md:py-6">
-										<Clock className="size-6 text-primary md:size-8" />
-										<span className="font-medium text-xs md:text-sm">
-											Schnelle Abwicklung
-										</span>
-									</CardContent>
-								</Card>
-								<Card>
-									<CardContent className="flex flex-col items-center gap-2 px-3 py-4 text-center md:px-4 md:py-6">
-										<ShieldCheck className="size-6 text-primary md:size-8" />
-										<span className="font-medium text-xs md:text-sm">
-											Sichere Verarbeitung
-										</span>
-									</CardContent>
-								</Card>
-								<Card>
-									<CardContent className="flex flex-col items-center gap-2 px-3 py-4 text-center md:px-4 md:py-6">
-										<Users className="size-6 text-primary md:size-8" />
-										<span className="font-medium text-xs md:text-sm">
-											Persönlicher Service
-										</span>
-									</CardContent>
-								</Card>
+								{promises.map((promise) => (
+									<Card key={promise.content}>
+										<CardContent className="flex flex-col items-center gap-2 px-3 py-4 text-center md:px-4 md:py-6">
+											<promise.icon className="size-6 text-primary md:size-8" />
+											<HoverCard openDelay={0} closeDelay={100}>
+												<HoverCardTrigger className="font-medium text-xs underline decoration-dotted underline-offset-4 md:text-sm">
+													{promise.content}
+												</HoverCardTrigger>
+												<HoverCardContent>{promise.hover}</HoverCardContent>
+											</HoverCard>
+										</CardContent>
+									</Card>
+								))}
 							</div>
 						</div>
 					</div>
