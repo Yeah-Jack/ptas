@@ -13,7 +13,6 @@ This project was created with [Better-T-Stack](https://github.com/AmanVarshney01
 - **TailwindCSS** - Utility-first CSS for rapid UI development
 - **shadcn/ui** - Reusable UI components
 - **Biome** - Linting and formatting
-- **Turborepo** - Optimized monorepo build system
 
 ## Getting Started
 
@@ -39,5 +38,5 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the w
 
 - `bun run dev`: Start in development mode
 - `bun run build`: Build for production
-- `bun run check-types`: Check TypeScript types
+- `bun run start`: Start in production mode
 - `bun run check`: Run Biome formatting and linting

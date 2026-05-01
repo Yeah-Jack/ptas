@@ -8,15 +8,11 @@ PTAS (Personentransport-Abrechnungsservice) is a German B2B website for a patien
 
 ```
 ptas/
-├── app/           # Next.js 16 frontend (port 3000)
-│   └── src/
-│       ├── app/        # App Router pages (German routes)
-│       ├── components/ # React components
-│       │   └── ui/     # shadcn/ui components (radix-vega style)
-│       └── lib/        # Utilities (cn function)
-├── packages/
-│   ├── config/         # Shared TypeScript config
-│   └── env/            # Environment validation (@t3-oss/env-nextjs)
+├── src/           # Next.js 16 frontend (port 3000)
+│   ├── app/        # App Router pages (German routes)
+│   ├── components/ # React components
+│   │   └── ui/     # shadcn/ui components (radix-vega style)
+│   └── lib/        # Utilities (cn function)
 ```
 
 ## Key Commands
@@ -25,8 +21,8 @@ ptas/
 bun install              # Install dependencies
 bun run dev              # Start dev server (localhost:3000)
 bun run build            # Build for production
+bun run start            # Start in production mode
 bun run check            # Format & lint with Biome (auto-fix)
-bun run check-types      # TypeScript type checking
 ```
 
 ## Code Patterns
@@ -37,7 +33,7 @@ All pages follow a consistent section-based layout:
 - Content sections alternating `bg-muted/30` backgrounds
 - CTA section with `bg-primary text-primary-foreground`
 
-Example: `app/src/app/page.tsx`
+Example: `src/app/page.tsx`
 
 ### UI Components
 - Use shadcn/ui components from `@/components/ui/*`
@@ -56,7 +52,7 @@ import { cn } from "@/lib/utils";
 - Use `bg-linear-to-br` not `bg-gradient-to-br`
 
 ### Navigation
-Add new pages to header in `app/src/components/header.tsx`:
+Add new pages to header in `src/components/header.tsx`:
 ```tsx
 const links = [
   { to: "/", label: "Home" },
@@ -70,17 +66,10 @@ const links = [
 - HTML lang attribute: `de`
 - Route names in German (e.g., `/abrechnung`, `/vorfinanzierung`)
 
-## Linting & Formatting
-
-Key rules:
-- Sorted CSS classes in `cn()`, `clsx()`, `cva()`
-- No unused variables
-- Exhaustive React hook dependencies (info level)
-
 ## Adding shadcn Components
 
 ```bash
 bunx --bun shadcn@latest add [component]
 ```
 
-Components are installed to `app/src/components/ui/`.
+Components are installed to `src/components/ui`.
