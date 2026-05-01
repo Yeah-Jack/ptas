@@ -201,7 +201,15 @@ export default function Home() {
 				</div>
 			</section>
 
-			<Testimonial />
+			{/* Testimonial Section */}
+			<section className="py-8 sm:py-16 lg:py-24">
+				<div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-11 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
+					<h2 className="font-semibold text-2xl sm:text-3xl lg:text-4xl">
+						Mehr als 100 Unternehmen nutzen PTAS für ihre Abrechnung.
+					</h2>
+					<Testimonial />
+				</div>
+			</section>
 
 			{/* Services Section */}
 			<section className="py-16 md:py-24">
