@@ -80,7 +80,7 @@ export default function Footer() {
 						</h3>
 						<div className="flex flex-col gap-3 text-muted-foreground text-sm">
 							<a
-								href="https://www.google.com/maps/place/Am+Holzweg+26,+65830+Kriftel,+Germany"
+								href="https://www.google.com/maps/place/Am+Holzweg+26,+65830+Kriftel,+Deutschland"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="flex items-center gap-2 transition-colors hover:text-foreground"
