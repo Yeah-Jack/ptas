@@ -1,8 +1,8 @@
-# PTAS - Copilot Instructions
+# PTAS
 
 ## Project Overview
 
-PTAS (Personentransport-Abrechnungsservice) is a German B2B website for a patient transport billing service. The site is built with Next.js 16 in a Turborepo monorepo structure.
+PTAS (Personentransport-Abrechnungsservice) is a German B2B website for a patient transport billing service. The site is built with Next.js 16.
 
 ## Architecture
 
