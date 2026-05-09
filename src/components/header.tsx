@@ -13,7 +13,6 @@ const links = [
 	{ to: "/leistungen", label: "Leistungen" },
 	{ to: "/abrechnung", label: "Abrechnung" },
 	{ to: "/vorfinanzierung", label: "Vorfinanzierung" },
-	{ to: "/abrechnungssoftware", label: "Software" },
 	{ to: "/kontakt", label: "Kontakt" },
 ] as const;
 
