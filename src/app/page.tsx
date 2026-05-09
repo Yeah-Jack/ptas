@@ -11,6 +11,7 @@ import {
 	Zap,
 } from "lucide-react";
 import Link from "next/link";
+import { FadeInUp } from "@/components/animations/fade-in-up";
 import CTA from "@/components/cta";
 import Testimonial from "@/components/testimonial";
 import { Button } from "@/components/ui/button";
@@ -94,7 +95,7 @@ export default function Home() {
 			<section className="relative overflow-hidden bg-linear-to-br from-primary/5 via-background to-primary/10 py-16 md:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
 					<div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-						<div className="flex flex-col gap-4 md:gap-6">
+						<FadeInUp className="flex flex-col gap-4 md:gap-6">
 							<div className="flex items-center gap-2 text-primary">
 								<Ambulance className="size-5 md:size-6" />
 								<span className="font-medium text-sm uppercase tracking-wider">
@@ -106,13 +107,16 @@ export default function Home() {
 								<span className="text-primary">Krankenfahrt-Belegen</span> mit
 								allen Kostenträgern
 							</h1>
-							<p className="text-lg text-muted-foreground">
+							<p className="max-w-lg text-lg text-muted-foreground">
 								Schnell, zuverlässig und sicher. Entscheiden Sie sich für mehr
 								Unabhängigkeit.
 							</p>
-							<div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+							<div className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap">
 								<Link href="/kontakt">
-									<Button size="lg" className="w-full gap-2 sm:w-auto">
+									<Button
+										size="lg"
+										className="w-full gap-2 shadow-sm transition-all hover:scale-[1.02] hover:shadow-md sm:w-auto"
+									>
 										<Send className="size-4" />
 										Unverbindliche Anfrage
 									</Button>
@@ -121,32 +125,38 @@ export default function Home() {
 									<Button
 										variant="outline"
 										size="lg"
-										className="w-full gap-2 sm:w-auto"
+										className="group w-full gap-2 transition-colors hover:bg-primary/5 sm:w-auto"
 									>
 										Mehr erfahren
-										<ArrowRight className="size-4" />
+										<ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
 									</Button>
 								</Link>
 							</div>
-						</div>
-						<div className="relative mt-8 md:mt-0">
+						</FadeInUp>
+						<FadeInUp delay={0.2} className="relative mt-8 md:mt-0">
 							<div className="absolute inset-0 hidden rounded-full bg-primary/10 blur-3xl md:block" />
 							<div className="relative grid grid-cols-2 gap-3 md:gap-4">
-								{promises.map((promise) => (
-									<Card key={promise.content}>
-										<CardContent className="flex flex-col items-center gap-2 px-3 py-4 text-center md:px-4 md:py-6">
-											<promise.icon className="size-6 text-primary md:size-8" />
-											<HoverCard openDelay={0} closeDelay={100}>
-												<HoverCardTrigger className="font-medium text-xs underline decoration-dotted underline-offset-4 md:text-sm">
-													{promise.content}
-												</HoverCardTrigger>
-												<HoverCardContent>{promise.hover}</HoverCardContent>
-											</HoverCard>
-										</CardContent>
-									</Card>
+								{promises.map((promise, idx) => (
+									<FadeInUp key={promise.content} delay={0.3 + idx * 0.1}>
+										<Card className="border-primary/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+											<CardContent className="flex flex-col items-center gap-3 px-3 py-5 text-center md:px-4 md:py-8">
+												<div className="mb-1 rounded-full bg-primary/10 p-3">
+													<promise.icon className="size-6 text-primary md:size-8" />
+												</div>
+												<HoverCard openDelay={0} closeDelay={100}>
+													<HoverCardTrigger className="font-semibold text-xs transition-colors hover:text-primary md:text-sm">
+														{promise.content}
+													</HoverCardTrigger>
+													<HoverCardContent className="text-sm shadow-xl">
+														{promise.hover}
+													</HoverCardContent>
+												</HoverCard>
+											</CardContent>
+										</Card>
+									</FadeInUp>
 								))}
 							</div>
-						</div>
+						</FadeInUp>
 					</div>
 				</div>
 			</section>

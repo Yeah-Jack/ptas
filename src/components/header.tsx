@@ -44,7 +44,10 @@ export default function Header() {
 				{/* Desktop Actions */}
 				<div className="hidden items-center gap-2 md:flex">
 					<Link href="/kontakt" className="hidden lg:flex">
-						<Button size="lg" className="w-full gap-2 sm:w-auto">
+						<Button
+							size="lg"
+							className="w-full gap-2 shadow-sm transition-all hover:scale-[1.02] hover:shadow-md sm:w-auto"
+						>
 							<Send className="size-4" />
 							Unverbindliche Anfrage
 						</Button>
