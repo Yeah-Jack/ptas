@@ -24,17 +24,20 @@ export default function Header() {
 		<header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
 			<div className="container mx-auto flex items-center justify-between px-4 py-3">
 				{/* Logo */}
-				<Link href="/">
+				<Link
+					href="/"
+					className="transition-opacity hover:opacity-80 active:scale-95"
+				>
 					<Image src={icon} width={128} alt="PTAS Logo" />
 				</Link>
 
 				{/* Desktop Navigation */}
-				<nav className="hidden items-center gap-6 md:flex">
+				<nav className="hidden items-center gap-1 md:flex lg:gap-2">
 					{links.map(({ to, label }) => (
 						<Link
 							key={to}
 							href={to}
-							className="text-muted-foreground transition-colors hover:text-foreground"
+							className="rounded-full px-3 py-1.5 text-muted-foreground transition-all hover:bg-primary/10 hover:text-primary active:scale-95"
 						>
 							{label}
 						</Link>
@@ -72,15 +75,17 @@ export default function Header() {
 			{/* Mobile Navigation */}
 			{isOpen ? (
 				<nav className="border-t bg-background px-4 py-4 md:hidden">
-					<div className="flex flex-col gap-3">
+					<div className="flex flex-col gap-2">
 						{links.map(({ to, label }) => (
 							<Link
 								key={to}
 								href={to}
-								className="rounded-md px-3 py-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+								className="group rounded-lg px-4 py-2 font-medium text-muted-foreground transition-all hover:bg-primary/10 hover:text-primary"
 								onClick={() => setIsOpen(false)}
 							>
-								{label}
+								<span className="inline-block transition-transform group-hover:translate-x-1">
+									{label}
+								</span>
 							</Link>
 						))}
 					</div>
