@@ -27,6 +27,7 @@ import {
 	HoverCardContent,
 	HoverCardTrigger,
 } from "@/components/ui/hover-card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const benefits = [
 	{
@@ -86,6 +87,24 @@ const services = [
 	"Fahrten zur Chemo- und Strahlentherapie (Serienfahrten)",
 	"Sammelfahrten",
 	"Behinderten- und Schülertransporte",
+] as const;
+
+const vehicles = [
+	"Taxis und Mietwagen",
+	"Krankentransportwagen (KTW)",
+	"Behindertentransportwagen (BTW)",
+	"Spezialfahrzeuge (Liegendtransporte)",
+	"Tragestuhltransporte",
+	"Rollstuhlfahrzeuge",
+] as const;
+
+const serviceFeatures = [
+	"Prüfung aller Verordnungen",
+	"Direkte Kommunikation mit Kassen",
+	"Rückläuferbearbeitung",
+	"Kostenlose Software-Nutzung",
+	"Optionale Vorfinanzierung (24h)",
+	"Persönlicher Ansprechpartner",
 ] as const;
 
 export default function Home() {
@@ -197,14 +216,18 @@ export default function Home() {
 							</div>
 						</div>
 						<div className="grid gap-4 sm:grid-cols-2">
-							{benefits.map((benefit) => (
-								<Card key={benefit.title}>
-									<CardHeader>
-										<benefit.icon className="mb-2 size-8 text-primary" />
-										<CardTitle>{benefit.title}</CardTitle>
-										<CardDescription>{benefit.description}</CardDescription>
-									</CardHeader>
-								</Card>
+							{benefits.map((benefit, idx) => (
+								<FadeInUp key={benefit.title} delay={0.1 * idx}>
+									<Card className="h-full border-transparent bg-background/50 transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:bg-background hover:shadow-md">
+										<CardHeader>
+											<div className="mb-4 w-fit rounded-xl bg-primary/10 p-3 shadow-inner">
+												<benefit.icon className="size-6 text-primary" />
+											</div>
+											<CardTitle>{benefit.title}</CardTitle>
+											<CardDescription>{benefit.description}</CardDescription>
+										</CardHeader>
+									</Card>
+								</FadeInUp>
 							))}
 						</div>
 					</div>
@@ -232,24 +255,79 @@ export default function Home() {
 							Schnelle, unkomplizierte und verlässliche Abrechnung von:
 						</p>
 					</div>
-					<div className="mx-auto max-w-3xl">
-						<Card>
-							<CardContent className="py-6">
-								<ul className="grid gap-3 sm:grid-cols-2">
-									{services.map((service) => (
-										<li key={service} className="flex items-start gap-3">
-											<CheckCircle className="mt-0.5 size-5 shrink-0 text-primary" />
-											<span className="text-sm">{service}</span>
-										</li>
-									))}
-								</ul>
-							</CardContent>
-						</Card>
-					</div>
-					<div className="mt-12 text-center">
-						<Card className="mx-auto inline-block bg-primary/5">
-							<CardContent className="py-6">
-								<p className="mb-4 font-medium text-lg">
+					<FadeInUp className="mx-auto max-w-3xl">
+						<Tabs defaultValue="fahrten" className="w-full">
+							<TabsList className="mb-6 grid w-full grid-cols-3 bg-primary/5">
+								<TabsTrigger value="fahrten">Fahrten</TabsTrigger>
+								<TabsTrigger value="fahrzeuge">Fahrzeuge</TabsTrigger>
+								<TabsTrigger value="service">Unser Service</TabsTrigger>
+							</TabsList>
+
+							<TabsContent value="fahrten">
+								<Card className="overflow-hidden border-primary/10 shadow-sm">
+									<CardContent className="py-6">
+										<ul className="grid gap-3 sm:grid-cols-2">
+											{services.map((service) => (
+												<li
+													key={service}
+													className="group flex items-start gap-3 rounded-lg p-2 transition-colors hover:bg-primary/5"
+												>
+													<CheckCircle className="mt-0.5 size-5 shrink-0 text-primary transition-transform group-hover:scale-110 group-hover:text-primary/80" />
+													<span className="font-medium text-sm transition-colors group-hover:text-primary">
+														{service}
+													</span>
+												</li>
+											))}
+										</ul>
+									</CardContent>
+								</Card>
+							</TabsContent>
+
+							<TabsContent value="fahrzeuge">
+								<Card className="overflow-hidden border-primary/10 shadow-sm">
+									<CardContent className="py-6">
+										<ul className="grid gap-3 sm:grid-cols-2">
+											{vehicles.map((item) => (
+												<li
+													key={item}
+													className="group flex items-start gap-3 rounded-lg p-2 transition-colors hover:bg-primary/5"
+												>
+													<CheckCircle className="mt-0.5 size-5 shrink-0 text-primary transition-transform group-hover:scale-110 group-hover:text-primary/80" />
+													<span className="font-medium text-sm transition-colors group-hover:text-primary">
+														{item}
+													</span>
+												</li>
+											))}
+										</ul>
+									</CardContent>
+								</Card>
+							</TabsContent>
+
+							<TabsContent value="service">
+								<Card className="overflow-hidden border-primary/10 shadow-sm">
+									<CardContent className="py-6">
+										<ul className="grid gap-3 sm:grid-cols-2">
+											{serviceFeatures.map((item) => (
+												<li
+													key={item}
+													className="group flex items-start gap-3 rounded-lg p-2 transition-colors hover:bg-primary/5"
+												>
+													<CheckCircle className="mt-0.5 size-5 shrink-0 text-primary transition-transform group-hover:scale-110 group-hover:text-primary/80" />
+													<span className="font-medium text-sm transition-colors group-hover:text-primary">
+														{item}
+													</span>
+												</li>
+											))}
+										</ul>
+									</CardContent>
+								</Card>
+							</TabsContent>
+						</Tabs>
+					</FadeInUp>
+					<FadeInUp delay={0.2} className="mt-12 text-center">
+						<Card className="mx-auto inline-block border-primary/20 bg-linear-to-br from-primary/10 to-transparent shadow-sm">
+							<CardContent className="px-6 py-8 md:px-12">
+								<p className="mb-4 font-semibold text-foreground text-lg md:text-xl">
 									Wir sind Ihr spezialisierter Partner für die Abrechnung von
 									Krankenfahrten mit allen Kostenträgern!
 								</p>
@@ -258,7 +336,7 @@ export default function Home() {
 								</p>
 							</CardContent>
 						</Card>
-					</div>
+					</FadeInUp>
 				</div>
 			</section>
 
