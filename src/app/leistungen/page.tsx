@@ -12,8 +12,8 @@ import {
 	Zap,
 } from "lucide-react";
 import Link from "next/link";
+import { FadeInUp } from "@/components/animations/fade-in-up";
 import CTA from "@/components/cta";
-
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -96,10 +96,10 @@ export default function LeistungenPage() {
 			{/* Hero Section */}
 			<section className="border-b bg-linear-to-br from-primary/5 via-background to-primary/10 py-16 md:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
-					<div className="mx-auto max-w-3xl text-center">
+					<FadeInUp className="mx-auto max-w-3xl text-center">
 						<div className="mb-4 flex items-center justify-center gap-2 text-primary">
 							<Package className="size-6" />
-							<span className="font-medium text-sm uppercase tracking-wider">
+							<span className="font-semibold text-sm uppercase tracking-wider">
 								Unsere Leistungen
 							</span>
 						</div>
@@ -112,14 +112,14 @@ export default function LeistungenPage() {
 							Transportscheine. Von der Erfassung der Krankenfahrten bis hin zur
 							Rechnungsstellung.
 						</p>
-					</div>
+					</FadeInUp>
 				</div>
 			</section>
 
 			{/* Process Section */}
 			<section className="py-16 md:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
-					<div className="mb-12 text-center">
+					<FadeInUp className="mb-12 text-center">
 						<h2 className="mb-4 font-bold text-2xl md:text-3xl">
 							Unser Ablauf
 						</h2>
@@ -128,21 +128,25 @@ export default function LeistungenPage() {
 							der Belege fakturieren wir die Forderungen an die Kostenträger per
 							Datenträgeraustausch nach §302 SGB.
 						</p>
-					</div>
+					</FadeInUp>
 
 					<div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
 						{processSteps.map((step, index) => (
 							<div key={step.title} className="relative">
 								{index < processSteps.length - 1 && (
-									<div className="absolute top-8 right-0 hidden h-0.5 w-full translate-x-1/2 bg-border lg:block" />
+									<div className="absolute top-10 right-0 hidden h-0.5 w-[calc(100%-3rem)] translate-x-1/2 bg-linear-to-r from-primary/30 to-background xl:block" />
 								)}
-								<Card className="relative h-full">
-									<CardHeader className="text-center">
-										<step.icon className="mx-auto mb-2 size-10 text-primary" />
-										<CardTitle className="text-lg">{step.title}</CardTitle>
-										<CardDescription>{step.description}</CardDescription>
-									</CardHeader>
-								</Card>
+								<FadeInUp delay={0.1 * index}>
+									<Card className="relative h-full border-transparent bg-background/50 transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:bg-background hover:shadow-md">
+										<CardHeader className="flex flex-col items-center text-center">
+											<div className="mb-4 w-fit rounded-xl bg-primary/10 p-3 shadow-inner">
+												<step.icon className="size-8 text-primary" />
+											</div>
+											<CardTitle className="text-lg">{step.title}</CardTitle>
+											<CardDescription>{step.description}</CardDescription>
+										</CardHeader>
+									</Card>
+								</FadeInUp>
 							</div>
 						))}
 					</div>
@@ -153,7 +157,7 @@ export default function LeistungenPage() {
 			<section className="border-y bg-muted/30 py-12 md:py-16 lg:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
 					<div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
-						<div>
+						<FadeInUp>
 							<h2 className="mb-6 font-bold text-2xl md:text-3xl">
 								Was wir für Sie übernehmen
 							</h2>
@@ -182,51 +186,53 @@ export default function LeistungenPage() {
 									selbstverständlich als Betriebsausgaben absetzbar.
 								</p>
 							</div>
-						</div>
-						<Card className="bg-primary/5">
-							<CardHeader>
-								<CardTitle className="flex items-center gap-2">
-									<CheckCircle className="size-5 text-primary" />
-									Inklusive Leistungen
-								</CardTitle>
-							</CardHeader>
-							<CardContent>
-								<ul className="space-y-3">
-									<li className="flex items-start gap-3">
-										<CheckCircle className="mt-0.5 size-4 shrink-0 text-primary" />
-										<span className="text-sm">
-											Komplette Erfassung Ihrer Krankenfahrten
-										</span>
-									</li>
-									<li className="flex items-start gap-3">
-										<CheckCircle className="mt-0.5 size-4 shrink-0 text-primary" />
-										<span className="text-sm">
-											Digitale Archivierung der Belege
-										</span>
-									</li>
-									<li className="flex items-start gap-3">
-										<CheckCircle className="mt-0.5 size-4 shrink-0 text-primary" />
-										<span className="text-sm">
-											Fakturierung per Datenträgeraustausch §302 SGB
-										</span>
-									</li>
-									<li className="flex items-start gap-3">
-										<CheckCircle className="mt-0.5 size-4 shrink-0 text-primary" />
-										<span className="text-sm">Rückläuferbearbeitung</span>
-									</li>
-									<li className="flex items-start gap-3">
-										<CheckCircle className="mt-0.5 size-4 shrink-0 text-primary" />
-										<span className="text-sm">Mahnwesen</span>
-									</li>
-									<li className="flex items-start gap-3">
-										<CheckCircle className="mt-0.5 size-4 shrink-0 text-primary" />
-										<span className="text-sm">
-											Aufbereitung für Buchhaltung/Steuerberater
-										</span>
-									</li>
-								</ul>
-							</CardContent>
-						</Card>
+						</FadeInUp>
+						<FadeInUp delay={0.2}>
+							<Card className="border-primary/20 bg-linear-to-br from-primary/10 to-transparent shadow-sm">
+								<CardHeader>
+									<CardTitle className="flex items-center gap-2">
+										<CheckCircle className="size-5 text-primary" />
+										Inklusive Leistungen
+									</CardTitle>
+								</CardHeader>
+								<CardContent>
+									<ul className="space-y-3">
+										<li className="flex items-start gap-3">
+											<CheckCircle className="mt-0.5 size-4 shrink-0 text-primary" />
+											<span className="text-sm">
+												Komplette Erfassung Ihrer Krankenfahrten
+											</span>
+										</li>
+										<li className="flex items-start gap-3">
+											<CheckCircle className="mt-0.5 size-4 shrink-0 text-primary" />
+											<span className="text-sm">
+												Digitale Archivierung der Belege
+											</span>
+										</li>
+										<li className="flex items-start gap-3">
+											<CheckCircle className="mt-0.5 size-4 shrink-0 text-primary" />
+											<span className="text-sm">
+												Fakturierung per Datenträgeraustausch §302 SGB
+											</span>
+										</li>
+										<li className="flex items-start gap-3">
+											<CheckCircle className="mt-0.5 size-4 shrink-0 text-primary" />
+											<span className="text-sm">Rückläuferbearbeitung</span>
+										</li>
+										<li className="flex items-start gap-3">
+											<CheckCircle className="mt-0.5 size-4 shrink-0 text-primary" />
+											<span className="text-sm">Mahnwesen</span>
+										</li>
+										<li className="flex items-start gap-3">
+											<CheckCircle className="mt-0.5 size-4 shrink-0 text-primary" />
+											<span className="text-sm">
+												Aufbereitung für Buchhaltung/Steuerberater
+											</span>
+										</li>
+									</ul>
+								</CardContent>
+							</Card>
+						</FadeInUp>
 					</div>
 				</div>
 			</section>
@@ -234,21 +240,25 @@ export default function LeistungenPage() {
 			{/* Benefits Section */}
 			<section className="py-16 md:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
-					<div className="mb-12 text-center">
+					<FadeInUp className="mb-12 text-center">
 						<h2 className="mb-4 font-bold text-2xl md:text-3xl">
 							Ihre Vorteile
 						</h2>
-					</div>
+					</FadeInUp>
 
 					<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-						{benefits.map((benefit) => (
-							<Card key={benefit.title}>
-								<CardHeader className="text-center">
-									<benefit.icon className="mx-auto mb-2 size-10 text-primary" />
-									<CardTitle>{benefit.title}</CardTitle>
-									<CardDescription>{benefit.description}</CardDescription>
-								</CardHeader>
-							</Card>
+						{benefits.map((benefit, idx) => (
+							<FadeInUp key={benefit.title} delay={0.1 * idx}>
+								<Card className="h-full border-transparent bg-background/50 transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:bg-background hover:shadow-md">
+									<CardHeader className="flex flex-col items-center text-center">
+										<div className="mb-4 w-fit rounded-xl bg-primary/10 p-3 shadow-inner">
+											<benefit.icon className="size-8 text-primary" />
+										</div>
+										<CardTitle className="text-lg">{benefit.title}</CardTitle>
+										<CardDescription>{benefit.description}</CardDescription>
+									</CardHeader>
+								</Card>
+							</FadeInUp>
 						))}
 					</div>
 				</div>
