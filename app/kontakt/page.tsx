@@ -2,7 +2,6 @@
 
 import { Clock, Mail, Phone, Send } from "lucide-react";
 import { useCallback, useState } from "react";
-
 import { Button } from "../../components/ui/button";
 import {
 	Card,
@@ -112,10 +111,10 @@ export default function KontaktPage() {
 								<CardTitle>Telefon</CardTitle>
 								<CardDescription>
 									<a
-										href="tel:+4961929999002"
+										href="tel:+4961929391752"
 										className="text-foreground hover:text-primary"
 									>
-										(06192) 9999 002
+										(06192) 9391 752
 									</a>
 								</CardDescription>
 							</CardHeader>

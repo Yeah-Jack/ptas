@@ -92,11 +92,11 @@ export default function Footer() {
 								</span>
 							</a>
 							<a
-								href="tel:+4961929999002"
+								href="tel:+4961929391752"
 								className="flex items-center gap-2 transition-colors hover:text-foreground"
 							>
 								<Phone className="size-4 shrink-0 text-primary" />
-								(06192) 9999 002
+								(06192) 9391 752
 							</a>
 							<a
 								href="mailto:info@ptas.de"
