@@ -1,10 +1,19 @@
 import {
 	Ambulance,
 	ArrowRight,
+	BadgeCheck,
+	Building,
+	Building2,
+	Calculator,
 	CheckCircle,
 	Clock,
 	HandCoins,
+	Handshake,
 	HeartPulse,
+	Laptop,
+	Network,
+	PhoneCall,
+	Receipt,
 	Send,
 	ShieldCheck,
 	Users,
@@ -107,6 +116,52 @@ const serviceFeatures = [
 	"Persönlicher Ansprechpartner",
 ] as const;
 
+const partners = [
+	{ name: "1159 Finance", icon: Handshake },
+	{ name: "Sozialfactoring", icon: Handshake },
+	{ name: "Bridgetec", icon: Handshake },
+	{ name: "GVN Fördermitglied", icon: BadgeCheck },
+	{ name: "Bayern-Deal (T&M)", icon: BadgeCheck },
+	{ name: "VSPV Mitglied", icon: BadgeCheck },
+] as const;
+
+const genossenschaftenFeatures = [
+	"Transparente Umlagen & Gebührenberechnung",
+	"Sichere Mitgliedsbeitrag-Verwaltung",
+	"Zentrale Online-Einsicht für jeden Unternehmer",
+] as const;
+
+const workflowSteps = [
+	{
+		icon: PhoneCall,
+		title: "1. Fahrtvermittlung",
+		description: "Auftrag wird in der Zentrale erfasst und disponiert.",
+	},
+	{
+		icon: Network,
+		title: "2. Automatische Zuordnung",
+		description:
+			"Fahrt wird automatisch dem ausführenden Unternehmer zugeordnet.",
+	},
+	{
+		icon: Calculator,
+		title: "3. Gebührenberechnung",
+		description:
+			"Umlagen, Mitgliedsbeiträge und Vermittlungsgebühren werden regelbasiert ermittelt.",
+	},
+	{
+		icon: Receipt,
+		title: "4. Abrechnungserstellung",
+		description:
+			"Transparente, periodische Erstellung der Unternehmerabrechnung.",
+	},
+	{
+		icon: Laptop,
+		title: "5. Portal-Zugang",
+		description: "24/7 Online-Einsicht für Unternehmer und Zentrale.",
+	},
+] as const;
+
 export default function Home() {
 	return (
 		<div className="flex flex-col">
@@ -176,6 +231,26 @@ export default function Home() {
 								))}
 							</div>
 						</FadeInUp>
+					</div>
+				</div>
+			</section>
+
+			{/* Partners Section */}
+			<section className="border-b bg-background py-8 md:py-12">
+				<div className="container mx-auto max-w-6xl px-4 text-center">
+					<p className="mb-6 font-medium text-muted-foreground text-sm uppercase tracking-widest">
+						Unterstützt durch unsere Partner & Verbände
+					</p>
+					<div className="flex flex-wrap justify-center gap-4 md:gap-8">
+						{partners.map((partner) => (
+							<div
+								key={partner.name}
+								className="flex items-center gap-2 rounded-full border bg-muted/30 px-4 py-2"
+							>
+								<partner.icon className="size-4 text-primary" />
+								<span className="font-medium text-sm">{partner.name}</span>
+							</div>
+						))}
 					</div>
 				</div>
 			</section>
@@ -331,12 +406,76 @@ export default function Home() {
 									Wir sind Ihr spezialisierter Partner für die Abrechnung von
 									Krankenfahrten mit allen Kostenträgern!
 								</p>
-								<p className="text-muted-foreground">
+								<p className="md:font-extralight md:text-lg">
 									Ob Krankenfahrten mit dem Taxi, Mietwagen, KTW oder BTW.
 								</p>
 							</CardContent>
 						</Card>
 					</FadeInUp>
+				</div>
+			</section>
+
+			{/* Genossenschaften & Workflow Section */}
+			<section className="border-y bg-muted/30 py-16 md:py-24">
+				<div className="container mx-auto max-w-6xl px-4">
+					{/* Genossenschaften Value Prop */}
+					<div className="mb-16 grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+						<FadeInUp>
+							<div className="mb-4 flex items-center gap-2 text-primary">
+								<Building className="size-5" />
+								<span className="w-fit font-medium text-sm uppercase tracking-widest">
+									Für Genossenschaften
+								</span>
+							</div>
+							<h2 className="mb-4 font-bold text-2xl md:text-3xl lg:text-4xl">
+								Unternehmerabrechnung für Taxigenossenschaften und Funkzentralen
+							</h2>
+							<p className="mb-6 text-lg text-muted-foreground">
+								Wir übernehmen die komplette und komplexe Abrechnung zwischen
+								Funkzentrale und Unternehmern. Verabschieden Sie sich von
+								unübersichtlichen Tabellen und manuellen Prozessen.
+							</p>
+							<ul className="mb-8 space-y-3">
+								{genossenschaftenFeatures.map((feature) => (
+									<li key={feature} className="flex items-start gap-3">
+										<CheckCircle className="mt-1 size-5 text-primary" />
+										<span className="text-foreground">{feature}</span>
+									</li>
+								))}
+							</ul>
+						</FadeInUp>
+						<FadeInUp delay={0.2}>
+							<Card className="border-primary/10 bg-background/50 shadow-lg">
+								<CardHeader>
+									<CardTitle className="flex items-center gap-3">
+										<Building2 className="size-6 text-primary" />
+										So funktioniert es
+									</CardTitle>
+									<CardDescription>
+										Unser 5-Schritte-Workflow für eine effiziente
+										Unternehmerabrechnung
+									</CardDescription>
+								</CardHeader>
+								<CardContent className="pt-6">
+									<div className="space-y-6">
+										{workflowSteps.map((step) => (
+											<div key={step.title} className="flex gap-4">
+												<div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+													<step.icon className="size-5" />
+												</div>
+												<div>
+													<h4 className="font-semibold">{step.title}</h4>
+													<p className="text-muted-foreground text-sm">
+														{step.description}
+													</p>
+												</div>
+											</div>
+										))}
+									</div>
+								</CardContent>
+							</Card>
+						</FadeInUp>
+					</div>
 				</div>
 			</section>
 
