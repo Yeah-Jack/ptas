@@ -25,6 +25,8 @@ type FormData = {
 	telefon: string;
 	abrechnungInteresse: boolean;
 	vorfinanzierungInteresse: boolean;
+	abrechnungsvolumen: string;
+	schmerzpunkt: string;
 	nachricht: string;
 };
 
@@ -39,6 +41,8 @@ export default function KontaktPage() {
 		telefon: "",
 		abrechnungInteresse: false,
 		vorfinanzierungInteresse: false,
+		abrechnungsvolumen: "",
+		schmerzpunkt: "",
 		nachricht: "",
 	};
 
@@ -326,6 +330,43 @@ export default function KontaktPage() {
 										</form.Field>
 									</div>
 								</div>
+
+								<form.Field name="abrechnungsvolumen">
+									{(field) => (
+										<div className="space-y-2">
+											<Label htmlFor={field.name}>
+												Abrechnungsvolumen pro Monat
+											</Label>
+											<Input
+												id={field.name}
+												name={field.name}
+												placeholder="z.B. 50.000 €"
+												value={field.state.value}
+												onBlur={field.handleBlur}
+												onChange={(e) => field.handleChange(e.target.value)}
+											/>
+										</div>
+									)}
+								</form.Field>
+
+								<form.Field name="schmerzpunkt">
+									{(field) => (
+										<div className="space-y-2">
+											<Label htmlFor={field.name}>
+												Was ist Ihr größter Schmerzpunkt?
+											</Label>
+											<Textarea
+												id={field.name}
+												name={field.name}
+												placeholder="Beschreiben Sie Ihre größte Herausforderung..."
+												value={field.state.value}
+												onBlur={field.handleBlur}
+												onChange={(e) => field.handleChange(e.target.value)}
+												rows={3}
+											/>
+										</div>
+									)}
+								</form.Field>
 
 								<form.Field name="nachricht">
 									{(field) => (
