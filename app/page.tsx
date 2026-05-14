@@ -11,28 +11,23 @@ import {
 	Zap,
 } from "lucide-react";
 import Link from "next/link";
-import { FadeInUp } from "../components/animations/fade-in-up";
-import CTA from "../components/cta";
-import Testimonial from "../components/testimonial";
-import { Button } from "../components/ui/button";
+import { FadeInUp } from "@/components/animations/fade-in-up";
+import CTA from "@/components/cta";
+import Testimonial from "@/components/testimonial";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
 	CardDescription,
 	CardHeader,
 	CardTitle,
-} from "../components/ui/card";
+} from "@/components/ui/card";
 import {
 	HoverCard,
 	HoverCardContent,
 	HoverCardTrigger,
-} from "../components/ui/hover-card";
-import {
-	Tabs,
-	TabsContent,
-	TabsList,
-	TabsTrigger,
-} from "../components/ui/tabs";
+} from "@/components/ui/hover-card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const benefits = [
 	{

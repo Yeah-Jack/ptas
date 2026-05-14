@@ -4,7 +4,6 @@
 
 <img width="2552" height="1433" alt="Website Screenshot" src="https://github.com/user-attachments/assets/35b4d647-906b-4b37-9613-be78432afd48" />
 
-
 This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines Next.js, and more.
 
 ## Features
