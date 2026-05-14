@@ -123,7 +123,7 @@ export default function KontaktPage() {
 							<CardHeader className="text-center">
 								<Clock className="mx-auto mb-2 size-10 text-primary" />
 								<CardTitle>Bürozeiten</CardTitle>
-								<CardDescription>Mo-Fr 09-18 Uhr</CardDescription>
+								<CardDescription>Mo-Fr 09-16 Uhr</CardDescription>
 							</CardHeader>
 						</Card>
 					</div>
