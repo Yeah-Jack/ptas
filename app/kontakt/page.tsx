@@ -13,6 +13,7 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
 type FormData = {
 	name: string;
@@ -28,19 +29,21 @@ type FormData = {
 };
 
 export default function KontaktPage() {
-	const form = useForm<FormData>({
-		defaultValues: {
-			name: "",
-			unternehmen: "",
-			adresse: "",
-			plz: "",
-			ort: "",
-			email: "",
-			telefon: "",
-			abrechnungInteresse: false,
-			vorfinanzierungInteresse: false,
-			nachricht: "",
-		},
+	const defaultValues: FormData = {
+		name: "",
+		unternehmen: "",
+		adresse: "",
+		plz: "",
+		ort: "",
+		email: "",
+		telefon: "",
+		abrechnungInteresse: false,
+		vorfinanzierungInteresse: false,
+		nachricht: "",
+	};
+
+	const form = useForm({
+		defaultValues,
 		onSubmit: async ({ value }) => {
 			console.log("Form submitted:", value);
 			// Add actual submit logic here
@@ -328,7 +331,7 @@ export default function KontaktPage() {
 									{(field) => (
 										<div className="space-y-2">
 											<Label htmlFor={field.name}>Nachricht</Label>
-											<textarea
+											<Textarea
 												id={field.name}
 												name={field.name}
 												placeholder="Schreiben Sie uns eine Nachricht..."
@@ -336,7 +339,6 @@ export default function KontaktPage() {
 												onBlur={field.handleBlur}
 												onChange={(e) => field.handleChange(e.target.value)}
 												rows={5}
-												className="w-full min-w-0 rounded-none border border-input bg-transparent px-2.5 py-2 text-xs outline-none transition-colors placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-input/50 disabled:opacity-50 dark:bg-input/30"
 											/>
 										</div>
 									)}
