@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import icon from "@/app/icon.svg";
-import { Button } from "@/components/ui/button";
 import { ModeToggle } from "./mode-toggle";
+import { Button } from "./ui/button";
 
 const links = [
 	{ to: "/", label: "Startseite" },

@@ -5,8 +5,8 @@ import useEmblaCarousel, {
 } from "embla-carousel-react";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import * as React from "react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
+import { Button } from "./button";
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -120,8 +120,6 @@ function Carousel({
 			<div
 				onKeyDownCapture={handleKeyDown}
 				className={cn("relative", className)}
-				role="region"
-				aria-roledescription="carousel"
 				data-slot="carousel"
 				{...props}
 			>
@@ -157,8 +155,6 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
 
 	return (
 		<div
-			role="group"
-			aria-roledescription="slide"
 			data-slot="carousel-item"
 			className={cn(
 				"min-w-0 shrink-0 grow-0 basis-full",

@@ -12,9 +12,9 @@ import {
 	Zap,
 } from "lucide-react";
 import Link from "next/link";
-import { FadeInUp } from "@/components/animations/fade-in-up";
-import CTA from "@/components/cta";
-import { Button } from "@/components/ui/button";
+import { FadeInUp } from "../../components/animations/fade-in-up";
+import CTA from "../../components/cta";
+import { Button } from "../../components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -22,7 +22,7 @@ import {
 	CardFooter,
 	CardHeader,
 	CardTitle,
-} from "@/components/ui/card";
+} from "../../components/ui/card";
 
 const processSteps = [
 	{
