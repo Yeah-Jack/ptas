@@ -1,6 +1,6 @@
 import {
 	Ambulance,
-	ArrowRight,
+	// ArrowRight,
 	BadgeCheck,
 	Building,
 	Building2,
@@ -195,7 +195,7 @@ export default function Home() {
 										Unverbindliche Anfrage
 									</Button>
 								</Link>
-								<Link href="/abrechnung">
+								{/* <Link href="/abrechnung">
 									<Button
 										variant="outline"
 										size="lg"
@@ -204,7 +204,7 @@ export default function Home() {
 										Mehr erfahren
 										<ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
 									</Button>
-								</Link>
+								</Link> */}
 							</div>
 						</FadeInUp>
 						<FadeInUp delay={0.2} className="relative mt-8 md:mt-0">
