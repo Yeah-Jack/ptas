@@ -1,7 +1,7 @@
 "use client";
 
+import { useForm } from "@tanstack/react-form";
 import { Clock, Mail, Phone, Send } from "lucide-react";
-import { useCallback, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -13,19 +13,6 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-
-const initialFormData = {
-	name: "",
-	unternehmen: "",
-	adresse: "",
-	plz: "",
-	ort: "",
-	email: "",
-	telefon: "",
-	abrechnungInteresse: false,
-	vorfinanzierungInteresse: false,
-	nachricht: "",
-} as const;
 
 type FormData = {
 	name: string;
@@ -41,28 +28,24 @@ type FormData = {
 };
 
 export default function KontaktPage() {
-	const [formData, setFormData] = useState<FormData>({ ...initialFormData });
-
-	// Memoized handlers using functional setState (rerender-functional-setstate)
-	const handleInputChange = useCallback(
-		(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-			const { name, value } = e.target;
-			setFormData((prev) => ({ ...prev, [name]: value }));
+	const form = useForm<FormData>({
+		defaultValues: {
+			name: "",
+			unternehmen: "",
+			adresse: "",
+			plz: "",
+			ort: "",
+			email: "",
+			telefon: "",
+			abrechnungInteresse: false,
+			vorfinanzierungInteresse: false,
+			nachricht: "",
 		},
-		[],
-	);
-
-	const handleCheckboxChange = useCallback((name: string, checked: boolean) => {
-		setFormData((prev) => ({ ...prev, [name]: checked }));
-	}, []);
-
-	const handleSubmit = useCallback(
-		(e: React.FormEvent) => {
-			e.preventDefault();
-			console.log("Form submitted:", formData);
+		onSubmit: async ({ value }) => {
+			console.log("Form submitted:", value);
+			// Add actual submit logic here
 		},
-		[formData],
-	);
+	});
 
 	return (
 		<div className="flex flex-col">
@@ -111,10 +94,10 @@ export default function KontaktPage() {
 								<CardTitle>Telefon</CardTitle>
 								<CardDescription>
 									<a
-										href="tel:+4961929391752"
+										href="tel:+1961929391752"
 										className="text-foreground hover:text-primary"
 									>
-										(06192) 9391 752
+										+19 6192 9391 752
 									</a>
 								</CardDescription>
 							</CardHeader>
@@ -137,174 +120,248 @@ export default function KontaktPage() {
 							</CardDescription>
 						</CardHeader>
 						<CardContent>
-							<form onSubmit={handleSubmit} className="space-y-6">
+							<form
+								onSubmit={(e) => {
+									e.preventDefault();
+									e.stopPropagation();
+									form.handleSubmit();
+								}}
+								className="space-y-6"
+							>
 								<div className="grid gap-4 md:grid-cols-2">
-									{/* Name */}
-									<div className="space-y-2">
-										<Label htmlFor="name">
-											Name/Ansprechpartner{" "}
-											<span className="text-destructive">*</span>
-										</Label>
-										<Input
-											id="name"
-											name="name"
-											placeholder="Name oder Ansprechpartner..."
-											value={formData.name}
-											onChange={handleInputChange}
-											required
-										/>
-									</div>
+									<form.Field
+										name="name"
+										validators={{
+											onChange: ({ value }) =>
+												!value ? "Name ist erforderlich" : undefined,
+										}}
+									>
+										{(field) => (
+											<div className="space-y-2">
+												<Label htmlFor={field.name}>
+													Name/Ansprechpartner{" "}
+													<span className="text-destructive">*</span>
+												</Label>
+												<Input
+													id={field.name}
+													name={field.name}
+													placeholder="Name oder Ansprechpartner..."
+													value={field.state.value}
+													onBlur={field.handleBlur}
+													onChange={(e) => field.handleChange(e.target.value)}
+												/>
+												{field.state.meta.errors ? (
+													<p className="text-[0.8rem] text-destructive">
+														{field.state.meta.errors.join(", ")}
+													</p>
+												) : null}
+											</div>
+										)}
+									</form.Field>
 
-									{/* Unternehmen */}
-									<div className="space-y-2">
-										<Label htmlFor="unternehmen">Unternehmen</Label>
-										<Input
-											id="unternehmen"
-											name="unternehmen"
-											placeholder="Unternehmen..."
-											value={formData.unternehmen}
-											onChange={handleInputChange}
-										/>
-									</div>
+									<form.Field name="unternehmen">
+										{(field) => (
+											<div className="space-y-2">
+												<Label htmlFor={field.name}>Unternehmen</Label>
+												<Input
+													id={field.name}
+													name={field.name}
+													placeholder="Unternehmen..."
+													value={field.state.value}
+													onBlur={field.handleBlur}
+													onChange={(e) => field.handleChange(e.target.value)}
+												/>
+											</div>
+										)}
+									</form.Field>
 								</div>
 
-								{/* Adresse */}
-								<div className="space-y-2">
-									<Label htmlFor="adresse">Adresse</Label>
-									<Input
-										id="adresse"
-										name="adresse"
-										placeholder="Adresse..."
-										value={formData.adresse}
-										onChange={handleInputChange}
-									/>
+								<form.Field name="adresse">
+									{(field) => (
+										<div className="space-y-2">
+											<Label htmlFor={field.name}>Adresse</Label>
+											<Input
+												id={field.name}
+												name={field.name}
+												placeholder="Adresse..."
+												value={field.state.value}
+												onBlur={field.handleBlur}
+												onChange={(e) => field.handleChange(e.target.value)}
+											/>
+										</div>
+									)}
+								</form.Field>
+
+								<div className="grid gap-4 md:grid-cols-2">
+									<form.Field name="plz">
+										{(field) => (
+											<div className="space-y-2">
+												<Label htmlFor={field.name}>PLZ</Label>
+												<Input
+													id={field.name}
+													name={field.name}
+													placeholder="PLZ..."
+													value={field.state.value}
+													onBlur={field.handleBlur}
+													onChange={(e) => field.handleChange(e.target.value)}
+												/>
+											</div>
+										)}
+									</form.Field>
+
+									<form.Field name="ort">
+										{(field) => (
+											<div className="space-y-2">
+												<Label htmlFor={field.name}>Ort</Label>
+												<Input
+													id={field.name}
+													name={field.name}
+													placeholder="Ort..."
+													value={field.state.value}
+													onBlur={field.handleBlur}
+													onChange={(e) => field.handleChange(e.target.value)}
+												/>
+											</div>
+										)}
+									</form.Field>
 								</div>
 
 								<div className="grid gap-4 md:grid-cols-2">
-									{/* PLZ */}
-									<div className="space-y-2">
-										<Label htmlFor="plz">PLZ</Label>
-										<Input
-											id="plz"
-											name="plz"
-											placeholder="PLZ..."
-											value={formData.plz}
-											onChange={handleInputChange}
-										/>
-									</div>
+									<form.Field
+										name="email"
+										validators={{
+											onChange: ({ value }) =>
+												!value
+													? "E-Mail ist erforderlich"
+													: !/^\S+@\S+\.\S+$/.test(value)
+														? "Ungültige E-Mail-Adresse"
+														: undefined,
+										}}
+									>
+										{(field) => (
+											<div className="space-y-2">
+												<Label htmlFor={field.name}>
+													E-Mail-Adresse{" "}
+													<span className="text-destructive">*</span>
+												</Label>
+												<Input
+													id={field.name}
+													name={field.name}
+													type="email"
+													placeholder="E-Mail-Adresse..."
+													value={field.state.value}
+													onBlur={field.handleBlur}
+													onChange={(e) => field.handleChange(e.target.value)}
+												/>
+												{field.state.meta.errors ? (
+													<p className="text-[0.8rem] text-destructive">
+														{field.state.meta.errors.join(", ")}
+													</p>
+												) : null}
+											</div>
+										)}
+									</form.Field>
 
-									{/* Ort */}
-									<div className="space-y-2">
-										<Label htmlFor="ort">Ort</Label>
-										<Input
-											id="ort"
-											name="ort"
-											placeholder="Ort..."
-											value={formData.ort}
-											onChange={handleInputChange}
-										/>
-									</div>
+									<form.Field name="telefon">
+										{(field) => (
+											<div className="space-y-2">
+												<Label htmlFor={field.name}>Telefon</Label>
+												<Input
+													id={field.name}
+													name={field.name}
+													type="tel"
+													placeholder="Telefon..."
+													value={field.state.value}
+													onBlur={field.handleBlur}
+													onChange={(e) => field.handleChange(e.target.value)}
+												/>
+											</div>
+										)}
+									</form.Field>
 								</div>
 
-								<div className="grid gap-4 md:grid-cols-2">
-									{/* E-Mail */}
-									<div className="space-y-2">
-										<Label htmlFor="email">
-											E-Mail-Adresse <span className="text-destructive">*</span>
-										</Label>
-										<Input
-											id="email"
-											name="email"
-											type="email"
-											placeholder="E-Mail-Adresse..."
-											value={formData.email}
-											onChange={handleInputChange}
-											required
-										/>
-									</div>
-
-									{/* Telefon */}
-									<div className="space-y-2">
-										<Label htmlFor="telefon">Telefon</Label>
-										<Input
-											id="telefon"
-											name="telefon"
-											type="tel"
-											placeholder="Telefon..."
-											value={formData.telefon}
-											onChange={handleInputChange}
-										/>
-									</div>
-								</div>
-
-								{/* Interesse */}
 								<div className="space-y-3">
 									<Label>Anfrage/Interesse für:</Label>
 									<div className="flex flex-wrap gap-6">
-										<div className="flex items-center gap-2">
-											<Checkbox
-												id="abrechnungInteresse"
-												checked={formData.abrechnungInteresse}
-												onCheckedChange={(checked) =>
-													handleCheckboxChange(
-														"abrechnungInteresse",
-														checked === true,
-													)
-												}
-											/>
-											<Label
-												htmlFor="abrechnungInteresse"
-												className="cursor-pointer font-normal"
-											>
-												Abrechnung
-											</Label>
-										</div>
-										<div className="flex items-center gap-2">
-											<Checkbox
-												id="vorfinanzierungInteresse"
-												checked={formData.vorfinanzierungInteresse}
-												onCheckedChange={(checked) =>
-													handleCheckboxChange(
-														"vorfinanzierungInteresse",
-														checked === true,
-													)
-												}
-											/>
-											<Label
-												htmlFor="vorfinanzierungInteresse"
-												className="cursor-pointer font-normal"
-											>
-												Abrechnung mit Vorfinanzierung
-											</Label>
-										</div>
+										<form.Field name="abrechnungInteresse">
+											{(field) => (
+												<div className="flex items-center gap-2">
+													<Checkbox
+														id={field.name}
+														checked={field.state.value}
+														onCheckedChange={(checked) =>
+															field.handleChange(checked === true)
+														}
+													/>
+													<Label
+														htmlFor={field.name}
+														className="cursor-pointer font-normal"
+													>
+														Abrechnung
+													</Label>
+												</div>
+											)}
+										</form.Field>
+										<form.Field name="vorfinanzierungInteresse">
+											{(field) => (
+												<div className="flex items-center gap-2">
+													<Checkbox
+														id={field.name}
+														checked={field.state.value}
+														onCheckedChange={(checked) =>
+															field.handleChange(checked === true)
+														}
+													/>
+													<Label
+														htmlFor={field.name}
+														className="cursor-pointer font-normal"
+													>
+														Abrechnung mit Vorfinanzierung
+													</Label>
+												</div>
+											)}
+										</form.Field>
 									</div>
 								</div>
 
-								{/* Nachricht */}
-								<div className="space-y-2">
-									<Label htmlFor="nachricht">Nachricht</Label>
-									<textarea
-										id="nachricht"
-										name="nachricht"
-										placeholder="Schreiben Sie uns eine Nachricht..."
-										value={formData.nachricht}
-										onChange={handleInputChange}
-										rows={5}
-										className="w-full min-w-0 rounded-none border border-input bg-transparent px-2.5 py-2 text-xs outline-none transition-colors placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-input/50 disabled:opacity-50 dark:bg-input/30"
-									/>
-								</div>
+								<form.Field name="nachricht">
+									{(field) => (
+										<div className="space-y-2">
+											<Label htmlFor={field.name}>Nachricht</Label>
+											<textarea
+												id={field.name}
+												name={field.name}
+												placeholder="Schreiben Sie uns eine Nachricht..."
+												value={field.state.value}
+												onBlur={field.handleBlur}
+												onChange={(e) => field.handleChange(e.target.value)}
+												rows={5}
+												className="w-full min-w-0 rounded-none border border-input bg-transparent px-2.5 py-2 text-xs outline-none transition-colors placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-input/50 disabled:opacity-50 dark:bg-input/30"
+											/>
+										</div>
+									)}
+								</form.Field>
 
-								{/* Required Note */}
 								<p className="text-muted-foreground text-xs">
 									<span className="text-destructive">*</span> Erforderliche
 									Angaben
 								</p>
 
-								{/* Submit Button */}
-								<Button type="submit" size="lg" className="w-full gap-2">
-									<Send className="size-4" />
-									Nachricht senden
-								</Button>
+								<form.Subscribe
+									selector={(state) => [state.canSubmit, state.isSubmitting]}
+								>
+									{([canSubmit, isSubmitting]) => (
+										<Button
+											type="submit"
+											size="lg"
+											className="w-full gap-2"
+											disabled={!canSubmit || isSubmitting}
+										>
+											<Send className="size-4" />
+											{isSubmitting ? "Senden..." : "Nachricht senden"}
+										</Button>
+									)}
+								</form.Subscribe>
 							</form>
 						</CardContent>
 					</Card>
