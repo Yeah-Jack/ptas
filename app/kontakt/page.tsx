@@ -26,7 +26,7 @@ type FormData = {
 	abrechnungInteresse: boolean;
 	vorfinanzierungInteresse: boolean;
 	abrechnungsvolumen: string;
-	schmerzpunkt: string;
+	problem: string;
 	nachricht: string;
 };
 
@@ -42,7 +42,7 @@ export default function KontaktPage() {
 		abrechnungInteresse: false,
 		vorfinanzierungInteresse: false,
 		abrechnungsvolumen: "",
-		schmerzpunkt: "",
+		problem: "",
 		nachricht: "",
 	};
 
@@ -349,11 +349,11 @@ export default function KontaktPage() {
 									)}
 								</form.Field>
 
-								<form.Field name="schmerzpunkt">
+								<form.Field name="problem">
 									{(field) => (
 										<div className="space-y-2">
 											<Label htmlFor={field.name}>
-												Was ist Ihr größter Schmerzpunkt?
+												Was ist Ihr größtes Problem?
 											</Label>
 											<Textarea
 												id={field.name}
