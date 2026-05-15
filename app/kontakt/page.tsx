@@ -77,7 +77,6 @@ export default function KontaktPage() {
 
 	return (
 		<div className="flex flex-col">
-			{/* Hero Section */}
 			<section className="border-b bg-linear-to-br from-primary/5 via-background to-primary/10 py-16 md:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
 					<div className="mx-auto max-w-3xl text-center">
