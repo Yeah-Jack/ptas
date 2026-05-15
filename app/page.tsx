@@ -1,14 +1,12 @@
 import {
 	Ambulance,
 	// ArrowRight,
-	BadgeCheck,
 	Building,
 	Building2,
 	Calculator,
 	CheckCircle,
 	Clock,
 	HandCoins,
-	Handshake,
 	HeartPulse,
 	Laptop,
 	Network,
@@ -19,6 +17,7 @@ import {
 	Users,
 	Zap,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { FadeInUp } from "@/components/animations/fade-in-up";
 import CTA from "@/components/cta";
@@ -117,12 +116,12 @@ const serviceFeatures = [
 ] as const;
 
 const partners = [
-	{ name: "1159 Finance", icon: Handshake },
-	{ name: "Sozialfactoring", icon: Handshake },
-	{ name: "Bridgetec", icon: Handshake },
-	{ name: "GVN Fördermitglied", icon: BadgeCheck },
-	{ name: "Bayern-Deal (T&M)", icon: BadgeCheck },
-	{ name: "VSPV Mitglied", icon: BadgeCheck },
+	{ name: "1159 Finance", logo: "/1159-Finance.svg" },
+	{ name: "Sozialfactoring", logo: "/Sozial-Factoring.svg" },
+	// { name: "Bridgetec", icon: Handshake },
+	{ name: "GVN Fördermitglied", logo: "/GVN.png" },
+	// { name: "Bayern-Deal (T&M)", icon: BadgeCheck },
+	// { name: "VSPV Mitglied", icon: BadgeCheck },
 ] as const;
 
 const genossenschaftenFeatures = [
@@ -247,8 +246,18 @@ export default function Home() {
 								key={partner.name}
 								className="flex items-center gap-2 rounded-full border bg-muted/30 px-4 py-2"
 							>
-								<partner.icon className="size-4 text-primary" />
-								<span className="font-medium text-sm">{partner.name}</span>
+								<Image
+									src={partner.logo}
+									alt={partner.name}
+									width={160}
+									height={40}
+									className={`w-auto ${
+										partner.name === "Sozialfactoring" ||
+										partner.name === "GVN Fördermitglied"
+											? "h-10 sm:h-12"
+											: "h-6"
+									} ${partner.name === "1159 Finance" ? "invert dark:invert-0" : "dark:brightness-0 dark:invert"}`}
+								/>
 							</div>
 						))}
 					</div>
