@@ -19,38 +19,38 @@ export type TestimonialItem = {
 };
 
 const testimonials: TestimonialItem[] = [
-	{
-		name: "Clarence Rogers",
-		role: "CEO & Co Founder",
-		company: "Easy Taxi",
-		avatar: "https://randomuser.me/api/portraits/men/3.jpg",
-		content:
-			"Ich nutze PTAS nun schon seit einem Jahr und es hat die Verwaltung meiner Finanzen so viel einfacher und schneller gemacht.",
-	},
-	{
-		name: "Garrett Lewis",
-		role: "Product manager",
-		company: "Taxi 24",
-		avatar: "https://randomuser.me/api/portraits/men/27.jpg",
-		content:
-			"Mit PTAS kann ich meine Abrechnungen ganz einfach im Blick behalten und in Echtzeit sehen, wie sie sich entwickeln.",
-	},
-	{
-		name: "Steven Schmidt",
-		role: "Lead Designer",
-		company: "Cabify",
-		avatar: "https://randomuser.me/api/portraits/lego/0.jpg",
-		content:
-			"Die UI ist wunderschön gestaltet und lässt sich unglaublich einfach anpassen. Das hat unseren Abrechnungs-Workflow grundlegend verändert.",
-	},
-	{
-		name: "Lydia Griffith",
-		role: "Frontend Developer",
-		company: "Bolt",
-		avatar: "https://randomuser.me/api/portraits/women/69.jpg",
-		content:
-			"PTAS hat uns unzählige Stunden Abrechnungszeit eingespart. Die Webseite ist umfassend und gut dokumentiert.",
-	},
+	// {
+	// 	name: "Clarence Rogers",
+	// 	role: "CEO & Co Founder",
+	// 	company: "Easy Taxi",
+	// 	avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+	// 	content:
+	// 		"Ich nutze PTAS nun schon seit einem Jahr und es hat die Verwaltung meiner Finanzen so viel einfacher und schneller gemacht.",
+	// },
+	// {
+	// 	name: "Garrett Lewis",
+	// 	role: "Product manager",
+	// 	company: "Taxi 24",
+	// 	avatar: "https://randomuser.me/api/portraits/men/27.jpg",
+	// 	content:
+	// 		"Mit PTAS kann ich meine Abrechnungen ganz einfach im Blick behalten und in Echtzeit sehen, wie sie sich entwickeln.",
+	// },
+	// {
+	// 	name: "Steven Schmidt",
+	// 	role: "Lead Designer",
+	// 	company: "Cabify",
+	// 	avatar: "https://randomuser.me/api/portraits/lego/0.jpg",
+	// 	content:
+	// 		"Die UI ist wunderschön gestaltet und lässt sich unglaublich einfach anpassen. Das hat unseren Abrechnungs-Workflow grundlegend verändert.",
+	// },
+	// {
+	// 	name: "Lydia Griffith",
+	// 	role: "Frontend Developer",
+	// 	company: "Bolt",
+	// 	avatar: "https://randomuser.me/api/portraits/women/69.jpg",
+	// 	content:
+	// 		"PTAS hat uns unzählige Stunden Abrechnungszeit eingespart. Die Webseite ist umfassend und gut dokumentiert.",
+	// },
 ] as const;
 
 export default function Testimonial() {
