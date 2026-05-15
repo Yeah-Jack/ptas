@@ -112,7 +112,7 @@ const serviceFeatures = [
 	"Direkte Kommunikation mit Kassen",
 	"Rückläuferbearbeitung",
 	"Kostenlose Software-Nutzung",
-	"Optionale Vorfinanzierung (24h)",
+	"Optionale Vorfinanzierung",
 	"Persönlicher Ansprechpartner",
 ] as const;
 

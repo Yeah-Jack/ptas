@@ -9,7 +9,6 @@ import {
 	Handshake,
 	Send,
 	ShieldCheck,
-	Zap,
 } from "lucide-react";
 import Link from "next/link";
 import CTA from "@/components/cta";
@@ -25,9 +24,9 @@ import {
 const benefits = [
 	{
 		icon: Clock,
-		title: "24 Stunden",
+		title: "Schnnelle Auszahlung",
 		description:
-			"Wenn Sie möchten, ist das Geld innerhalb von 24 Stunden auf Ihrem Bankkonto.",
+			"Erhalten Sie Ihre Zahlungen schneller als die regulären 6 Wochen!",
 	},
 	{
 		icon: HandCoins,
@@ -81,63 +80,43 @@ export default function VorfinanzierungPage() {
 			{/* Hero Section */}
 			<section className="border-b bg-linear-to-br from-primary/5 via-background to-primary/10 py-16 md:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
-					<div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-						<div className="flex flex-col gap-4 md:gap-6">
-							<div className="flex items-center gap-2 text-primary">
-								<Banknote className="size-6" />
-								<span className="font-medium text-sm uppercase tracking-wider">
-									Vorfinanzierung
-								</span>
-							</div>
-							<h1 className="font-bold text-3xl leading-tight tracking-tight md:text-4xl lg:text-5xl">
-								Vorfinanzierung für{" "}
-								<span className="text-primary">Krankenfahrten</span>
-							</h1>
-							<p className="text-lg text-muted-foreground">
-								In der Regel dauert es ca. 6 Wochen, bis die Kostenträger Ihre
-								Krankenfahrten bezahlen. Haben Sie Ihr Geld schneller auf dem
-								Konto - gegen einen geringen Aufpreis.
-							</p>
-							<p className="font-medium text-foreground">
-								Unsere Vorfinanzierung für Krankenfahrten ist einfacher als
-								gedacht!
-							</p>
-							<div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-								<Link href="/kontakt">
-									<Button size="lg" className="w-full gap-2 sm:w-auto">
-										<Send className="size-4" />
-										Jetzt anfragen
-									</Button>
-								</Link>
-								<Link href="/abrechnung">
-									<Button
-										variant="outline"
-										size="lg"
-										className="w-full gap-2 sm:w-auto"
-									>
-										Zur Abrechnung
-										<ArrowRight className="size-4" />
-									</Button>
-								</Link>
-							</div>
+					<div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center md:gap-6">
+						<div className="flex items-center gap-2 text-primary">
+							<Banknote className="size-6" />
+							<span className="font-medium text-sm uppercase tracking-wider">
+								Vorfinanzierung
+							</span>
 						</div>
-						<div className="relative mt-6 lg:mt-0">
-							<div className="absolute inset-0 hidden rounded-full bg-primary/10 blur-3xl lg:block" />
-							<Card className="relative border-primary/20 bg-primary/5">
-								<CardContent className="py-8">
-									<div className="mb-6 flex items-center justify-center">
-										<div className="flex size-20 items-center justify-center rounded-full bg-primary/10">
-											<Zap className="size-10 text-primary" />
-										</div>
-									</div>
-									<div className="space-y-4 text-center">
-										<p className="font-bold text-4xl text-primary">24h</p>
-										<p className="text-lg text-muted-foreground">
-											Schnelle Auszahlung auf Ihr Bankkonto
-										</p>
-									</div>
-								</CardContent>
-							</Card>
+						<h1 className="font-bold text-3xl leading-tight tracking-tight md:text-4xl lg:text-5xl">
+							Vorfinanzierung für{" "}
+							<span className="text-primary">Krankenfahrten</span>
+						</h1>
+						<p className="text-lg text-muted-foreground">
+							In der Regel dauert es ca. 6 Wochen, bis die Kostenträger Ihre
+							Krankenfahrten bezahlen. Haben Sie Ihr Geld schneller auf dem
+							Konto - gegen einen geringen Aufpreis.
+						</p>
+						<p className="font-medium text-foreground">
+							Unsere Vorfinanzierung für Krankenfahrten ist einfacher als
+							gedacht!
+						</p>
+						<div className="flex w-full flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
+							<Link href="/kontakt">
+								<Button size="lg" className="w-full gap-2 sm:w-auto">
+									<Send className="size-4" />
+									Jetzt anfragen
+								</Button>
+							</Link>
+							<Link href="/abrechnung">
+								<Button
+									variant="outline"
+									size="lg"
+									className="w-full gap-2 sm:w-auto"
+								>
+									Zur Abrechnung
+									<ArrowRight className="size-4" />
+								</Button>
+							</Link>
 						</div>
 					</div>
 				</div>
