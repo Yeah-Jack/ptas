@@ -2,6 +2,7 @@
 
 import { useForm } from "@tanstack/react-form";
 import { Clock, Mail, Phone, Send } from "lucide-react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -48,9 +49,29 @@ export default function KontaktPage() {
 
 	const form = useForm({
 		defaultValues,
-		onSubmit: async ({ value }) => {
-			console.log("Form submitted:", value);
-			// Add actual submit logic here
+		onSubmit: async ({ value, formApi }) => {
+			const promise = fetch("/api/contact", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(value),
+			}).then(async (res) => {
+				if (!res.ok) {
+					const error = await res.json();
+					throw new Error(error.error || "Fehler beim Senden");
+				}
+				return res.json();
+			});
+
+			toast.promise(promise, {
+				loading: "Nachricht wird gesendet...",
+				success: "Nachricht erfolgreich gesendet!",
+				error: (err) => err.message || "Es ist ein Fehler aufgetreten.",
+			});
+
+			try {
+				await promise;
+				formApi.reset();
+			} catch (_) {}
 		},
 	});
 
