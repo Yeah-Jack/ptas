@@ -101,10 +101,10 @@ export default function KontaktPage() {
 								<CardTitle>Telefon</CardTitle>
 								<CardDescription>
 									<a
-										href="tel:+1961929391752"
+										href="tel:+4961929391752"
 										className="text-foreground hover:text-primary"
 									>
-										+19 6192 9391 752
+										+49 6192 9391 752
 									</a>
 								</CardDescription>
 							</CardHeader>
