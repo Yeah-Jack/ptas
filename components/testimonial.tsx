@@ -19,14 +19,14 @@ export type TestimonialItem = {
 };
 
 const testimonials: TestimonialItem[] = [
-	// {
-	// 	name: "Clarence Rogers",
-	// 	role: "CEO & Co Founder",
-	// 	company: "Easy Taxi",
-	// 	avatar: "https://randomuser.me/api/portraits/men/3.jpg",
-	// 	content:
-	// 		"Ich nutze PTAS nun schon seit einem Jahr und es hat die Verwaltung meiner Finanzen so viel einfacher und schneller gemacht.",
-	// },
+	{
+		name: "Clarence Rogers",
+		role: "CEO & Co Founder",
+		company: "Taxi & Mietwagengenossenschaft Magdeburg",
+		avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+		content:
+			"Sehr geehrte Damen und Herren,\n wir möchten die hervorragende Zusammenarbeit mit der Firma PTAS ausdrücklich empfehlen. Durch ihre Zuverlässigkeit, ihre Innovationskraft und ihr professionelles Vorgehen im Personentransport-Abrechnungsservice haben sie unsere Abrechnungen maßgeblich vorangebracht. Wir sind überzeugt, dass die Firma PTAS auch in der Zukunft ein wertvoller Partner für jedes Unternehmen sein wird.\n Wir als Taxigenossenschaft fühlen uns auf ganzer Linie in unseren Belangen bestens unterstützt!",
+	},
 	// {
 	// 	name: "Garrett Lewis",
 	// 	role: "Product manager",
@@ -34,22 +34,6 @@ const testimonials: TestimonialItem[] = [
 	// 	avatar: "https://randomuser.me/api/portraits/men/27.jpg",
 	// 	content:
 	// 		"Mit PTAS kann ich meine Abrechnungen ganz einfach im Blick behalten und in Echtzeit sehen, wie sie sich entwickeln.",
-	// },
-	// {
-	// 	name: "Steven Schmidt",
-	// 	role: "Lead Designer",
-	// 	company: "Cabify",
-	// 	avatar: "https://randomuser.me/api/portraits/lego/0.jpg",
-	// 	content:
-	// 		"Die UI ist wunderschön gestaltet und lässt sich unglaublich einfach anpassen. Das hat unseren Abrechnungs-Workflow grundlegend verändert.",
-	// },
-	// {
-	// 	name: "Lydia Griffith",
-	// 	role: "Frontend Developer",
-	// 	company: "Bolt",
-	// 	avatar: "https://randomuser.me/api/portraits/women/69.jpg",
-	// 	content:
-	// 		"PTAS hat uns unzählige Stunden Abrechnungszeit eingespart. Die Webseite ist umfassend und gut dokumentiert.",
 	// },
 ] as const;
 
@@ -73,7 +57,7 @@ export default function Testimonial() {
 							<div className="flex flex-col gap-10">
 								<div className="space-y-2">
 									<p className="h-14 text-8xl">&ldquo;</p>
-									<p className="font-medium text-muted-foreground text-xl sm:text-2xl lg:text-3xl">
+									<p className="whitespace-pre-line font-medium text-muted-foreground text-xl sm:text-2xl">
 										{testimonial.content}
 									</p>
 								</div>
