@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./global.css";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
@@ -33,6 +34,20 @@ export default function RootLayout({
 			suppressHydrationWarning
 			className={cn(`${geistSans.variable} ${geistMono.variable} antialiased`)}
 		>
+			<head>
+				<Script
+					strategy="afterInteractive"
+					src="https://www.googletagmanager.com/gtag/js?id=AW-10795425279"
+				/>
+				<Script id="google-ads-tag" strategy="afterInteractive">
+					{`
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments);}
+						gtag('js', new Date());
+						gtag('config', 'AW-10795425279');
+					`}
+				</Script>
+			</head>
 			<body>
 				<Providers>
 					<div className="grid min-h-svh grid-rows-[auto_1fr_auto]">
