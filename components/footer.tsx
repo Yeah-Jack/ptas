@@ -12,7 +12,6 @@ const navigationLinks = [
 const legalLinks = [
 	{ to: "/impressum", label: "Impressum" },
 	{ to: "/datenschutz", label: "Datenschutz" },
-	{ to: "/agb", label: "AGB" },
 ] as const;
 
 export default function Footer() {
