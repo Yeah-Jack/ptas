@@ -9,8 +9,10 @@
 		"ignoreUnknown": false,
 		"includes": [
 			"**",
-			"!**/.next",
-			"!**/dist",
+			"!node_modules",
+			"!.next",
+			"!dist",
+			"!build",
 			"!**/.turbo",
 			"!**/dev-dist",
 			"!**/.zed",
@@ -70,6 +72,10 @@
 				"noInferrableTypes": "error",
 				"noUselessElse": "error"
 			}
+		},
+		"domains": {
+			"next": "recommended",
+			"react": "recommended"
 		}
 	},
 	"javascript": {

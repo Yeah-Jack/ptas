@@ -4,8 +4,6 @@
 
 <img width="2552" height="1433" alt="Website Screenshot" src="https://github.com/user-attachments/assets/35b4d647-906b-4b37-9613-be78432afd48" />
 
-This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines Next.js, and more.
-
 ## Features
 
 - **TypeScript** - For type safety and improved developer experience
@@ -28,7 +26,7 @@ Then, run the development server:
 bun run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the web application.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Git Hooks and Formatting
 
