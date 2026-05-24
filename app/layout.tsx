@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./global.css";
 import Footer from "@/components/footer";
@@ -7,14 +7,10 @@ import Header from "@/components/header";
 import Providers from "@/components/providers";
 import { cn } from "@/lib/utils";
 
-const geistSans = Geist({
-	variable: "--font-geist-sans",
+const inter = Inter({
 	subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
-	subsets: ["latin"],
+	display: "swap",
+	variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -32,9 +28,7 @@ export default function RootLayout({
 		<html
 			lang="de"
 			suppressHydrationWarning
-			className={cn(
-				`${geistSans.variable} ${geistMono.variable} h-full antialiased`,
-			)}
+			className={cn("h-full antialiased", inter.variable)}
 		>
 			<head>
 				<Script
