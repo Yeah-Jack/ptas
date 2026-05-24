@@ -32,7 +32,9 @@ export default function RootLayout({
 		<html
 			lang="de"
 			suppressHydrationWarning
-			className={cn(`${geistSans.variable} ${geistMono.variable} antialiased`)}
+			className={cn(
+				`${geistSans.variable} ${geistMono.variable} h-full antialiased`,
+			)}
 		>
 			<head>
 				<Script
@@ -50,7 +52,7 @@ export default function RootLayout({
 			</head>
 			<body>
 				<Providers>
-					<div className="grid min-h-svh grid-rows-[auto_1fr_auto]">
+					<div className="flex min-h-full flex-col">
 						<Header />
 						<main>{children}</main>
 						<Footer />
