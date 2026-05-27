@@ -6,6 +6,24 @@ const mailjet = new Mailjet({
 	apiSecret: process.env.MJ_APIKEY_PRIVATE || "",
 });
 
+const escapeHtml = (value: string) =>
+	value.replace(/[&<>"']/g, (char) => {
+		switch (char) {
+			case "&":
+				return "&amp;";
+			case "<":
+				return "&lt;";
+			case ">":
+				return "&gt;";
+			case '"':
+				return "&quot;";
+			case "'":
+				return "&#39;";
+			default:
+				return char;
+		}
+	});
+
 export async function POST(req: Request) {
 	try {
 		const body = await req.json();
@@ -39,20 +57,35 @@ export async function POST(req: Request) {
 			);
 		}
 
+		const safeName = escapeHtml(String(name));
+		const safeUnternehmen = unternehmen ? escapeHtml(String(unternehmen)) : "-";
+		const safeAdresse = adresse ? escapeHtml(String(adresse)) : "-";
+		const safePlz = plz ? escapeHtml(String(plz)) : "";
+		const safeOrt = ort ? escapeHtml(String(ort)) : "";
+		const safeEmail = escapeHtml(String(email));
+		const safeTelefon = telefon ? escapeHtml(String(telefon)) : "-";
+		const safeAbrechnungsvolumen = abrechnungsvolumen
+			? escapeHtml(String(abrechnungsvolumen))
+			: "-";
+		const safeProblem = problem ? escapeHtml(String(problem)) : "-";
+		const safeNachricht = nachricht
+			? escapeHtml(String(nachricht)).replace(/\n/g, "<br>")
+			: "-";
+
 		const htmlContent = `
       <h3>Neue Kontaktanfrage über die Webseite</h3>
-      <p><strong>Name/Ansprechpartner:</strong> ${name}</p>
-      <p><strong>Unternehmen:</strong> ${unternehmen || "-"}</p>
-      <p><strong>Adresse:</strong> ${adresse || "-"}, ${plz || ""} ${ort || ""}</p>
-      <p><strong>E-Mail:</strong> ${email}</p>
-      <p><strong>Telefon:</strong> ${telefon || "-"}</p>
+      <p><strong>Name/Ansprechpartner:</strong> ${safeName}</p>
+      <p><strong>Unternehmen:</strong> ${safeUnternehmen}</p>
+      <p><strong>Adresse:</strong> ${safeAdresse}, ${safePlz} ${safeOrt}</p>
+      <p><strong>E-Mail:</strong> ${safeEmail}</p>
+      <p><strong>Telefon:</strong> ${safeTelefon}</p>
       <br />
       <p><strong>Interesse an Abrechnung:</strong> ${abrechnungInteresse ? "Ja" : "Nein"}</p>
       <p><strong>Interesse an Vorfinanzierung:</strong> ${vorfinanzierungInteresse ? "Ja" : "Nein"}</p>
-      <p><strong>Abrechnungsvolumen:</strong> ${abrechnungsvolumen || "-"}</p>
-      <p><strong>Aktuelles Problem:</strong> ${problem || "-"}</p>
+      <p><strong>Abrechnungsvolumen:</strong> ${safeAbrechnungsvolumen}</p>
+      <p><strong>Aktuelles Problem:</strong> ${safeProblem}</p>
       <p><strong>Zusätzliche Nachricht:</strong></p>
-      <p>${nachricht ? nachricht.replace(/\n/g, "<br>") : "-"}</p>
+      <p>${safeNachricht}</p>
     `;
 
 		const request = await mailjet.post("send", { version: "v3.1" }).request({
