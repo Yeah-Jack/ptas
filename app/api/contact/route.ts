@@ -59,12 +59,12 @@ export async function POST(req: Request) {
 			Messages: [
 				{
 					From: {
-						Email: process.env.MJ_FROM_EMAIL || "info@ptas.de",
+						Email: "info@ptas.de",
 						Name: "PTAS Website",
 					},
 					To: [
 						{
-							Email: "info@ptas.de",
+							Email: process.env.MJ_TO_EMAIL,
 							Name: "PTAS Info",
 						},
 					],
