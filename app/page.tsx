@@ -206,11 +206,11 @@ export default function Home() {
 								</Link> */}
 							</div>
 						</FadeInUp>
-						<FadeInUp delay={0.2} className="relative mt-8 md:mt-0">
+						<FadeInUp delay={0.1} className="relative mt-8 md:mt-0">
 							<div className="absolute inset-0 hidden rounded-full bg-primary/10 blur-3xl md:block" />
 							<div className="relative grid grid-cols-2 gap-3 md:gap-4">
 								{promises.map((promise, idx) => (
-									<FadeInUp key={promise.content} delay={0.3 + idx * 0.1}>
+									<FadeInUp key={promise.content} delay={idx * 0.2}>
 										<Card className="border-primary/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
 											<CardContent className="flex flex-col items-center gap-3 px-3 py-5 text-center md:px-4 md:py-8">
 												<div className="mb-1 rounded-full bg-primary/10 p-3">
@@ -236,14 +236,18 @@ export default function Home() {
 
 			{/* Partners Section */}
 			<section className="border-b bg-background py-8 md:py-12">
-				<div className="container mx-auto max-w-6xl px-4 text-center">
+				<FadeInUp
+					delay={0.2}
+					className="container mx-auto max-w-6xl px-4 text-center"
+				>
 					<p className="mb-6 font-medium text-muted-foreground text-sm uppercase tracking-widest">
 						Unterstützt durch unsere Partner & Verbände
 					</p>
 					<div className="flex flex-wrap justify-center gap-4 md:gap-8">
-						{partners.map((partner) => (
-							<div
+						{partners.map((partner, idx) => (
+							<FadeInUp
 								key={partner.name}
+								delay={idx * 0.2}
 								className="flex items-center gap-2 rounded-full border bg-muted/30 px-4 py-2"
 							>
 								<Image
@@ -258,16 +262,16 @@ export default function Home() {
 											: "h-6"
 									} ${partner.name === "1159 Finance" ? "invert dark:invert-0" : "dark:brightness-0 dark:invert"}`}
 								/>
-							</div>
+							</FadeInUp>
 						))}
 					</div>
-				</div>
+				</FadeInUp>
 			</section>
 
 			{/* Experience Section */}
 			<section className="border-y bg-muted/30 py-12 md:py-16 lg:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
-					<div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+					<FadeInUp className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
 						<div>
 							<h2 className="mb-4 font-bold text-2xl md:text-3xl">
 								Abrechnung von Krankenfahrten
@@ -314,7 +318,7 @@ export default function Home() {
 								</FadeInUp>
 							))}
 						</div>
-					</div>
+					</FadeInUp>
 				</div>
 			</section>
 
