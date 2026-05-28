@@ -23,7 +23,7 @@ const testimonials: TestimonialItem[] = [
 		company: "Taxi & Mietwagengenossenschaft Magdeburg",
 		avatar: "",
 		content:
-			"Sehr geehrte Damen und Herren,\n wir möchten die hervorragende Zusammenarbeit mit der Firma PTAS ausdrücklich empfehlen. Durch ihre Zuverlässigkeit, ihre Innovationskraft und ihr professionelles Vorgehen im Personentransport-Abrechnungsservice haben sie unsere Abrechnungen maßgeblich vorangebracht. Wir sind überzeugt, dass die Firma PTAS auch in der Zukunft ein wertvoller Partner für jedes Unternehmen sein wird.\n Wir als Taxigenossenschaft fühlen uns auf ganzer Linie in unseren Belangen bestens unterstützt!",
+			"Wir möchten die hervorragende Zusammenarbeit mit der Firma PTAS ausdrücklich empfehlen. Durch ihre Zuverlässigkeit, ihre Innovationskraft und ihr professionelles Vorgehen im Personentransport-Abrechnungsservice haben sie unsere Abrechnungen maßgeblich vorangebracht. Wir sind überzeugt, dass die Firma PTAS auch in der Zukunft ein wertvoller Partner für jedes Unternehmen sein wird. Wir als Taxigenossenschaft fühlen uns auf ganzer Linie in unseren Belangen bestens unterstützt!",
 	},
 	// {
 	// 	name: "Garrett Lewis",
