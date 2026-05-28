@@ -12,7 +12,6 @@ import {
 
 export type TestimonialItem = {
 	name: string;
-	role: string;
 	avatar: string;
 	company: string;
 	content: string;
@@ -20,16 +19,14 @@ export type TestimonialItem = {
 
 const testimonials: TestimonialItem[] = [
 	{
-		name: "Clarence Rogers",
-		role: "CEO & Co Founder",
+		name: "Kerstin Barsch",
 		company: "Taxi & Mietwagengenossenschaft Magdeburg",
-		avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+		avatar: "",
 		content:
 			"Sehr geehrte Damen und Herren,\n wir möchten die hervorragende Zusammenarbeit mit der Firma PTAS ausdrücklich empfehlen. Durch ihre Zuverlässigkeit, ihre Innovationskraft und ihr professionelles Vorgehen im Personentransport-Abrechnungsservice haben sie unsere Abrechnungen maßgeblich vorangebracht. Wir sind überzeugt, dass die Firma PTAS auch in der Zukunft ein wertvoller Partner für jedes Unternehmen sein wird.\n Wir als Taxigenossenschaft fühlen uns auf ganzer Linie in unseren Belangen bestens unterstützt!",
 	},
 	// {
 	// 	name: "Garrett Lewis",
-	// 	role: "Product manager",
 	// 	company: "Taxi 24",
 	// 	avatar: "https://randomuser.me/api/portraits/men/27.jpg",
 	// 	content:
@@ -77,7 +74,7 @@ export default function Testimonial() {
 									<div className="flex-1">
 										<h4 className="font-medium text-lg">{testimonial.name}</h4>
 										<p className="text-muted-foreground">
-											{testimonial.role} bei {testimonial.company}
+											{testimonial.company}
 										</p>
 									</div>
 								</div>
