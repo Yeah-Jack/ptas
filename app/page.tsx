@@ -210,7 +210,7 @@ export default function Home() {
 							<div className="absolute inset-0 hidden rounded-full bg-primary/10 blur-3xl md:block" />
 							<div className="relative grid grid-cols-2 gap-3 md:gap-4">
 								{promises.map((promise, idx) => (
-									<FadeInUp key={promise.content} delay={idx * 0.2}>
+									<FadeInUp key={promise.content} delay={idx * 0.1}>
 										<Card className="border-primary/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
 											<CardContent className="flex flex-col items-center gap-3 px-3 py-5 text-center md:px-4 md:py-8">
 												<div className="mb-1 rounded-full bg-primary/10 p-3">
