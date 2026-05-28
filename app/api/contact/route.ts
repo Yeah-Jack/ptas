@@ -1,21 +1,15 @@
 import { NextResponse } from "next/server";
-import Mailjet from "node-mailjet";
-
-const mailjet = new Mailjet({
-	apiKey: process.env.MAILJET_APIKEY_PUBLIC || "",
-	apiSecret: process.env.MAILJET_APIKEY_PRIVATE || "",
-});
 
 export async function POST(req: Request) {
 	try {
 		const body = await req.json();
 		const {
 			name,
+			email,
 			unternehmen,
 			adresse,
 			plz,
 			ort,
-			email,
 			telefon,
 			abrechnungInteresse,
 			vorfinanzierungInteresse,
@@ -31,16 +25,20 @@ export async function POST(req: Request) {
 			);
 		}
 
-		if (
-			!process.env.MAILJET_APIKEY_PUBLIC ||
-			!process.env.MAILJET_APIKEY_PRIVATE
-		) {
-			console.error("Mailjet API key missing in environment variables.");
+		const publicKey = process.env.MAILJET_APIKEY_PUBLIC;
+		const privateKey = process.env.MAILJET_APIKEY_PRIVATE;
+		const toEmail = process.env.MAILJET_TO_EMAIL;
+
+		if (!publicKey || !privateKey || !toEmail) {
+			console.error("Mailjet env vars missing.");
 			return NextResponse.json(
 				{ error: "Server-Konfigurationsfehler: E-Mail-Dienst nicht bereit." },
 				{ status: 500 },
 			);
 		}
+
+		const Mailjet = (await import("node-mailjet")).default;
+		const mailjet = new Mailjet({ apiKey: publicKey, apiSecret: privateKey });
 
 		const htmlContent = `
       <h3>Neue Kontaktanfrage über die Webseite</h3>
@@ -61,20 +59,9 @@ export async function POST(req: Request) {
 		const request = await mailjet.post("send", { version: "v3.1" }).request({
 			Messages: [
 				{
-					From: {
-						Email: "info@ptas.de",
-						Name: "PTAS Website",
-					},
-					To: [
-						{
-							Email: process.env.MAILJET_TO_EMAIL,
-							Name: "PTAS Info",
-						},
-					],
-					ReplyTo: {
-						Email: email,
-						Name: name,
-					},
+					From: { Email: "info@ptas.de", Name: "PTAS Website" },
+					To: [{ Email: toEmail, Name: "PTAS Info" }],
+					ReplyTo: { Email: email, Name: name },
 					Subject: `Neue Kontaktanfrage von ${name}`,
 					HTMLPart: htmlContent,
 					TextPart: `Neue Kontaktanfrage von ${name}. E-Mail: ${email}`,
