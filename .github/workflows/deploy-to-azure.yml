@@ -39,13 +39,13 @@ jobs:
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: '${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_RED_WAVE_039B6B203 }}'
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_RED_WAVE_039B6B203 }}
           action: upload
           app_location: /
           api_location: ''
           output_location: ''
-          github_id_token: '${{ steps.idtoken.outputs.result }}'
+          github_id_token: ${{ steps.idtoken.outputs.result }}
         env:
-          MAILJET_APIKEY_PUBLIC: '${{ secrets.MAILJET_APIKEY_PUBLIC }}'
-          MAILJET_APIKEY_PRIVATE: '${{ secrets.MAILJET_APIKEY_PRIVATE }}'
-          MAILJET_TO_EMAIL: '${{ secrets.MAILJET_TO_EMAIL }}'
+          MAILJET_APIKEY_PUBLIC: ${{ secrets.MAILJET_APIKEY_PUBLIC }}
+          MAILJET_APIKEY_PRIVATE: ${{ secrets.MAILJET_APIKEY_PRIVATE }}
+          MAILJET_TO_EMAIL: ${{ secrets.MAILJET_TO_EMAIL }}
