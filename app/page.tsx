@@ -247,7 +247,7 @@ export default function Home() {
 						{partners.map((partner, idx) => (
 							<FadeInUp
 								key={partner.name}
-								delay={idx * 0.2}
+								delay={idx * 0.1}
 								className="flex items-center gap-2 rounded-full border bg-muted/30 px-4 py-2"
 							>
 								<Image
@@ -271,8 +271,8 @@ export default function Home() {
 			{/* Experience Section */}
 			<section className="border-y bg-muted/30 py-12 md:py-16 lg:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
-					<FadeInUp className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-						<div>
+					<div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+						<FadeInUp>
 							<h2 className="mb-4 font-bold text-2xl md:text-3xl">
 								Abrechnung von Krankenfahrten
 							</h2>
@@ -302,7 +302,7 @@ export default function Home() {
 									Zahlungsziele und warten Sie nicht wochenlang auf ihr Geld.
 								</p>
 							</div>
-						</div>
+						</FadeInUp>
 						<div className="grid gap-4 sm:grid-cols-2">
 							{benefits.map((benefit, idx) => (
 								<FadeInUp key={benefit.title} delay={0.1 * idx}>
@@ -318,7 +318,7 @@ export default function Home() {
 								</FadeInUp>
 							))}
 						</div>
-					</FadeInUp>
+					</div>
 				</div>
 			</section>
 
