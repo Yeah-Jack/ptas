@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 import Mailjet from "node-mailjet";
 
 const mailjet = new Mailjet({
-	apiKey: process.env.MJ_APIKEY_PUBLIC || "",
-	apiSecret: process.env.MJ_APIKEY_PRIVATE || "",
+	apiKey: process.env.MAILJET_APIKEY_PUBLIC || "",
+	apiSecret: process.env.MAILJET_APIKEY_PRIVATE || "",
 });
 
 export async function POST(req: Request) {
@@ -31,7 +31,10 @@ export async function POST(req: Request) {
 			);
 		}
 
-		if (!process.env.MJ_APIKEY_PUBLIC || !process.env.MJ_APIKEY_PRIVATE) {
+		if (
+			!process.env.MAILJET_APIKEY_PUBLIC ||
+			!process.env.MAILJET_APIKEY_PRIVATE
+		) {
 			console.error("Mailjet API key missing in environment variables.");
 			return NextResponse.json(
 				{ error: "Server-Konfigurationsfehler: E-Mail-Dienst nicht bereit." },
@@ -64,7 +67,7 @@ export async function POST(req: Request) {
 					},
 					To: [
 						{
-							Email: process.env.MJ_TO_EMAIL,
+							Email: process.env.MAILJET_TO_EMAIL,
 							Name: "PTAS Info",
 						},
 					],
