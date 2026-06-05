@@ -166,7 +166,7 @@ export default function VorfinanzierungPage() {
 					<div className="grid items-stretch gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
 						{steps.map((step, index) => (
 							<div key={step.title} className="relative h-full">
-								<div className="absolute top-8 right-0 h-0.5 w-full translate-x-1/2 bg-border lg:block" />
+								<div className="absolute top-8 right-0 hidden h-0.5 w-full translate-x-1/2 bg-border lg:block" />
 								<FadeInUp delay={0.1 * index} className="h-full">
 									<Card className="relative h-full">
 										<CardHeader>
