@@ -1,713 +1,1046 @@
-import { FadeInUp } from "@/components/animations/fade-in-up";
-
 export const metadata = {
-	title: "Datenschutz | PTAS",
-	description: "Datenschutzerklärung der Daniel Software GmbH.",
+	title: "Datenschutz",
+	description:
+		"Datenschutzhinweise der Daniel Software GmbH gemäß Art. 13 DSGVO für die Nutzung dieser Webseite.",
 };
 
 export default function DatenschutzPage() {
 	return (
-		<>
-			<section className="container mx-auto max-w-4xl py-16 text-center md:py-24">
-				<FadeInUp>
-					<h1 className="mb-6 font-bold text-3xl leading-tight tracking-tight md:text-4xl lg:text-5xl">
-						Datenschutzerklärung
+		<main className="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
+			<section className="space-y-6">
+				<div className="max-w-3xl space-y-4">
+					<p className="text-primary text-sm uppercase tracking-[0.24em]">
+						Datenschutzhinweise gemäß Art. 13 DSGVO
+					</p>
+					<h1 className="font-bold text-3xl text-slate-950 tracking-tight sm:text-4xl">
+						Datenschutz
 					</h1>
-				</FadeInUp>
-			</section>
+				</div>
 
-			<section className="pb-16 md:pb-24">
-				<div className="container mx-auto max-w-4xl px-4">
-					<FadeInUp delay={0.1}>
-						<div className="flex flex-col gap-8 text-foreground/80 md:text-lg">
-							<div>
-								<h2 className="mb-4 font-bold text-2xl text-foreground">
-									1. Datenschutz auf einen Blick
-								</h2>
+				<div className="grid gap-10">
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">
+							Name und Anschrift des Verantwortlichen
+						</h2>
+						<div className="space-y-2 text-slate-700">
+							<p>
+								Verantwortliche Stelle im Sinne der Datenschutz-Grundverordnung
+								(DSGVO) und anderer datenschutzrechtlicher Bestimmungen ist:
+							</p>
+							<address className="space-y-1 text-slate-900 text-sm not-italic leading-6">
+								<p>Daniel Software GmbH</p>
+								<p>Im Brand 1A</p>
+								<p>65719 Hofheim am Taunus</p>
+								<p>Deutschland</p>
+								<p>Telefon: +49 6192 9999 002</p>
+								<p>E-Mail: mail@daniel.de</p>
+							</address>
+						</div>
+					</section>
 
-								<h3 className="mt-6 mb-2 font-semibold text-foreground text-xl">
-									Allgemeine Hinweise
-								</h3>
-								<p className="mb-4 leading-relaxed">
-									Die folgenden Hinweise geben einen einfachen Überblick
-									darüber, was mit Ihren personenbezogenen Daten passiert, wenn
-									Sie diese Website besuchen. Personenbezogene Daten sind alle
-									Daten, mit denen Sie persönlich identifiziert werden können.
-									Ausführliche Informationen zum Thema Datenschutz entnehmen Sie
-									unserer unter diesem Text aufgeführten Datenschutzerklärung.
-								</p>
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">
+							Name und Anschrift des Datenschutzbeauftragten
+						</h2>
+						<div className="space-y-2 text-slate-700">
+							<p>Der Datenschutzbeauftragte des Verantwortlichen ist:</p>
+							<address className="space-y-1 text-slate-900 text-sm not-italic leading-6">
+								<p>dsgvoschutzteam.com - Lukmann Consulting GmbH</p>
+								<p>Packerstraße 131a</p>
+								<p>A-8561 Söding</p>
+								<p>Telefon: +49 7223 95 666 77</p>
+								<p>E-Mail: service@dsgvoschutzteam.com</p>
+							</address>
+						</div>
+					</section>
 
-								<h3 className="mt-6 mb-2 font-semibold text-foreground text-xl">
-									Datenerfassung auf dieser Website
-								</h3>
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">
+							Allgemeines zur Datenverarbeitung
+						</h2>
+						<p className="text-slate-700 leading-7">
+							Die nachfolgenden Datenschutzhinweise erläutern die
+							Rechtsgrundlagen, Zwecke und Dauer der Verarbeitung
+							personenbezogener Daten bei der Nutzung unserer Webseite.
+						</p>
+					</section>
 
-								<h4 className="mt-4 mb-2 font-semibold text-foreground text-lg">
-									Wer ist verantwortlich für die Datenerfassung auf dieser
-									Website?
-								</h4>
-								<p className="mb-4 leading-relaxed">
-									Die Datenverarbeitung auf dieser Website erfolgt durch den
-									Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt
-									„Hinweis zur Verantwortlichen Stelle“ in dieser
-									Datenschutzerklärung entnehmen.
-								</p>
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">
+							Rechtsgrundlage für die Verarbeitung personenbezogener Daten
+						</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Nach Maßgabe des Art. 13 DSGVO teilen wir Ihnen die
+								Rechtsgrundlagen unserer Datenverarbeitungen mit. Sofern die
+								Rechtsgrundlage im Datenschutzhinweis nicht genau genannt wird,
+								gilt Folgendes:
+							</p>
+							<ul className="list-disc space-y-2 pl-6">
+								<li>
+									Die Rechtsgrundlage für die Einholung von Einwilligungen ist
+									Art. 6 Abs. 1 lit. a i.V.m. Art. 7 DSGVO.
+								</li>
+								<li>
+									Die Rechtsgrundlage für die Verarbeitung zur Erfüllung unserer
+									Leistungen und Durchführung vertraglicher Maßnahmen sowie zur
+									Beantwortung von Anfragen ist Art. 6 Abs. 1 lit. b DSGVO.
+								</li>
+								<li>
+									Die Rechtsgrundlage für die Verarbeitung zur Erfüllung unserer
+									rechtlichen Verpflichtungen ist Art. 6 Abs. 1 lit. c DSGVO.
+								</li>
+								<li>
+									Ist die Verarbeitung Ihrer Daten zur Wahrung eines
+									berechtigten Interesses unseres Unternehmens oder eines
+									Dritten erforderlich und überwiegen die Interessen,
+									Grundrechte und Grundfreiheiten des Betroffenen das
+									erstgenannte Interesse nicht, so dient Art. 6 Abs. 1 lit. f
+									DSGVO als Rechtsgrundlage für die Verarbeitung.
+								</li>
+								<li>
+									Für den Fall, dass lebenswichtige Interessen der betroffenen
+									Person oder einer anderen natürlichen Person eine Verarbeitung
+									personenbezogener Daten erforderlich machen, dient Art. 6 Abs.
+									1 lit. d DSGVO als Rechtsgrundlage.
+								</li>
+							</ul>
+						</div>
+					</section>
 
-								<h4 className="mt-4 mb-2 font-semibold text-foreground text-lg">
-									Wie erfassen wir Ihre Daten?
-								</h4>
-								<p className="mb-4 leading-relaxed">
-									Ihre Daten werden zum einen dadurch erhoben, dass Sie uns
-									diese mitteilen. Hierbei kann es sich z. B. um Daten handeln,
-									die Sie in ein Kontaktformular eingeben.
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Andere Daten werden automatisch oder nach Ihrer Einwilligung
-									beim Besuch der Website durch unsere IT-Systeme erfasst. Das
-									sind vor allem technische Daten (z. B. Internetbrowser,
-									Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung
-									dieser Daten erfolgt automatisch, sobald Sie diese Website
-									betreten.
-								</p>
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">
+							Datenlöschung und Speicherdauer
+						</h2>
+						<p className="text-slate-700 leading-7">
+							Wir halten uns an die Grundsätze der Datenminimierung gem. Art. 5
+							Abs. 1 lit. c DSGVO und Speicherbegrenzung gem. Art. 5 Abs. 1 lit.
+							e DSGVO. Wir speichern Ihre personenbezogenen Daten nur so lange,
+							wie dies zur Erreichung der hier genannten Zwecke erforderlich ist
+							oder wie es die vom Gesetzgeber vorgesehenen Aufbewahrungsfristen
+							vorsehen. Nach Wegfall des jeweiligen Zwecks bzw. nach Ablauf
+							dieser Aufbewahrungsfristen werden die entsprechenden Daten
+							schnellstmöglich gelöscht.
+						</p>
+					</section>
 
-								<h4 className="mt-4 mb-2 font-semibold text-foreground text-lg">
-									Wofür nutzen wir Ihre Daten?
-								</h4>
-								<p className="mb-4 leading-relaxed">
-									Ein Teil der Daten wird erhoben, um eine fehlerfreie
-									Bereitstellung der Website zu gewährleisten. Andere Daten
-									können zur Analyse Ihres Nutzerverhaltens verwendet werden.
-								</p>
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">Externe Links</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Diese Webseite kann Links zu Webseiten Dritter bzw. zu anderen
+								Webseiten in unserer Verantwortung enthalten. Folgen Sie einem
+								Link zu einer der Webseiten außerhalb unserer Verantwortung,
+								beachten Sie bitte, dass diese Webseiten über ihre eigenen
+								Datenschutzinformationen verfügen. Für diese fremden Webseiten
+								und deren Datenschutzhinweise übernehmen wir keine Verantwortung
+								oder Haftung.
+							</p>
+							<p>
+								Überprüfen Sie daher vor Nutzung dieser Webseiten, ob Sie mit
+								den dortigen Datenschutzerklärungen einverstanden sind.
+							</p>
+							<p>
+								Externe Links erkennen Sie entweder daran, dass sie farblich
+								etwas abgesetzt vom restlichen Text oder unterstrichen
+								dargestellt werden. Ihr Cursor zeigt Ihnen externe Links an,
+								wenn Sie diesen über einen solchen Link bewegen. Erst wenn Sie
+								auf einen externen Link klicken, werden Ihre personenbezogenen
+								Daten zum Ziel des Links übertragen. Dabei erhält der Betreiber
+								der anderen Webseite insbesondere Ihre IP-Adresse, den
+								Zeitpunkt, zu dem Sie den Link angeklickt haben, die Seite, auf
+								der Sie den Link angeklickt haben, sowie weitere Informationen,
+								die Sie in den Datenschutzhinweisen des jeweiligen Anbieters
+								finden.
+							</p>
+							<p>
+								Bitte beachten Sie auch, dass einzelne Links zu einer
+								Datenübermittlung außerhalb des europäischen Wirtschaftsraums
+								führen können. Hierdurch könnten ausländische Behörden Zugriff
+								auf Ihre Daten erhalten. Möglicherweise stehen Ihnen keine
+								Rechtsbehelfe gegen diese Datenzugriffe zu. Wenn Sie nicht
+								möchten, dass Ihre personenbezogenen Daten zum Linkziel
+								übertragen werden oder gar unerwünscht dem Zugriff ausländischer
+								Behörden ausgesetzt werden, klicken Sie bitte keine Links an.
+							</p>
+						</div>
+					</section>
 
-								<h4 className="mt-4 mb-2 font-semibold text-foreground text-lg">
-									Welche Rechte haben Sie bezüglich Ihrer Daten?
-								</h4>
-								<p className="mb-4 leading-relaxed">
-									Sie haben jederzeit das Recht, unentgeltlich Auskunft über
-									Herkunft, Empfänger und Zweck Ihrer gespeicherten
-									personenbezogenen Daten zu erhalten. Sie haben außerdem ein
-									Recht, die Berichtigung oder Löschung dieser Daten zu
-									verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung
-									erteilt haben, können Sie diese Einwilligung jederzeit für die
-									Zukunft widerrufen. Außerdem haben Sie das Recht, unter
-									bestimmten Umständen die Einschränkung der Verarbeitung Ihrer
-									personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen
-									ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können
-									Sie sich jederzeit an uns wenden.
-								</p>
-
-								<h3 className="mt-6 mb-2 font-semibold text-foreground text-xl">
-									Analyse-Tools und Tools von Dritt­anbietern
-								</h3>
-								<p className="mb-4 leading-relaxed">
-									Beim Besuch dieser Website kann Ihr Surf-Verhalten statistisch
-									ausgewertet werden. Das geschieht vor allem mit sogenannten
-									Analyseprogrammen.
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Detaillierte Informationen zu diesen Analyseprogrammen finden
-									Sie in der folgenden Datenschutzerklärung.
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">
+							Rechte der betroffenen Person
+						</h2>
+						<div className="space-y-4 text-slate-700 leading-7">
+							<p>
+								Als Betroffener im Sinne der DSGVO haben Sie die Möglichkeit,
+								verschiedene Rechte geltend zu machen. Die sich aus der DSGVO
+								ergebenden Betroffenenrechte sind:
+							</p>
+							<ul className="list-disc space-y-2 pl-6">
+								<li>Auskunftsrecht (Artikel 15)</li>
+								<li>Recht auf Berichtigung (Artikel 16)</li>
+								<li>Recht auf Löschung (Artikel 17)</li>
+								<li>Recht auf Einschränkung der Verarbeitung (Artikel 18)</li>
+								<li>Widerspruchsrecht (Artikel 21)</li>
+								<li>Recht auf Beschwerde bei einer Aufsichtsbehörde</li>
+								<li>Recht auf Datenübertragbarkeit (Artikel 20)</li>
+							</ul>
+							<div className="space-y-4 rounded-2xl bg-white p-4 shadow-sm">
+								<h3 className="font-semibold text-xl">Widerrufsrecht</h3>
+								<p>
+									Einige Datenverarbeitungen können nur mit Ihrer ausdrücklichen
+									Einwilligung erfolgen. Sie haben jederzeit die Möglichkeit,
+									Ihre erteilte Einwilligung zu widerrufen. Die Rechtmäßigkeit
+									der Datenverarbeitung bis zum Widerruf bleibt hiervon
+									unberührt.
 								</p>
 							</div>
-
-							<hr className="border-border/50" />
-
-							<div>
-								<h2 className="mb-4 font-bold text-2xl text-foreground">
-									2. Hosting
-								</h2>
-
-								<h3 className="mt-6 mb-2 font-semibold text-foreground text-xl">
-									Externes Hosting
-								</h3>
-								<p className="mb-4 leading-relaxed">
-									Diese Website wird bei einem externen Dienstleister gehostet
-									(Hoster). Die personenbezogenen Daten, die auf dieser Website
-									erfasst werden, werden auf den Servern des Hosters
-									gespeichert. Hierbei kann es sich v. a. um IP-Adressen,
-									Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten,
-									Kontaktdaten, Namen, Websitezugriffe und sonstige Daten, die
-									über eine Website generiert werden, handeln.
+							<div className="space-y-4 rounded-2xl bg-white p-4 shadow-sm">
+								<h3 className="font-semibold text-xl">Widerspruchsrecht</h3>
+								<p>
+									Beruht die Verarbeitung auf Art. 6 Absatz 1 lit. e oder f
+									DSGVO, können Sie als Betroffener aus Gründen, die sich aus
+									Ihrer besonderen Situation ergeben, jederzeit gegen die
+									Verarbeitung der Sie betreffenden personenbezogenen Daten
+									widersprechen. Dieses Recht steht Ihnen auch bei auf diese
+									Bestimmungen gestütztem Profiling iSd Art. 4 Z 4 DSGVO zu.
+									Sofern wir kein berechtigtes Interesse für die Verarbeitung
+									nachweisen können, welche Ihre Interessen, Rechte und
+									Freiheiten überwiegen oder eine Verarbeitung, der
+									Geltendmachung, Ausübung oder Verteidigung von
+									Rechtsansprüchen dient, werden wir die Verarbeitung Ihrer
+									Daten nach erfolgtem Widerspruch unterlassen.
 								</p>
-								<p className="mb-4 leading-relaxed">
-									Der Einsatz des Hosters erfolgt zum Zwecke der
-									Vertragserfüllung gegenüber unseren potenziellen und
-									bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im
-									Interesse einer sicheren, schnellen und effizienten
-									Bereitstellung unseres Online-Angebots durch einen
-									professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO). Sofern
-									eine entsprechende Einwilligung abgefragt wurde, erfolgt die
-									Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1
-									lit. a DSGVO und § 25 Abs. 1 TTDSG, soweit die Einwilligung
-									die Speicherung von Cookies oder den Zugriff auf Informationen
-									im Endgerät des Nutzers (z. B. Device-Fingerprinting) im Sinne
-									des TTDSG umfasst. Die Einwilligung ist jederzeit widerrufbar.
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Unser Hoster wird Ihre Daten nur insoweit verarbeiten, wie
-									dies zur Erfüllung seiner Leistungspflichten erforderlich ist
-									und unsere Weisungen in Bezug auf diese Daten befolgen.
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Wir setzen folgenden Hoster ein:
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Microsoft Azure
-									<br />
-									Microsoft Ireland Operations Limited
-									<br />
-									70 Sir John Rogerson's Quay
-									<br />
-									Dublin 2<br />
-									Irland
-								</p>
-
-								<h4 className="mt-4 mb-2 font-semibold text-foreground text-lg">
-									Auftragsverarbeitung
-								</h4>
-								<p className="mb-4 leading-relaxed">
-									Wir haben einen Vertrag über Auftragsverarbeitung (AVV) mit
-									dem oben genannten Anbieter geschlossen. Hierbei handelt es
-									sich um einen datenschutzrechtlich vorgeschriebenen Vertrag,
-									der gewährleistet, dass dieser die personenbezogenen Daten
-									unserer Websitebesucher nur nach unseren Weisungen und unter
-									Einhaltung der DSGVO verarbeitet.
+								<p>
+									Dient die Verarbeitung von personenbezogenen Daten der
+									Betreibung von Direktwerbung, so haben Sie auch das Recht,
+									jederzeit Widerspruch zu erheben. Dasselbe gilt für Profiling,
+									welches mit Direktwerbung in Verbindung steht. Auch hier
+									werden wir personenbezogene Daten nicht mehr verarbeiten,
+									sobald Sie Widerspruch erheben.
 								</p>
 							</div>
-
-							<hr className="border-border/50" />
-
-							<div>
-								<h2 className="mb-4 font-bold text-2xl text-foreground">
-									3. Allgemeine Hinweise und Pflicht­informationen
-								</h2>
-
-								<h3 className="mt-6 mb-2 font-semibold text-foreground text-xl">
-									Datenschutz
+							<div className="space-y-4 rounded-2xl bg-white p-4 shadow-sm">
+								<h3 className="font-semibold text-xl">
+									Recht auf Beschwerde bei einer Aufsichtsbehörde
 								</h3>
-								<p className="mb-4 leading-relaxed">
-									Die Betreiber dieser Seiten nehmen den Schutz Ihrer
-									persönlichen Daten sehr ernst. Wir behandeln Ihre
-									personenbezogenen Daten vertraulich und entsprechend den
-									gesetzlichen Datenschutzvorschriften sowie dieser
-									Datenschutzerklärung.
+								<p>
+									Wenn Sie der Ansicht sind, dass die Verarbeitung der Sie
+									betreffenden personenbezogenen Daten gegen die DSGVO verstößt,
+									steht Ihnen unbeschadet eines anderweitigen
+									verwaltungsrechtlichen oder gerichtlichen Rechtsbehelfs das
+									Recht auf Beschwerde bei einer Aufsichtsbehörde zu,
+									insbesondere in dem Mitgliedsstaat Ihres Aufenthaltsorts,
+									Ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes.
 								</p>
-								<p className="mb-4 leading-relaxed">
-									Wenn Sie diese Website benutzen, werden verschiedene
-									personenbezogene Daten erhoben. Personenbezogene Daten sind
-									Daten, mit denen Sie persönlich identifiziert werden können.
-									Die vorliegende Datenschutzerklärung erläutert, welche Daten
-									wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie
-									und zu welchem Zweck das geschieht.
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Wir weisen darauf hin, dass die Datenübertragung im Internet
-									(z. B. bei der Kommunikation per E-Mail) Sicherheitslücken
-									aufweisen kann. Ein lückenloser Schutz der Daten vor dem
-									Zugriff durch Dritte ist nicht möglich.
-								</p>
-
-								<h3 className="mt-6 mb-2 font-semibold text-foreground text-xl">
-									Hinweis zur verantwortlichen Stelle
+							</div>
+							<div className="space-y-4 rounded-2xl bg-white p-4 shadow-sm">
+								<h3 className="font-semibold text-xl">
+									Recht auf Datenübertragbarkeit
 								</h3>
-								<p className="mb-4 leading-relaxed">
-									Die verantwortliche Stelle für die Datenverarbeitung auf
-									dieser Website ist:
+								<p>
+									Werden Ihre Daten aufgrund einer Einwilligung oder Erfüllung
+									eines Vertrages automatisiert verarbeitet, haben Sie das
+									Recht, diese Daten in einem strukturierten, gängigen und
+									maschinenlesbaren Format zu erhalten. Außerdem haben Sie das
+									Recht, die Übertragung und Bereitstellung der Daten an einen
+									anderen Verantwortlichen zu fordern, soweit dies technisch
+									umsetzbar ist.
 								</p>
-								<p className="mb-4 leading-relaxed">
-									Daniel Software GmbH
-									<br />
-									Im Brand 1A
-									<br />
-									65719 Hofheim
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Telefon: +49 6192 9999 002
-									<br />
-									E-Mail: info@daniel.de
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Verantwortliche Stelle ist die natürliche oder juristische
-									Person, die allein oder gemeinsam mit anderen über die Zwecke
-									und Mittel der Verarbeitung von personenbezogenen Daten (z. B.
-									Namen, E-Mail-Adressen o. Ä.) entscheidet.
-								</p>
-
-								<h3 className="mt-6 mb-2 font-semibold text-foreground text-xl">
-									Speicherdauer
+							</div>
+							<div className="space-y-4 rounded-2xl bg-white p-4 shadow-sm">
+								<h3 className="font-semibold text-xl">
+									Recht auf Auskunft, Berichtigung und Löschung
 								</h3>
-								<p className="mb-4 leading-relaxed">
-									Soweit innerhalb dieser Datenschutzerklärung keine speziellere
-									Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen
-									Daten bei uns, bis der Zweck für die Datenverarbeitung
-									entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend
-									machen oder eine Einwilligung zur Datenverarbeitung
-									widerrufen, werden Ihre Daten gelöscht, sofern wir keine
-									anderen rechtlich zulässigen Gründe für die Speicherung Ihrer
-									personenbezogenen Daten haben (z. B. steuer- oder
-									handelsrechtliche Aufbewahrungsfristen); im letztgenannten
-									Fall erfolgt die Löschung nach Fortfall dieser Gründe.
+								<p>
+									Sie haben das Recht, Auskunft über Ihre verarbeiteten
+									personenbezogenen Daten bezüglich des Zwecks der
+									Datenverarbeitung, der Kategorien, der Empfänger sowie der
+									Dauer der Speicherung zu erhalten. Bei Fragen zu diesem Thema
+									oder auch zu anderen Themen bezüglich personenbezogener Daten
+									können Sie sich selbstverständlich über die im Impressum
+									angegebenen Kontaktmöglichkeiten an uns wenden.
 								</p>
-
-								<h3 className="mt-6 mb-2 font-semibold text-foreground text-xl">
-									Allgemeine Hinweise zu den Rechtsgrundlagen der
-									Datenverarbeitung auf dieser Website
-								</h3>
-								<p className="mb-4 leading-relaxed">
-									Sofern Sie in die Datenverarbeitung eingewilligt haben,
-									verarbeiten wir Ihre personenbezogenen Daten auf Grundlage von
-									Art. 6 Abs. 1 lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO,
-									sofern besondere Datenkategorien nach Art. 9 Abs. 1 DSGVO
-									verarbeitet werden. Sofern Sie in die Speicherung von Cookies
-									oder in den Zugriff auf Informationen in Ihr Endgerät (z. B.
-									via Device-Fingerprinting) eingewilligt haben, erfolgt die
-									Datenverarbeitung zusätzlich auf Grundlage von § 25 Abs. 1
-									TTDSG. Die Einwilligung ist jederzeit widerrufbar. Sind Ihre
-									Daten zur Vertragserfüllung oder zur Durchführung
-									vorvertraglicher Maßnahmen erforderlich, verarbeiten wir Ihre
-									Daten auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO. Des
-									Weiteren verarbeiten wir Ihre Daten, sofern diese zur
-									Erfüllung einer rechtlichen Verpflichtung erforderlich sind
-									auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO. Die
-									Datenverarbeitung kann ferner auf Grundlage unseres
-									berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO
-									erfolgen. Über die jeweils im Einzelfall einschlägigen
-									Rechtsgrundlagen wird in den folgenden Absätzen dieser
-									Datenschutzerklärung informiert.
-								</p>
-
-								<h3 className="mt-6 mb-2 font-semibold text-foreground text-xl">
-									Hinweis zur Datenweitergabe in die USA und sonstige
-									Drittstaaten
-								</h3>
-								<p className="mb-4 leading-relaxed">
-									Wir verwenden unter anderem Tools von Unternehmen mit Sitz in
-									den USA oder sonstigen datenschutzrechtlich nicht sicheren
-									Drittstaaten. Wenn diese Tools aktiv sind, können Ihre
-									personenbezogene Daten in diese Drittstaaten übertragen und
-									dort verarbeitet werden. Wir weisen darauf hin, dass in diesen
-									Ländern kein mit der EU vergleichbares Datenschutzniveau
-									garantiert werden kann. Beispielsweise sind US-Unternehmen
-									dazu verpflichtet, personenbezogene Daten an
-									Sicherheitsbehörden herauszugeben, ohne dass Sie als
-									Betroffener hiergegen gerichtlich vorgehen könnten. Es kann
-									daher nicht ausgeschlossen werden, dass US-Behörden (z. B.
-									Geheimdienste) Ihre auf US-Servern befindlichen Daten zu
-									Überwachungszwecken verarbeiten, auswerten und dauerhaft
-									speichern. Wir haben auf diese Verarbeitungstätigkeiten keinen
-									Einfluss.
-								</p>
-
-								<h3 className="mt-6 mb-2 font-semibold text-foreground text-xl">
-									Widerruf Ihrer Einwilligung zur Datenverarbeitung
-								</h3>
-								<p className="mb-4 leading-relaxed">
-									Viele Datenverarbeitungsvorgänge sind nur mit Ihrer
-									ausdrücklichen Einwilligung möglich. Sie können eine bereits
-									erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit
-									der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom
-									Widerruf unberührt.
-								</p>
-
-								<h3 className="mt-6 mb-2 font-semibold text-foreground text-xl">
-									Widerspruchsrecht gegen die Datenerhebung in besonderen Fällen
-									sowie gegen Direktwerbung (Art. 21 DSGVO)
-								</h3>
-								<p className="mb-4 uppercase leading-relaxed">
-									Wenn die Datenverarbeitung auf Grundlage von Art. 6 Abs. 1
-									lit. e oder f DSGVO erfolgt, haben Sie jederzeit das Recht,
-									aus Gründen, die sich aus Ihrer besonderen Situation ergeben,
-									gegen die Verarbeitung Ihrer personenbezogenen Daten
-									Widerspruch einzulegen; dies gilt auch für ein auf diese
-									Bestimmungen gestütztes Profiling. Die jeweilige
-									Rechtsgrundlage, auf denen eine Verarbeitung beruht, entnehmen
-									Sie dieser Datenschutzerklärung. Wenn Sie Widerspruch
-									einlegen, werden wir Ihre betroffenen personenbezogenen Daten
-									nicht mehr verarbeiten, es sei denn, wir können zwingende
-									schutzwürdige Gründe für die Verarbeitung nachweisen, die Ihre
-									Interessen, Rechte und Freiheiten überwiegen oder die
-									Verarbeitung dient der Geltendmachung, Ausübung oder
-									Verteidigung von Rechtsansprüchen (Widerspruch nach Art. 21
-									Abs. 1 DSGVO).
-								</p>
-								<p className="mb-4 uppercase leading-relaxed">
-									Werden Ihre personenbezogenen Daten verarbeitet, um
-									Direktwerbung zu betreiben, so haben Sie das Recht, jederzeit
-									Widerspruch gegen die Verarbeitung Sie betreffender
-									personenbezogener Daten zum Zwecke derartiger Werbung
-									einzulegen; dies gilt auch für das Profiling, soweit es mit
-									solcher Direktwerbung in Verbindung steht. Wenn Sie
-									widersprechen, werden Ihre personenbezogenen Daten
-									anschließend nicht mehr zum Zwecke der Direktwerbung verwendet
-									(Widerspruch nach Art. 21 Abs. 2 DSGVO).
-								</p>
-
-								<h3 className="mt-6 mb-2 font-semibold text-foreground text-xl">
-									Beschwerde­recht bei der zuständigen Aufsichts­behörde
-								</h3>
-								<p className="mb-4 leading-relaxed">
-									Im Falle von Verstößen gegen die DSGVO steht den Betroffenen
-									ein Beschwerderecht bei einer Aufsichtsbehörde, insbesondere
-									in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres
-									Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes zu.
-									Das Beschwerderecht besteht unbeschadet anderweitiger
-									verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe.
-								</p>
-
-								<h3 className="mt-6 mb-2 font-semibold text-foreground text-xl">
-									Recht auf Daten­übertrag­barkeit
-								</h3>
-								<p className="mb-4 leading-relaxed">
-									Sie haben das Recht, Daten, die wir auf Grundlage Ihrer
-									Einwilligung oder in Erfüllung eines Vertrags automatisiert
-									verarbeiten, an sich oder an einen Dritten in einem gängigen,
-									maschinenlesbaren Format aushändigen zu lassen. Sofern Sie die
-									direkte Übertragung der Daten an einen anderen
-									Verantwortlichen verlangen, erfolgt dies nur, soweit es
-									technisch machbar ist.
-								</p>
-
-								<h3 className="mt-6 mb-2 font-semibold text-foreground text-xl">
-									SSL- bzw. TLS-Verschlüsselung
-								</h3>
-								<p className="mb-4 leading-relaxed">
-									Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der
-									Übertragung vertraulicher Inhalte, wie zum Beispiel
-									Bestellungen oder Anfragen, die Sie an uns als Seitenbetreiber
-									senden, eine SSL- bzw. TLS-Verschlüsselung. Eine
-									verschlüsselte Verbindung erkennen Sie daran, dass die
-									Adresszeile des Browsers von „http://“ auf „https://“ wechselt
-									und an dem Schloss-Symbol in Ihrer Browserzeile.
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können
-									die Daten, die Sie an uns übermitteln, nicht von Dritten
-									mitgelesen werden.
-								</p>
-
-								<h3 className="mt-6 mb-2 font-semibold text-foreground text-xl">
-									Auskunft, Löschung und Berichtigung
-								</h3>
-								<p className="mb-4 leading-relaxed">
-									Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen
-									jederzeit das Recht auf unentgeltliche Auskunft über Ihre
-									gespeicherten personenbezogenen Daten, deren Herkunft und
-									Empfänger und den Zweck der Datenverarbeitung und ggf. ein
-									Recht auf Berichtigung oder Löschung dieser Daten. Hierzu
-									sowie zu weiteren Fragen zum Thema personenbezogene Daten
-									können Sie sich jederzeit an uns wenden.
-								</p>
-
-								<h3 className="mt-6 mb-2 font-semibold text-foreground text-xl">
+							</div>
+							<div className="space-y-4 rounded-2xl bg-white p-4 shadow-sm">
+								<h3 className="font-semibold text-xl">
 									Recht auf Einschränkung der Verarbeitung
 								</h3>
-								<p className="mb-4 leading-relaxed">
-									Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer
-									personenbezogenen Daten zu verlangen. Hierzu können Sie sich
-									jederzeit an uns wenden. Das Recht auf Einschränkung der
-									Verarbeitung besteht in folgenden Fällen:
+								<p>
+									Sie können jederzeit die Einschränkung der Verarbeitung Ihrer
+									personenbezogenen Daten geltend machen. Dazu müssen Sie eine
+									der folgenden Voraussetzungen erfüllen:
 								</p>
-								<ul className="mb-4 list-disc pl-6 leading-relaxed">
-									<li className="mb-2">
-										Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten
-										personenbezogenen Daten bestreiten, benötigen wir in der
-										Regel Zeit, um dies zu überprüfen. Für die Dauer der Prüfung
-										haben Sie das Recht, die Einschränkung der Verarbeitung
-										Ihrer personenbezogenen Daten zu verlangen.
+								<ul className="list-disc space-y-2 pl-6 text-slate-700">
+									<li>
+										Sie bestreiten die Richtigkeit der personenbezogenen Daten.
+										Für die Dauer der Überprüfung der Richtigkeit haben Sie das
+										Recht, eine Einschränkung der Verarbeitung zu verlangen.
 									</li>
-									<li className="mb-2">
-										Wenn die Verarbeitung Ihrer personenbezogenen Daten
-										unrechtmäßig geschah/geschieht, können Sie statt der
-										Löschung die Einschränkung der Datenverarbeitung verlangen.
+									<li>
+										Erfolgt eine Verarbeitung unrechtmäßig, so können Sie
+										alternativ zur Löschung die Einschränkung der Nutzung der
+										Daten beantragen.
 									</li>
-									<li className="mb-2">
-										Wenn wir Ihre personenbezogenen Daten nicht mehr benötigen,
-										Sie sie jedoch zur Ausübung, Verteidigung oder
-										Geltendmachung von Rechtsansprüchen benötigen, haben Sie das
-										Recht, statt der Löschung die Einschränkung der Verarbeitung
-										Ihrer personenbezogenen Daten zu verlangen.
+									<li>
+										Sollten wir Ihre personenbezogenen Daten für die Zwecke der
+										Verarbeitung nicht mehr benötigen, Sie aber die Daten für
+										die Geltendmachung, Ausübung oder Verteidigung von
+										Rechtsansprüchen benötigen, können Sie alternativ zur
+										Löschung die Einschränkung der Verarbeitung beantragen.
 									</li>
-									<li className="mb-2">
-										Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO
-										eingelegt haben, muss eine Abwägung zwischen Ihren und
-										unseren Interessen vorgenommen werden. Solange noch nicht
-										feststeht, wessen Interessen überwiegen, haben Sie das
-										Recht, die Einschränkung der Verarbeitung Ihrer
-										personenbezogenen Daten zu verlangen.
+									<li>
+										Legen Sie Widerspruch gegen die Verarbeitung gemäß Art. 21
+										Abs. 1 DSGVO ein, wird eine Abwägung zwischen Ihren und
+										unseren Interessen durchgeführt. Bis diese Abwägung erfolgt
+										ist, haben Sie das Recht, die Einschränkung der Verarbeitung
+										zu beantragen.
 									</li>
 								</ul>
-								<p className="mb-4 leading-relaxed">
-									Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten
-									eingeschränkt haben, dürfen diese Daten – von ihrer
-									Speicherung abgesehen – nur mit Ihrer Einwilligung oder zur
-									Geltendmachung, Ausübung oder Verteidigung von
-									Rechtsansprüchen oder zum Schutz der Rechte einer anderen
-									natürlichen oder juristischen Person oder aus Gründen eines
-									wichtigen öffentlichen Interesses der Europäischen Union oder
-									eines Mitgliedstaats verarbeitet werden.
-								</p>
-							</div>
-
-							<hr className="border-border/50" />
-
-							<div>
-								<h2 className="mb-4 font-bold text-2xl text-foreground">
-									4. Datenerfassung auf dieser Website
-								</h2>
-
-								<h3 className="mt-6 mb-2 font-semibold text-foreground text-xl">
-									Cookies
-								</h3>
-								<p className="mb-4 leading-relaxed">
-									Unsere Internetseiten verwenden so genannte „Cookies“. Cookies
-									sind kleine Textdateien und richten auf Ihrem Endgerät keinen
-									Schaden an. Sie werden entweder vorübergehend für die Dauer
-									einer Sitzung (Session-Cookies) oder dauerhaft (permanente
-									Cookies) auf Ihrem Endgerät gespeichert. Session-Cookies
-									werden nach Ende Ihres Besuchs automatisch gelöscht.
-									Permanente Cookies bleiben auf Ihrem Endgerät gespeichert, bis
-									Sie diese selbst löschen oder eine automatische Löschung durch
-									Ihren Webbrowser erfolgt.
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Teilweise können auch Cookies von Drittunternehmen auf Ihrem
-									Endgerät gespeichert werden, wenn Sie unsere Seite betreten
-									(Third-Party-Cookies). Diese ermöglichen uns oder Ihnen die
-									Nutzung bestimmter Dienstleistungen des Drittunternehmens (z.
-									B. Cookies zur Abwicklung von Zahlungsdienstleistungen).
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Cookies haben verschiedene Funktionen. Zahlreiche Cookies sind
-									technisch notwendig, da bestimmte Websitefunktionen ohne diese
-									nicht funktionieren würden (z. B. die Warenkorbfunktion oder
-									die Anzeige von Videos). Andere Cookies dienen dazu, das
-									Nutzerverhalten auszuwerten oder Werbung anzuzeigen.
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Cookies, die zur Durchführung des elektronischen
-									Kommunikationsvorgangs, zur Bereitstellung bestimmter, von
-									Ihnen erwünschter Funktionen (z. B. für die Warenkorbfunktion)
-									oder zur Optimierung der Website (z. B. Cookies zur Messung
-									des Webpublikums) erforderlich sind (notwendige Cookies),
-									werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO
-									gespeichert, sofern keine andere Rechtsgrundlage angegeben
-									wird. Der Websitebetreiber hat ein berechtigtes Interesse an
-									der Speicherung von notwendigen Cookies zur technisch
-									fehlerfreien und optimierten Bereitstellung seiner Dienste.
-									Sofern eine Einwilligung zur Speicherung von Cookies und
-									vergleichbaren Wiedererkennungstechnologien abgefragt wurde,
-									erfolgt die Verarbeitung ausschließlich auf Grundlage dieser
-									Einwilligung (Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1
-									TTDSG); die Einwilligung ist jederzeit widerrufbar.
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Sie können Ihren Browser so einstellen, dass Sie über das
-									Setzen von Cookies informiert werden und Cookies nur im
-									Einzelfall erlauben, die Annahme von Cookies für bestimmte
-									Fälle oder generell ausschließen sowie das automatische
-									Löschen der Cookies beim Schließen des Browsers aktivieren.
-									Bei der Deaktivierung von Cookies kann die Funktionalität
-									dieser Website eingeschränkt sein.
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Soweit Cookies von Drittunternehmen oder zu Analysezwecken
-									eingesetzt werden, werden wir Sie hierüber im Rahmen dieser
-									Datenschutzerklärung gesondert informieren und ggf. eine
-									Einwilligung abfragen.
-								</p>
-
-								<h3 className="mt-6 mb-2 font-semibold text-foreground text-xl">
-									Einwilligung mit Usercentrics
-								</h3>
-								<p className="mb-4 leading-relaxed">
-									Diese Website nutzt die Consent-Technologie von Usercentrics,
-									um Ihre Einwilligung zur Speicherung bestimmter Cookies auf
-									Ihrem Endgerät oder zum Einsatz bestimmter Technologien
-									einzuholen und diese datenschutzkonform zu dokumentieren.
-									Anbieter dieser Technologie ist die Usercentrics GmbH,
-									Sendlinger Straße 7, 80331 München, Website:{" "}
-									<a
-										href="https://usercentrics.com/de/"
-										className="text-primary hover:underline"
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										https://usercentrics.com/de/
-									</a>{" "}
-									(im Folgenden „Usercentrics“).
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Wenn Sie unsere Website betreten, werden folgende
-									personenbezogene Daten an Usercentrics übertragen:
-								</p>
-								<ul className="mb-4 list-disc pl-6 leading-relaxed">
-									<li className="mb-2">
-										Ihre Einwilligung(en) bzw. der Widerruf Ihrer
-										Einwilligung(en)
-									</li>
-									<li className="mb-2">Ihre IP-Adresse</li>
-									<li className="mb-2">Informationen über Ihren Browser</li>
-									<li className="mb-2">Informationen über Ihr Endgerät</li>
-									<li className="mb-2">
-										Zeitpunkt Ihres Besuchs auf der Website
-									</li>
-								</ul>
-								<p className="mb-4 leading-relaxed">
-									Des Weiteren speichert Usercentrics ein Cookie in Ihrem
-									Browser, um Ihnen die erteilten Einwilligungen bzw. deren
-									Widerruf zuordnen zu können. Die so erfassten Daten werden
-									gespeichert, bis Sie uns zur Löschung auffordern, das
-									Usercentrics-Cookie selbst löschen oder der Zweck für die
-									Datenspeicherung entfällt. Zwingende gesetzliche
-									Aufbewahrungspflichten bleiben unberührt.
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Der Einsatz von Usercentrics erfolgt, um die gesetzlich
-									vorgeschriebenen Einwilligungen für den Einsatz bestimmter
-									Technologien einzuholen. Rechtsgrundlage hierfür ist Art. 6
-									Abs. 1 lit. c DSGVO.
-								</p>
-
-								<h4 className="mt-4 mb-2 font-semibold text-foreground text-lg">
-									Auftragsverarbeitung
-								</h4>
-								<p className="mb-4 leading-relaxed">
-									Wir haben einen Vertrag über Auftragsverarbeitung (AVV) mit
-									dem oben genannten Anbieter geschlossen. Hierbei handelt es
-									sich um einen datenschutzrechtlich vorgeschriebenen Vertrag,
-									der gewährleistet, dass dieser die personenbezogenen Daten
-									unserer Websitebesucher nur nach unseren Weisungen und unter
-									Einhaltung der DSGVO verarbeitet.
-								</p>
-
-								<h3 className="mt-6 mb-2 font-semibold text-foreground text-xl">
-									Kontaktformular
-								</h3>
-								<p className="mb-4 leading-relaxed">
-									Wenn Sie uns per Kontaktformular Anfragen zukommen lassen,
-									werden Ihre Angaben aus dem Anfrageformular inklusive der von
-									Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der
-									Anfrage und für den Fall von Anschlussfragen bei uns
-									gespeichert. Diese Daten geben wir nicht ohne Ihre
-									Einwilligung weiter.
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6
-									Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung
-									eines Vertrags zusammenhängt oder zur Durchführung
-									vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen
-									Fällen beruht die Verarbeitung auf unserem berechtigten
-									Interesse an der effektiven Bearbeitung der an uns gerichteten
-									Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer
-									Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese
-									abgefragt wurde.
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben
-									bei uns, bis Sie uns zur Löschung auffordern, Ihre
-									Einwilligung zur Speicherung widerrufen oder der Zweck für die
-									Datenspeicherung entfällt (z. B. nach abgeschlossener
-									Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen
-									– insbesondere Aufbewahrungsfristen – bleiben unberührt.
-								</p>
-
-								<h3 className="mt-6 mb-2 font-semibold text-foreground text-xl">
-									Anfrage per E-Mail, Telefon oder Telefax
-								</h3>
-								<p className="mb-4 leading-relaxed">
-									Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren,
-									wird Ihre Anfrage inklusive aller daraus hervorgehenden
-									personenbezogenen Daten (Name, Anfrage) zum Zwecke der
-									Bearbeitung Ihres Anliegens bei uns gespeichert und
-									verarbeitet. Diese Daten geben wir nicht ohne Ihre
-									Einwilligung weiter.
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6
-									Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung
-									eines Vertrags zusammenhängt oder zur Durchführung
-									vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen
-									Fällen beruht die Verarbeitung auf unserem berechtigten
-									Interesse an der effektiven Bearbeitung der an uns gerichteten
-									Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer
-									Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese
-									abgefragt wurde.
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Die von Ihnen an uns per Kontaktanfragen übersandten Daten
-									verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre
-									Einwilligung zur Speicherung widerrufen oder der Zweck für die
-									Datenspeicherung entfällt (z. B. nach abgeschlossener
-									Bearbeitung Ihres Anliegens). Zwingende gesetzliche
-									Bestimmungen – insbesondere gesetzliche Aufbewahrungsfristen –
-									bleiben unberührt.
-								</p>
-							</div>
-
-							<hr className="border-border/50" />
-
-							<div>
-								<h2 className="mb-4 font-bold text-2xl text-foreground">
-									5. Analyse-Tools und Werbung
-								</h2>
-
-								<h3 className="mt-6 mb-2 font-semibold text-foreground text-xl">
-									Google Ads
-								</h3>
-								<p className="mb-4 leading-relaxed">
-									Der Websitebetreiber verwendet Google Ads. Google Ads ist ein
-									Online-Werbeprogramm der Google Ireland Limited („Google“),
-									Gordon House, Barrow Street, Dublin 4, Irland.
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Google Ads ermöglicht es uns Werbeanzeigen in der
-									Google-Suchmaschine oder auf Drittwebseiten auszuspielen, wenn
-									der Nutzer bestimmte Suchbegriffe bei Google eingibt
-									(Keyword-Targeting). Ferner können zielgerichtete
-									Werbeanzeigen anhand der bei Google vorhandenen Nutzerdaten
-									(z. B. Standortdaten und Interessen) ausgespielt werden
-									(Zielgruppen-Targeting). Wir als Websitebetreiber können diese
-									Daten quantitativ auswerten, indem wir beispielsweise
-									analysieren, welche Suchbegriffe zur Ausspielung unserer
-									Werbeanzeigen geführt haben und wie viele Anzeigen zu
-									entsprechenden Klicks geführt haben.
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Die Nutzung von Google Ads erfolgt auf Grundlage von Art. 6
-									Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes
-									Interesse an einer möglichst effektiven Vermarktung seiner
-									Dienstleistung Produkte.
-								</p>
-								<p className="mb-4 leading-relaxed">
-									Die Datenübertragung in die USA wird auf die
-									Standardvertragsklauseln der EU-Kommission gestützt. Details
-									finden Sie hier:{" "}
-									<a
-										href="https://policies.google.com/privacy/frameworks"
-										className="text-primary hover:underline"
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										https://policies.google.com/privacy/frameworks
-									</a>{" "}
-									und{" "}
-									<a
-										href="https://privacy.google.com/businesses/controllerterms/mccs/"
-										className="text-primary hover:underline"
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										https://privacy.google.com/businesses/controllerterms/mccs/
-									</a>
-									.
+								<p>
+									Eine Einschränkung der Verarbeitung hat zur Folge, dass die
+									personenbezogenen Daten, abgesehen von der Speicherung, nur
+									mit Ihrer Einwilligung oder zur Geltendmachung, zur Ausübung
+									bzw. Verteidigung von Rechtsansprüchen oder zum Schutz der
+									Rechte einer anderen natürlichen oder juristischen Person oder
+									aus Gründen eines wichtigen öffentlichen Interesses der Union
+									oder eines Mitgliedstaates verarbeitet werden dürfen.
 								</p>
 							</div>
 						</div>
-					</FadeInUp>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">
+							Bereitstellung der Webseite (Webhoster)
+						</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>Unsere Webseite wird gehostet bei:</p>
+							<address className="space-y-1 text-slate-900 text-sm not-italic leading-6">
+								<p>Microsoft Ireland Operations Ltd.</p>
+								<p>
+									One Microsoft Place, South County Business Park, Leopardstown,
+									Dublin 18, D18 P521
+								</p>
+								<p>Irland</p>
+							</address>
+							<p>Der Serverstandort ist Deutschland.</p>
+							<p>
+								Wenn Sie unsere Webseite aufrufen, erheben und speichern wir
+								automatisch Informationen in sogenannten Server-Logfiles. Diese
+								Informationen übermittelt Ihr Browser automatisch an unseren
+								Server bzw. an den Server unseres Hostingunternehmens.
+							</p>
+							<p>Dies sind:</p>
+							<ul className="list-disc space-y-2 pl-6">
+								<li>IP-Adresse des Endgerätes des Webseitenbesuchers</li>
+								<li>Verwendetes Gerät</li>
+								<li>Hostname des zugreifenden Rechners</li>
+								<li>Betriebssystem des Besuchers</li>
+								<li>Browsertyp und Version</li>
+								<li>Name der abgerufenen Datei</li>
+								<li>Zeitpunkt der Serveranfrage</li>
+								<li>Menge der Daten</li>
+								<li>Information, ob der Abruf der Daten erfolgreich war</li>
+							</ul>
+							<p>
+								Diese Daten werden nicht mit anderen Datenquellen
+								zusammengeführt.
+							</p>
+							<p>
+								Statt diese Webseite auf einem eigenen Server zu betreiben,
+								können wir sie auch auf dem Server eines externen Dienstleisters
+								(Hostingunternehmen) betreiben lassen, den wir in diesem Fall
+								weiter oben genannt haben. Die von dieser Webseite erfassten
+								personenbezogenen Daten werden dann auf den Servern des
+								Hostingunternehmens gespeichert. Ergänzend zu den oben genannten
+								Daten speichert der Webhoster für uns z. B. auch
+								Kontaktanfragen, Kontaktdaten, Namen, Webseitezugriffsdaten,
+								Meta- und Kommunikationsdaten, Vertragsdaten und sonstige Daten,
+								die über eine Website generiert werden.
+							</p>
+							<p>
+								Rechtsgrundlage für die Verarbeitung dieser Daten ist Art. 6
+								Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse ist die
+								technisch fehlerfreie Darstellung und Optimierung dieser
+								Webseite. Sofern die Webseite aufgerufen wird, um mit uns in
+								Vertragsverhandlungen zu gehen oder einen Vertrag abzuschließen,
+								dient als weitere Rechtsgrundlage (Art. 6 Abs. 1 lit. b DSGVO).
+								Für den Fall, dass wir ein Hostingunternehmen beauftragt haben,
+								besteht ein Vertrag über Auftragsverarbeitung mit diesem
+								Dienstleister.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">
+							Einsatz von Local Storage Items, Session Storage Items und Cookies
+						</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Unsere Webseite verwendet Local Storage Items, Session Storage
+								Items und/oder Cookies. Beim Local Storage handelt es sich um
+								einen Mechanismus, welcher die Speicherung von Daten innerhalb
+								des Browsers auf Ihrem Endgerät ermöglicht. Diese Daten
+								beinhalten meist Benutzerpräferenzen, wie beispielsweise den
+								„Tag-“ oder „Nachtmodus“ einer Webseite, und bleiben so lange
+								erhalten, bis Sie die Daten manuell löschen. Session Storage ist
+								dem Local Storage sehr ähnlich, wohingegen die Speicherdauer nur
+								während der aktuellen Sitzung, also bis zum Schließen des
+								aktuellen Tabs anhält. Danach werden die Session Storage Items
+								von Ihrem Endgerät gelöscht. Bei Cookies handelt es sich um
+								Informationen, welche ein Webserver (Server, der Webinhalte
+								bereitstellt) auf Ihrem Endgerät hinterlegt, um dieses Endgerät
+								identifizieren zu können. Sie werden entweder vorübergehend für
+								die Dauer einer Sitzung (Session-Cookies) und nach Ende Ihres
+								Besuchs einer Webseite gelöscht oder dauerhaft (permanente
+								Cookies) auf Ihrem Endgerät gespeichert, bis Sie diese selbst
+								löschen oder eine automatische Löschung durch Ihren Webbrowser
+								erfolgt.
+							</p>
+							<p>
+								Diese Objekte können auch von Drittunternehmen auf Ihrem
+								Endgerät gespeichert werden, wenn Sie unsere Seite betreten
+								(Third-Party-Requests). Dadurch wird es uns als Betreiber und
+								Ihnen als Besucher dieser Webseite ermöglicht, bestimmte
+								Dienstleistungen von Dritten, die auf dieser Webseite
+								installiert sind, in Anspruch zu nehmen. Beispiele dafür sind
+								etwa die Abwicklung von Zahlungsdienstleistungen oder die
+								Anzeige von Videos.
+							</p>
+							<p>
+								Diese Mechanismen haben vielfältige Einsatzmöglichkeiten. Sie
+								können die Funktionsfähigkeit einer Webseite verbessern,
+								Warenkorbfunktionen steuern, die Sicherheit und den Komfort der
+								Webseitennutzung erhöhen sowie Analysen bezüglich
+								Besucherströmen und -verhalten durchführen. In Abhängigkeit von
+								den einzelnen Funktionen sind diese datenschutzrechtlich
+								einzuordnen. Sind sie notwendig für den Betrieb der Webseite und
+								zur Bereitstellung bestimmter Funktionen gedacht
+								(Warenkorbfunktion) oder dienen zur Optimierung der Webseite (z.
+								B. Cookies zur Messung des Besucherverhaltens), dann erfolgt ihr
+								Einsatz auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Als
+								Webseitenbetreiber haben wir ein berechtigtes Interesse an der
+								Speicherung von Local Storage Items, Session Storage Items und
+								Cookies zur technisch fehlerfreien und optimierten
+								Bereitstellung unserer Dienste. In allen anderen Fällen erfolgt
+								die Speicherung von Local Storage Items, Session Storage Items
+								und Cookies nur nach Ihrer ausdrücklichen Einwilligung (Art. 6
+								Abs. 1 lit. a DSGVO).
+							</p>
+							<p>
+								Soweit Local Storage Item, Session Storage oder Cookies von
+								Drittunternehmen oder zu Analysezwecken eingesetzt werden,
+								informieren wir Sie hierüber im Rahmen dieses
+								Datenschutzhinweises gesondert. Ihre erforderliche Einwilligung
+								wird abgefragt und kann jederzeit widerrufen werden.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">
+							Einsatz von externen Diensten
+						</h2>
+						<p className="text-slate-700 leading-7">
+							Auf unserer Webseite sind externe Dienste im Einsatz. Externe
+							Dienste sind Dienste von Drittanbietern, die auf unserer Webseite
+							eingesetzt werden. Dies kann aus unterschiedlichen Gründen
+							erfolgen, beispielsweise für das Einbetten von Videos oder zur
+							Sicherheit der Webseite. Bei der Benutzung dieser Dienste werden
+							personenbezogene Daten auch an die jeweiligen Anbieter dieser
+							externen Dienste weitergegeben. Wenn wir kein berechtigtes
+							Interesse am Einsatz dieser Dienste haben, holen wir vor der
+							Verwendung Ihre jederzeit widerrufbare Einwilligung als Besucher
+							unserer Webseite ein (Art. 6 Abs. 1 lit. a DSGVO).
+						</p>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">Analytics</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Zur Analyse des Nutzerverhaltens verarbeiten wir
+								personenbezogene Daten der Webseitenbesucher. Wir sind durch die
+								Auswertung der gewonnenen Daten in der Lage, Informationen über
+								die Nutzung der einzelnen Komponenten unserer Webseite
+								zusammenzustellen. Hierdurch können wir die Nutzerfreundlichkeit
+								unserer Webseite erhöhen. Mittels der eingesetzten Analyse-Tools
+								könnten z. B. Nutzerprofile für die Ausspielung zielgerichteter
+								oder interessenbezogener Werbebotschaften erstellt, unsere
+								Webseitenbesucher beim nächsten Besuch unserer Webseite erkannt,
+								ihr Klick-/Scrollverhalten, ihre Downloads gemessen, Heatmaps
+								erstellt, Seitenaufrufe erkannt, die Besuchsdauer oder die
+								Absprungraten gemessen, sowie die Herkunft der Webseitenbesucher
+								(Stadt, Land, von welcher Seite kommt der Besucher)
+								zurückverfolgt werden. Mit Hilfe der Analyse-Tools lassen sich
+								unsere Marktforschungs- und Marketingaktivitäten verbessern.
+							</p>
+							<p>
+								Zu einer Verarbeitung kommt es nur, wenn Sie in diese
+								Datenverarbeitung (über unser Einwilligungsbanner auf der
+								Webseite) einwilligen. Die Rechtsgrundlage für diese
+								Verarbeitung ist die Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).
+								Ohne Ihre Einwilligung erfolgt die Datenverarbeitung in der oben
+								beschriebenen Weise nicht. Wenn Sie Ihre Einwilligung (z. B.
+								über das Einwilligungsbanner oder andere auf dieser Website
+								vorgesehene Möglichkeiten) widerrufen, beenden wir diese
+								Datenverarbeitung. Die Rechtmäßigkeit der bis zum Widerruf
+								erfolgten Verarbeitung bleibt davon unberührt.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">Google Analytics</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Wir nutzen auf unserer Webseite den Dienst Google Analytics.
+								Anbieter des Dienstes ist die Google Ireland Limited, Gordon
+								House, Barrow Street, Dublin 4, Irland.
+							</p>
+							<p>
+								Durch die Nutzung des Dienstes kann es zu einer Datenübertragung
+								in ein Drittland kommen (USA). Der Anbieter ist gemäß EU-U.S.
+								Data Privacy Framework zertifiziert und bietet daher ein
+								angemessenes Datenschutzniveau.
+							</p>
+							<p>
+								Weitere Informationen sind in den Datenschutzinformationen des
+								Anbieters unter folgender URL zu finden:{" "}
+								<a
+									className="text-primary underline"
+									href="https://business.safety.google/privacy"
+									target="_blank"
+									rel="noreferrer"
+								>
+									https://business.safety.google/privacy
+								</a>
+								.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">Consent Management</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Um datenschutzrechtlichen Anforderungen zu entsprechen, haben
+								wir auf unserer Webseite ein Consent-Management-Tool im Einsatz.
+								Mit diesem Tool holen wir erforderliche Einwilligungen für das
+								Setzen von Cookies oder die Verwendung externer Dienste ein. Die
+								Einwilligungen werden gespeichert.
+							</p>
+							<p>
+								Die Verarbeitung ist für die Erfüllung einer rechtlichen
+								Verpflichtung erforderlich, welcher der Verantwortliche
+								(Betreiber der Webseite) unterliegt. Als Rechtsgrundlage der
+								Verarbeitung wird daher Art. 6 Abs. 1 lit. c DSGVO herangezogen.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">Usercentrics</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Wir nutzen auf unserer Webseite den Dienst Usercentrics.
+								Anbieter des Dienstes ist die Usercentrics GmbH, Sendlinger
+								Straße 7, 80331 München, Deutschland.
+							</p>
+							<p>
+								Weitere Informationen sind in den Datenschutzinformationen des
+								Anbieters unter folgender URL zu finden:{" "}
+								<a
+									className="text-primary underline"
+									href="https://usercentrics.com/de/datenschutzerklaerung"
+									target="_blank"
+									rel="noreferrer"
+								>
+									https://usercentrics.com/de/datenschutzerklaerung
+								</a>
+								.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">
+							Content Delivery Network (CDN)
+						</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Wir nutzen ein Content Delivery Network (CDN), um die
+								Performance und Verfügbarkeit unserer Webseite zu optimieren.
+								Dafür wird von diesem Dienstleister, der dieses Netzwerk zur
+								Verfügung stellt, Ihre IP-Adresse sowie die Information, wann
+								Sie unsere Webseite besucht haben, verarbeitet. Alle weiteren
+								Informationen zur Datenverarbeitung durch diesen Dienstleister
+								finden Sie in dessen Datenschutzhinweisen.
+							</p>
+							<p>
+								Wir stützen diese Verarbeitung auf ein berechtigtes Interesse
+								(Art. 6 Abs. 1 lit. f DSGVO). Unser berechtigtes Interesse am
+								Einsatz eines Content Delivery Networks besteht darin, unsere
+								Webseite möglichst schnell, sicher und zuverlässig darstellen zu
+								können.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">jsDelivr</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Wir nutzen auf unserer Webseite den Dienst jsDelivr. Anbieter
+								des Dienstes ist die Volentio JSD Limited, Suite 2a1, Northside
+								House, Mount Pleasant, Barnet, EN4 9EB, Großbritannien.
+							</p>
+							<p>
+								Durch die Nutzung des Dienstes kann es zu einer Datenübertragung
+								in ein Drittland kommen (USA). Der Anbieter ist gemäß EU-U.S.
+								Data Privacy Framework zertifiziert und bietet daher ein
+								angemessenes Datenschutzniveau.
+							</p>
+							<p>
+								Weitere Informationen sind in den Datenschutzinformationen des
+								Anbieters unter folgender URL zu finden:{" "}
+								<a
+									className="text-primary underline"
+									href="https://www.jsdelivr.com/terms/privacy-policy"
+									target="_blank"
+									rel="noreferrer"
+								>
+									https://www.jsdelivr.com/terms/privacy-policy
+								</a>
+								.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">Datenschutzsoftware</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Um datenschutzrechtlichen Anforderungen besser nachkommen zu
+								können, haben wir entsprechende Software im Einsatz. Diese
+								Software unterstützt uns bei der Einhaltung
+								datenschutzrechtlicher Vorschriften.
+							</p>
+							<p>
+								Zu einer Verarbeitung kommt es nur, wenn Sie in diese
+								Datenverarbeitung (über unser Einwilligungsbanner auf der
+								Webseite) einwilligen. Die Rechtsgrundlage für diese
+								Verarbeitung ist die Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).
+								Ohne Ihre Einwilligung erfolgt die Datenverarbeitung in der oben
+								beschriebenen Weise nicht. Wenn Sie Ihre Einwilligung (z. B.
+								über das Einwilligungsbanner oder andere auf dieser Website
+								vorgesehene Möglichkeiten) widerrufen, beenden wir diese
+								Datenverarbeitung. Die Rechtmäßigkeit der bis zum Widerruf
+								erfolgten Verarbeitung bleibt davon unberührt.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">eRecht24</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Wir nutzen auf unserer Webseite den Dienst eRecht24. Anbieter
+								des Dienstes ist die eRecht24 GmbH &amp; Co. KG, Lietzenburger
+								Str. 94, 10719 Berlin, Deutschland.
+							</p>
+							<p>
+								Weitere Informationen sind in den Datenschutzinformationen des
+								Anbieters unter folgender URL zu finden:{" "}
+								<a
+									className="text-primary underline"
+									href="https://www.e-recht24.de/datenschutzerklaerung.html"
+									target="_blank"
+									rel="noreferrer"
+								>
+									https://www.e-recht24.de/datenschutzerklaerung.html
+								</a>
+								.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">Hosting</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Unter Hosting versteht man das Bereitstellen von Webspace und
+								den darauf befindlichen Dateien bei einem Webhoster.
+							</p>
+							<p>
+								Dabei kommt es zur Übertragung und Speicherung personenbezogener
+								Daten auf den Servern des Webhosters. Insbesondere werden die
+								IP-Adressen, Meta- und Kommunikationsdaten der Nutzer sowie
+								Daten über die Webseitenzugriffe verarbeitet. Wenn ein
+								Webseitenbesucher die Seite aufruft, wird eine Verbindung zu den
+								Servern des Webhosters hergestellt. Hierbei kommt es zu einer
+								Verarbeitung personenbezogener Daten des Webseitenbesuchers.
+							</p>
+							<p>
+								Wir stützen diese Verarbeitung auf ein berechtigtes Interesse
+								(Art. 6 Abs. 1 lit. f DSGVO). Unser berechtigtes Interesse
+								besteht darin, unsere Webseite darstellen und im Internet zur
+								Verfügung stellen zu können.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">Microsoft-Azure</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Wir nutzen auf unserer Webseite den Dienst Microsoft-Azure.
+								Anbieter des Dienstes ist die Microsoft Ireland Operations
+								Limited, One Microsoft Place, South County Business Park,
+								Leopardstown, Dublin 18, D18 P521, Irland.
+							</p>
+							<p>
+								Da dieser Dienst lokal am Webserver gehostet wird, findet keine
+								Datenübertragung an Dritte statt.
+							</p>
+							<p>
+								Wir stützen diese Verarbeitung auf ein berechtigtes Interesse
+								(Art. 6 Abs. 1 lit. f DSGVO).
+							</p>
+							<p>
+								Diese Anwendung wird benötigt, um die uneingeschränkte
+								Funktionalität der Webseite zu gewährleisten.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">Schnittstellensoftware</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Geschäftsprozesse laufen preisgünstiger, schneller und
+								fehlerfreier ab, wenn sie mit Hilfe von Software über
+								Schnittstellen automatisiert werden. So lassen sie sich über die
+								eigene Webseite oder über soziale Netzwerke auf effiziente Weise
+								in die Unternehmensprozesse einbinden. Wir setzen auf unserer
+								Webseite Schnittstellen-Software ein, um unterschiedliche
+								Anwendungen miteinander zu verknüpfen und um personenbezogene
+								Daten sicher von einer zur anderen Anwendung zu übergeben.
+							</p>
+							<p>
+								Zu einer Verarbeitung kommt es nur, wenn Sie in diese
+								Datenverarbeitung (über unser Einwilligungsbanner auf der
+								Webseite) einwilligen. Die Rechtsgrundlage für diese
+								Verarbeitung ist die Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).
+								Ohne Ihre Einwilligung erfolgt die Datenverarbeitung in der oben
+								beschriebenen Weise nicht. Wenn Sie Ihre Einwilligung (z. B.
+								über das Einwilligungsbanner oder andere auf dieser Website
+								vorgesehene Möglichkeiten) widerrufen, beenden wir diese
+								Datenverarbeitung. Die Rechtmäßigkeit der bis zum Widerruf
+								erfolgten Verarbeitung bleibt davon unberührt.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">Google Tag Manager</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Wir nutzen auf unserer Webseite den Dienst Google Tag Manager.
+								Anbieter des Dienstes ist die Google Ireland Limited, Gordon
+								House, Barrow Street, Dublin 4, Irland.
+							</p>
+							<p>
+								Durch die Nutzung des Dienstes kann es zu einer Datenübertragung
+								in ein Drittland kommen (USA). Der Anbieter ist gemäß EU-U.S.
+								Data Privacy Framework zertifiziert und bietet daher ein
+								angemessenes Datenschutzniveau.
+							</p>
+							<p>
+								Weitere Informationen sind in den Datenschutzinformationen des
+								Anbieters unter folgender URL zu finden:{" "}
+								<a
+									className="text-primary underline"
+									href="https://business.safety.google/privacy"
+									target="_blank"
+									rel="noreferrer"
+								>
+									https://business.safety.google/privacy
+								</a>
+								.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">Search Engine</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Damit Inhalte auf unserer Webseite leichter gefunden werden
+								können, wurde eine Search Engine von einem Drittanbieter
+								eingebaut. Durch den Einbau der Search Engine auf der Webseite
+								kommt es zu einer Übermittlung technischer Daten wie der
+								IP-Adresse an den Drittanbieter.
+							</p>
+							<p>
+								Zu einer Verarbeitung kommt es nur, wenn Sie in diese
+								Datenverarbeitung (über unser Einwilligungsbanner auf der
+								Webseite) einwilligen. Die Rechtsgrundlage für diese
+								Verarbeitung ist die Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).
+								Ohne Ihre Einwilligung erfolgt die Datenverarbeitung in der oben
+								beschriebenen Weise nicht. Wenn Sie Ihre Einwilligung (z. B.
+								über das Einwilligungsbanner oder andere auf dieser Website
+								vorgesehene Möglichkeiten) widerrufen, beenden wir diese
+								Datenverarbeitung. Die Rechtmäßigkeit der bis zum Widerruf
+								erfolgten Verarbeitung bleibt davon unberührt.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">Google</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Wir nutzen auf unserer Webseite den Dienst Google. Anbieter des
+								Dienstes ist die Google Ireland Limited, Gordon House, Barrow
+								Street, Dublin 4, Irland.
+							</p>
+							<p>
+								Durch die Nutzung des Dienstes kann es zu einer Datenübertragung
+								in ein Drittland kommen (USA). Der Anbieter ist gemäß EU-U.S.
+								Data Privacy Framework zertifiziert und bietet daher ein
+								angemessenes Datenschutzniveau.
+							</p>
+							<p>
+								Weitere Informationen sind in den Datenschutzinformationen des
+								Anbieters unter folgender URL zu finden:{" "}
+								<a
+									className="text-primary underline"
+									href="https://business.safety.google/privacy"
+									target="_blank"
+									rel="noreferrer"
+								>
+									https://business.safety.google/privacy
+								</a>
+								.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">Softwareframework</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Softwareframeworks erleichtern die Interaktion mit einer
+								Plattform, indem sie eine standardisierte Schnittstelle zu
+								dieser herstellen. Frameworks werden verwendet, um den
+								Entwicklungsaufwand bei wiederkehrenden Anforderungen an
+								Software zu reduzieren und um die Wiederverwendbarkeit vom Code
+								und Funktionen zu gewährleisten. Einige Softwareframeworks
+								implementieren Sicherheitsfeatures, um eine unsachgemäße
+								Verwendung der Webseite zu verhindern. Softwareframeworks können
+								mit geringem Aufwand Funktion, Barrierefreiheit, Sicherheit und
+								Performanz erhöhen und auch andere Anwendungsbereiche abdecken.
+							</p>
+							<p>
+								Zu einer Verarbeitung kommt es nur, wenn Sie in diese
+								Datenverarbeitung (über unser Einwilligungsbanner auf der
+								Webseite) einwilligen. Die Rechtsgrundlage für diese
+								Verarbeitung ist die Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).
+								Ohne Ihre Einwilligung erfolgt die Datenverarbeitung in der oben
+								beschriebenen Weise nicht. Wenn Sie Ihre Einwilligung (z. B.
+								über das Einwilligungsbanner oder andere auf dieser Website
+								vorgesehene Möglichkeiten) widerrufen, beenden wir diese
+								Datenverarbeitung. Die Rechtmäßigkeit der bis zum Widerruf
+								erfolgten Verarbeitung bleibt davon unberührt.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">.NET Framework</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Wir nutzen auf unserer Webseite den Dienst .NET Framework.
+								Anbieter des Dienstes ist die Microsoft Ireland Operations
+								Limited, One Microsoft Place, South County Business Park,
+								Leopardstown, Dublin 18, D18 P521, Irland.
+							</p>
+							<p>
+								Da dieser Dienst lokal am Webserver gehostet wird, findet keine
+								Datenübertragung an Dritte statt.
+							</p>
+							<p>
+								Wir stützen diese Verarbeitung auf ein berechtigtes Interesse
+								(Art. 6 Abs. 1 lit. f DSGVO).
+							</p>
+							<p>
+								Diese Anwendung wird benötigt, um die uneingeschränkte
+								Funktionalität der Webseite zu gewährleisten.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">Werbung</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Auf unserer Webseite sind Tools im Einsatz, die das Schalten von
+								Werbung und das Auswerten des Erfolgs von geschalteten Anzeigen
+								erleichtern oder ermöglichen. Hierzu werden personenbezogene
+								Daten verarbeitet, insbesondere die IP-Adresse, Zugriffszeiten
+								sowie die Geräteinformationen.
+							</p>
+							<p>
+								Zu einer Verarbeitung kommt es nur, wenn Sie in diese
+								Datenverarbeitung (über unser Einwilligungsbanner auf der
+								Webseite) einwilligen. Die Rechtsgrundlage für diese
+								Verarbeitung ist die Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).
+								Ohne Ihre Einwilligung erfolgt die Datenverarbeitung in der oben
+								beschriebenen Weise nicht. Wenn Sie Ihre Einwilligung (z. B.
+								über das Einwilligungsbanner oder andere auf dieser Website
+								vorgesehene Möglichkeiten) widerrufen, beenden wir diese
+								Datenverarbeitung. Die Rechtmäßigkeit der bis zum Widerruf
+								erfolgten Verarbeitung bleibt davon unberührt.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">Google Ads</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Wir nutzen auf unserer Webseite den Dienst Google Ads. Anbieter
+								des Dienstes ist die Google Ireland Limited, Gordon House,
+								Barrow Street, Dublin 4, Irland.
+							</p>
+							<p>
+								Da dieser Dienst lokal am Webserver gehostet wird, findet keine
+								Datenübertragung an Dritte statt.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">Google AdSense</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Wir nutzen auf unserer Webseite den Dienst Google AdSense.
+								Anbieter des Dienstes ist die Google Ireland Limited (GV),
+								Gordon House, Barrow Street, Dublin 4, Irland.
+							</p>
+							<p>
+								Durch die Nutzung des Dienstes kann es zu einer Datenübertragung
+								in ein Drittland kommen (USA). Der Anbieter ist gemäß EU-U.S.
+								Data Privacy Framework zertifiziert und bietet daher ein
+								angemessenes Datenschutzniveau.
+							</p>
+							<p>
+								Weitere Informationen sind in den Datenschutzinformationen des
+								Anbieters unter folgender URL zu finden:{" "}
+								<a
+									className="text-primary underline"
+									href="https://business.safety.google/privacy"
+									target="_blank"
+									rel="noreferrer"
+								>
+									https://business.safety.google/privacy
+								</a>
+								.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">Kontaktformulare</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Auf unserer Webseite besteht die Möglichkeit, uns über ein
+								Kontaktformular zu benachrichtigen. Für die Kontaktaufnahme über
+								dieses Formular werden insbesondere Ihre Kontaktdaten benötigt.
+							</p>
+							<p>
+								Wenn Sie Ihre Einwilligung erteilen, ist die Rechtsgrundlage
+								Art. 6 Abs. 1 lit. a DSGVO. Diese kann jederzeit widerrufen
+								werden.
+							</p>
+							<p>
+								Wenn Sie Anfragen zu unseren Produkten, Dienstleistungen oder
+								unserem Unternehmen absenden, erfolgt die Verarbeitung zum
+								Zwecke der Vertragserfüllung bzw. vorvertraglicher Maßnahmen
+								gem. Art. 6 Abs. 1 lit. b DSGVO. Außerdem kann ein berechtigtes
+								Interesse vorliegen, um Geschäftsbeziehungen zu pflegen oder
+								Ihre Anfrage aus sonstigen Gründen zu beantworten. Die
+								Rechtsgrundlage für die Verarbeitung Ihrer Daten wäre in diesem
+								Fall Art. 6 Abs. 1 lit. f DSGVO.
+							</p>
+							<p>
+								Die Daten werden gelöscht, wenn wir Ihre Anfrage abschließend
+								beantwortet haben und keine sonstigen Aufbewahrungspflichten dem
+								entgegenstehen.
+							</p>
+						</div>
+					</section>
+
+					<section className="space-y-4 rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h2 className="font-semibold text-2xl">Präsenz auf LinkedIn</h2>
+						<div className="space-y-3 text-slate-700 leading-7">
+							<p>
+								Soziale Netzwerke verarbeiten personenbezogene Daten ihrer
+								Nutzer in umfangreichem Maße. Beim Besuch unserer Profile werden
+								unter anderem Ihre IP-Adresse sowie weitere Informationen zu
+								Ihren verwendeten Geräten verarbeitet, was eine Zuordnung der
+								IP-Adressen zu einzelnen Nutzern ermöglicht. Auf diese
+								Datenverarbeitung können wir keinen Einfluss nehmen. Wir weisen
+								Sie darauf hin, dass Sie unsere Profile auf den sozialen
+								Netzwerken und ihre Funktionen in eigener Verantwortung nutzen.
+								Details zur Datenverarbeitung können Sie der
+								Datenschutzerklärung des Betreibers entnehmen.
+							</p>
+							<p>
+								Wir verfügen über ein Profil bei LinkedIn. Anbieter ist die
+								LinkedIn Ireland Unlimited Company, Wilton Plaza, Wilton Place,
+								Dublin 2, Irland. LinkedIn verwendet Werbecookies.
+							</p>
+							<p>
+								Genaue Informationen über den Umgang mit personenbezogenen Daten
+								finden Sie in der folgenden Datenschutzerklärung von LinkedIn:{" "}
+								<a
+									className="text-primary underline"
+									href="https://www.linkedin.com/legal/privacy-policy"
+									target="_blank"
+									rel="noreferrer"
+								>
+									https://www.linkedin.com/legal/privacy-policy
+								</a>
+								.
+							</p>
+							<p>
+								Zweck unserer Profile auf Social Media-Plattformen ist die
+								Vergrößerung unserer Internetpräsenz und damit einhergehende
+								größere Bekanntheit. Daher ist als Rechtsgrundlage berechtigtes
+								Interesse gem. Art. 6 Abs. 1 lit. f DSGVO heranzuziehen. Weiters
+								ist bezüglich der Verarbeitungstätigkeiten durch die sozialen
+								Netzwerke auf deren eigene Rechtsgrundlagen (z. B. Einwilligung
+								gem. Art. 6 Abs. 1 lit. a DSGVO) zu verweisen, welche Sie der
+								jeweiligen Datenschutzerklärung entnehmen.
+							</p>
+							<p>
+								Grundsätzlich sind wir gemeinsam mit der Social-Media-Plattform
+								für die beim Besuch unseres Profils ausgelösten
+								Datenverarbeitungsvorgänge verantwortlich. Daher können Sie Ihre
+								Betroffenenrechte gem. Art. 15ff DSGVO gegenüber der Social
+								Media-Plattform als auch gegenüber uns geltend machen. Wir
+								weisen jedoch darauf hin, dass wir keinen Einfluss auf die
+								Datenverarbeitung durch die Social Media-Plattform nehmen
+								können.
+							</p>
+						</div>
+					</section>
 				</div>
 			</section>
-		</>
+		</main>
 	);
 }
