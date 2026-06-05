@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-	const baseUrl = "https://ptas.vercel.app";
+	const baseUrl = "https://ptas.de";
 
 	const routes = [
 		"",
@@ -9,6 +9,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		"/kontakt",
 		"/leistungen",
 		"/vorfinanzierung",
+		"/impressum",
+		"/datenschutz",
 	];
 
 	return routes.map((route) => ({
