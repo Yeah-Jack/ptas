@@ -11,6 +11,7 @@ import {
 	ShieldCheck,
 } from "lucide-react";
 import Link from "next/link";
+import { FadeInUp } from "@/components/animations/fade-in-up";
 import CTA from "@/components/cta";
 import { Button } from "@/components/ui/button";
 import {
@@ -59,7 +60,7 @@ const steps = [
 		number: "2",
 		title: "Datenübertragung",
 		description:
-			"Wir übertragen zusätzlich noch Informationen aus den Abrechnungen an die SozialFactoring.",
+			"Wir übertragen zusätzlich Informationen aus den Abrechnungen an SozialFactoring.",
 	},
 	{
 		number: "3",
@@ -80,7 +81,7 @@ export default function VorfinanzierungPage() {
 			{/* Hero Section */}
 			<section className="border-b bg-linear-to-br from-primary/5 via-background to-primary/10 py-16 md:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
-					<div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center md:gap-6">
+					<FadeInUp className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center md:gap-6">
 						<div className="flex items-center gap-2 text-primary">
 							<Banknote className="size-6" />
 							<span className="font-medium text-sm uppercase tracking-wider">
@@ -118,31 +119,33 @@ export default function VorfinanzierungPage() {
 								</Button>
 							</Link>
 						</div>
-					</div>
+					</FadeInUp>
 				</div>
 			</section>
 
 			{/* Benefits Section */}
 			<section className="py-16 md:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
-					<div className="mb-12 text-center">
+					<FadeInUp className="mb-12 text-center">
 						<h2 className="mb-4 font-bold text-2xl md:text-3xl">
 							Schneller Zahlungseingang - Ihre Vorteile
 						</h2>
 						<p className="mx-auto max-w-2xl text-muted-foreground">
 							Wir arbeiten mit der SozialFactoring GmbH zusammen.
 						</p>
-					</div>
+					</FadeInUp>
 
 					<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-						{benefits.map((benefit) => (
-							<Card key={benefit.title}>
-								<CardHeader className="text-center">
-									<benefit.icon className="mx-auto mb-2 size-10 text-primary" />
-									<CardTitle>{benefit.title}</CardTitle>
-									<CardDescription>{benefit.description}</CardDescription>
-								</CardHeader>
-							</Card>
+						{benefits.map((benefit, idx) => (
+							<FadeInUp key={benefit.title} delay={0.1 * idx}>
+								<Card className="h-full">
+									<CardHeader className="text-center">
+										<benefit.icon className="mx-auto mb-2 size-10 text-primary" />
+										<CardTitle>{benefit.title}</CardTitle>
+										<CardDescription>{benefit.description}</CardDescription>
+									</CardHeader>
+								</Card>
+							</FadeInUp>
 						))}
 					</div>
 				</div>
@@ -151,30 +154,30 @@ export default function VorfinanzierungPage() {
 			{/* How it works Section */}
 			<section className="border-y bg-muted/30 py-16 md:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
-					<div className="mb-12 text-center">
+					<FadeInUp className="mb-12 text-center">
 						<h2 className="mb-4 font-bold text-2xl md:text-3xl">
 							Ganz einfach!
 						</h2>
 						<p className="mx-auto max-w-2xl text-muted-foreground">
 							So funktioniert die Vorfinanzierung für Krankenfahrten
 						</p>
-					</div>
+					</FadeInUp>
 
-					<div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
+					<div className="grid items-stretch gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
 						{steps.map((step, index) => (
-							<div key={step.title} className="relative">
-								{index < steps.length - 1 && (
-									<div className="absolute top-8 right-0 hidden h-0.5 w-full translate-x-1/2 bg-border lg:block" />
-								)}
-								<Card className="relative h-full">
-									<CardHeader>
-										<div className="mb-2 flex size-12 items-center justify-center rounded-full bg-primary font-bold text-lg text-primary-foreground">
-											{step.number}
-										</div>
-										<CardTitle>{step.title}</CardTitle>
-										<CardDescription>{step.description}</CardDescription>
-									</CardHeader>
-								</Card>
+							<div key={step.title} className="relative h-full">
+								<div className="absolute top-8 right-0 h-0.5 w-full translate-x-1/2 bg-border lg:block" />
+								<FadeInUp delay={0.1 * index} className="h-full">
+									<Card className="relative h-full">
+										<CardHeader>
+											<div className="mb-2 flex size-12 items-center justify-center rounded-full bg-primary font-bold text-lg text-primary-foreground">
+												{step.number}
+											</div>
+											<CardTitle>{step.title}</CardTitle>
+											<CardDescription>{step.description}</CardDescription>
+										</CardHeader>
+									</Card>
+								</FadeInUp>
 							</div>
 						))}
 					</div>
@@ -185,7 +188,7 @@ export default function VorfinanzierungPage() {
 			<section className="py-12 md:py-16 lg:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
 					<div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-						<div>
+						<FadeInUp>
 							<div className="mb-4 flex items-center gap-2 text-primary">
 								<Eye className="size-5" />
 								<span className="font-medium text-sm uppercase tracking-wider">
@@ -205,7 +208,7 @@ export default function VorfinanzierungPage() {
 									Geldeingänge von den Kassen.
 								</p>
 							</div>
-						</div>
+						</FadeInUp>
 						<Card className="bg-primary/5">
 							<CardContent className="py-6">
 								<ul className="space-y-4">

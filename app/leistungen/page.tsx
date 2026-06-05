@@ -266,7 +266,7 @@ export default function LeistungenPage() {
 
 			{/* Contact CTA */}
 			<section className="border-y bg-muted/30 py-8 md:py-12">
-				<div className="container mx-auto max-w-4xl px-4 text-center">
+				<FadeInUp className="container mx-auto max-w-4xl px-4 text-center">
 					<div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-3">
 						<Headphones className="size-8 text-primary" />
 						<p className="text-base md:text-lg">
@@ -280,13 +280,13 @@ export default function LeistungenPage() {
 							</Button>
 						</Link>
 					</div>
-				</div>
+				</FadeInUp>
 			</section>
 
 			{/* Packages Section */}
 			<section className="py-16 md:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
-					<div className="mb-12 text-center">
+					<FadeInUp className="mb-12 text-center">
 						<h2 className="mb-4 font-bold text-2xl md:text-3xl">
 							Unsere Leistungs-Pakete
 						</h2>
@@ -294,73 +294,80 @@ export default function LeistungenPage() {
 							Wählen Sie Ihr passendes Angebot. Eines unserer Leistungs-Pakete
 							ist sicher das Richtige für Ihren Betrieb!
 						</p>
-					</div>
+					</FadeInUp>
 
 					<div className="mx-auto grid max-w-4xl gap-6 md:gap-8 lg:grid-cols-2">
 						{/* Abrechnung Package */}
-						<Card className="flex flex-col">
-							<CardHeader>
-								<CardTitle className="text-2xl">Abrechnung</CardTitle>
-								<CardDescription className="text-base">
-									Sie erhalten schnell ein Angebot von uns!
-								</CardDescription>
-							</CardHeader>
-							<CardContent className="flex-1">
-								<ul className="space-y-3">
-									{abrechnungFeatures.map((feature) => (
-										<li key={feature} className="flex items-start gap-3">
-											<CheckCircle className="mt-0.5 size-5 shrink-0 text-primary" />
-											<span>{feature}</span>
-										</li>
-									))}
-								</ul>
-							</CardContent>
-							<CardFooter>
-								<Link href="/abrechnung" className="w-full">
-									<Button variant="outline" className="w-full gap-2">
-										Mehr erfahren
-										<ArrowRight className="size-4" />
-									</Button>
-								</Link>
-							</CardFooter>
-						</Card>
+						<FadeInUp className="flex flex-col">
+							<Card className="flex h-full flex-col">
+								<CardHeader>
+									<CardTitle className="text-2xl">Abrechnung</CardTitle>
+									<CardDescription className="text-base">
+										Sie erhalten schnell ein Angebot von uns!
+									</CardDescription>
+								</CardHeader>
+								<CardContent className="flex-1">
+									<ul className="space-y-3">
+										{abrechnungFeatures.map((feature) => (
+											<li key={feature} className="flex items-start gap-3">
+												<CheckCircle className="mt-0.5 size-5 shrink-0 text-primary" />
+												<span>{feature}</span>
+											</li>
+										))}
+									</ul>
+								</CardContent>
+								<CardFooter>
+									<Link href="/abrechnung" className="w-full">
+										<Button variant="outline" className="w-full gap-2">
+											Mehr erfahren
+											<ArrowRight className="size-4" />
+										</Button>
+									</Link>
+								</CardFooter>
+							</Card>
+						</FadeInUp>
 
 						{/* Abrechnung mit Vorfinanzierung Package */}
-						<Card className="relative flex flex-col overflow-hidden border-primary/30 bg-primary/5">
-							<div className="absolute top-0 right-0 rounded-bl-lg bg-primary px-3 py-1 font-medium text-primary-foreground text-xs">
-								Top-Kombination!
-							</div>
-							<CardHeader className="pt-8">
-								<CardTitle className="text-2xl">
-									Abrechnung mit Vorfinanzierung
-								</CardTitle>
-								<CardDescription className="text-base">
-									Testen Sie uns!
-								</CardDescription>
-							</CardHeader>
-							<CardContent className="flex-1">
-								<ul className="space-y-3">
-									{vorfinanzierungFeatures.map((feature) => (
-										<li key={feature} className="flex items-start gap-3">
-											<CheckCircle className="mt-0.5 size-5 shrink-0 text-primary" />
-											<span>{feature}</span>
-										</li>
-									))}
-								</ul>
-							</CardContent>
-							<CardFooter>
-								<Link href="/vorfinanzierung" className="w-full">
-									<Button className="w-full gap-2">
-										Mehr erfahren
-										<ArrowRight className="size-4" />
-									</Button>
-								</Link>
-							</CardFooter>
-						</Card>
+						<FadeInUp delay={0.2} className="flex flex-col">
+							<Card className="relative flex h-full flex-col overflow-hidden border-primary/30 bg-primary/5">
+								<div className="absolute top-0 right-0 rounded-bl-lg bg-primary px-3 py-1 font-medium text-primary-foreground text-xs">
+									Top-Kombination!
+								</div>
+								<CardHeader className="pt-8">
+									<CardTitle className="text-2xl">
+										Abrechnung mit Vorfinanzierung
+									</CardTitle>
+									<CardDescription className="text-base">
+										Testen Sie uns!
+									</CardDescription>
+								</CardHeader>
+								<CardContent className="flex-1">
+									<ul className="space-y-3">
+										{vorfinanzierungFeatures.map((feature) => (
+											<li key={feature} className="flex items-start gap-3">
+												<CheckCircle className="mt-0.5 size-5 shrink-0 text-primary" />
+												<span>{feature}</span>
+											</li>
+										))}
+									</ul>
+								</CardContent>
+								<CardFooter>
+									<Link href="/vorfinanzierung" className="w-full">
+										<Button className="w-full gap-2">
+											Mehr erfahren
+											<ArrowRight className="size-4" />
+										</Button>
+									</Link>
+								</CardFooter>
+							</Card>
+						</FadeInUp>
 					</div>
 
 					{/* Legal Notice */}
-					<div className="mx-auto mt-12 max-w-3xl rounded-lg border bg-muted/30 p-6 text-center text-muted-foreground text-sm">
+					<FadeInUp
+						delay={0.3}
+						className="mx-auto mt-12 max-w-3xl rounded-lg border bg-muted/30 p-6 text-center text-muted-foreground text-sm"
+					>
 						<p>
 							Unsere Angebote richten sich nur an Unternehmer (§14 BGB), also an
 							natürliche oder juristische Personen oder rechtsfähige
@@ -369,7 +376,7 @@ export default function LeistungenPage() {
 							Tätigkeit handeln. Wir schließen keine Verträge mit Verbrauchern
 							(§13 BGB).
 						</p>
-					</div>
+					</FadeInUp>
 				</div>
 			</section>
 

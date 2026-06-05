@@ -358,25 +358,25 @@ export default function Home() {
 
 			{/* Testimonial Section */}
 			<section className="py-8 sm:py-16 lg:py-24">
-				<div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-11 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
+				<FadeInUp className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-11 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
 					<h2 className="font-semibold text-2xl sm:text-3xl lg:text-4xl">
 						Mehr als 100 Unternehmen nutzen PTAS für ihre Abrechnung.
 					</h2>
 					<Testimonial />
-				</div>
+				</FadeInUp>
 			</section>
 
 			{/* Services Section */}
 			<section className="py-16 md:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
-					<div className="mb-12 text-center">
+					<FadeInUp className="mb-12 text-center">
 						<h2 className="mb-4 font-bold text-2xl md:text-3xl">
 							Die passende Lösung
 						</h2>
 						<p className="mx-auto max-w-2xl text-lg text-muted-foreground">
 							Schnelle, unkomplizierte und verlässliche Abrechnung von:
 						</p>
-					</div>
+					</FadeInUp>
 					<FadeInUp className="mx-auto max-w-3xl">
 						<Tabs defaultValue="fahrten" className="w-full">
 							<TabsList className="mb-6 grid w-full grid-cols-3 bg-primary/5">
@@ -447,13 +447,13 @@ export default function Home() {
 						</Tabs>
 					</FadeInUp>
 					<FadeInUp delay={0.2} className="mt-12 text-center">
-						<Card className="mx-auto inline-block border-primary/20 bg-linear-to-br from-primary/10 to-transparent shadow-sm">
+						<Card className="mx-auto inline-block border-primary/20 shadow-sm">
 							<CardContent className="px-6 py-8 md:px-12">
 								<p className="mb-4 font-semibold text-foreground text-lg md:text-xl">
 									Wir sind Ihr spezialisierter Partner für die Abrechnung von
 									Krankenfahrten mit allen Kostenträgern!
 								</p>
-								<p className="md:font-extralight md:text-lg">
+								<p className="md:text-lg">
 									Ob Krankenfahrten mit dem Taxi, Mietwagen, KTW oder BTW.
 								</p>
 							</CardContent>
