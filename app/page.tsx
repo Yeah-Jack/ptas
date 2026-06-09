@@ -218,9 +218,7 @@ export default function Home() {
 								width={180}
 								height={50}
 								className={`w-auto object-contain transition-transform hover:scale-105 ${
-									partner.name === "Sozialfactoring" || partner.name === "GVN Fördermitglied"
-										? "h-12 md:h-14"
-										: "h-8 md:h-10"
+									partner.name === "Sozialfactoring" ? "h-12 md:h-14" : "h-8 md:h-10"
 								} ${partner.name === "1159 Finance" ? "invert dark:invert-0" : "dark:brightness-0 dark:invert"}`}
 							/>
 						))}
