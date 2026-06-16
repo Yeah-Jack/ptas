@@ -14,38 +14,48 @@ import {
 	ShieldCheck,
 	Users,
 	Zap,
-} from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-import {FadeInUp} from "@/components/animations/fade-in-up"
-import CTA from "@/components/cta"
-import Testimonial from "@/components/testimonial"
-import {Button} from "@/components/ui/button"
-import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card"
-import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs"
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { FadeInUp } from "@/components/animations/fade-in-up";
+import CTA from "@/components/cta";
+import Testimonial from "@/components/testimonial";
+import { Button } from "@/components/ui/button";
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const benefits = [
 	{
 		icon: Clock,
 		title: "Zeitersparnis",
-		description: "Konzentrieren Sie sich auf Ihr Kerngeschäft - wir übernehmen die Abrechnung.",
+		description:
+			"Konzentrieren Sie sich auf Ihr Kerngeschäft - wir übernehmen die Abrechnung.",
 	},
 	{
 		icon: HandCoins,
 		title: "Kostenersparnis",
-		description: "Reduzieren Sie Personal- und Verwaltungskosten durch unsere effiziente Abwicklung.",
+		description:
+			"Reduzieren Sie Personal- und Verwaltungskosten durch unsere effiziente Abwicklung.",
 	},
 	{
 		icon: Zap,
 		title: "Schnelle Auszahlung",
-		description: "Verbessern Sie Ihre Liquidität durch individuelle Zahlungsziele.",
+		description:
+			"Verbessern Sie Ihre Liquidität durch individuelle Zahlungsziele.",
 	},
 	{
 		icon: ShieldCheck,
 		title: "Zuverlässig & Sicher",
-		description: "Profitieren Sie von unserer jahrelangen Erfahrung und eigener Software-Entwicklung.",
+		description:
+			"Profitieren Sie von unserer jahrelangen Erfahrung und eigener Software-Entwicklung.",
 	},
-] as const
+] as const;
 
 const promises = [
 	{
@@ -68,7 +78,7 @@ const promises = [
 		content: "Persönlicher Service",
 		hover: "Wir bieten individuelle Betreuung und Unterstützung.",
 	},
-]
+];
 
 const services = [
 	"Krankenfahrten zur ambulanten Behandlung (Arztbesuche)",
@@ -78,7 +88,7 @@ const services = [
 	"Fahrten zur Chemo- und Strahlentherapie (Serienfahrten)",
 	"Sammelfahrten",
 	"Behinderten- und Schülertransporte",
-] as const
+] as const;
 
 const vehicles = [
 	"Taxis und Mietwagen",
@@ -87,7 +97,7 @@ const vehicles = [
 	"Spezialfahrzeuge (Liegendtransporte)",
 	"Tragestuhltransporte",
 	"Rollstuhlfahrzeuge",
-] as const
+] as const;
 
 const serviceFeatures = [
 	"Prüfung aller Verordnungen",
@@ -96,22 +106,22 @@ const serviceFeatures = [
 	"Kostenlose Software-Nutzung",
 	"Optionale Vorfinanzierung",
 	"Persönlicher Ansprechpartner",
-] as const
+] as const;
 
 const partners = [
-	{name: "1159 Finance", logo: "/1159-Finance.svg"},
-	{name: "Sozialfactoring", logo: "/Sozial-Factoring.svg"},
+	{ name: "1159 Finance", logo: "/1159-Finance.svg" },
+	{ name: "Sozialfactoring", logo: "/Sozial-Factoring.svg" },
 	// { name: "Bridgetec", icon: Handshake },
 	// { name: "GVN Fördermitglied", logo: "/GVN.png" },
 	// { name: "Bayern-Deal (T&M)", icon: BadgeCheck },
 	// { name: "VSPV Mitglied", icon: BadgeCheck },
-] as const
+] as const;
 
 const genossenschaftenFeatures = [
 	"Transparente Umlagen & Gebührenberechnung",
 	"Sichere Mitgliedsbeitrag-Verwaltung",
 	"Zentrale Online-Einsicht für jeden Unternehmer",
-] as const
+] as const;
 
 const workflowSteps = [
 	{
@@ -122,24 +132,27 @@ const workflowSteps = [
 	{
 		icon: Network,
 		title: "2. Automatische Zuordnung",
-		description: "Fahrt wird automatisch dem ausführenden Unternehmer zugeordnet.",
+		description:
+			"Fahrt wird automatisch dem ausführenden Unternehmer zugeordnet.",
 	},
 	{
 		icon: Calculator,
 		title: "3. Gebührenberechnung",
-		description: "Umlagen, Mitgliedsbeiträge und Vermittlungsgebühren werden regelbasiert ermittelt.",
+		description:
+			"Umlagen, Mitgliedsbeiträge und Vermittlungsgebühren werden regelbasiert ermittelt.",
 	},
 	{
 		icon: Receipt,
 		title: "4. Abrechnungserstellung",
-		description: "Transparente, periodische Erstellung der Unternehmerabrechnung.",
+		description:
+			"Transparente, periodische Erstellung der Unternehmerabrechnung.",
 	},
 	{
 		icon: Laptop,
 		title: "5. Portal-Zugang",
 		description: "24/7 Online-Einsicht für Unternehmer und Zentrale.",
 	},
-] as const
+] as const;
 
 export default function Home() {
 	return (
@@ -156,7 +169,9 @@ export default function Home() {
 							<ShieldCheck className="mr-2 size-4" />
 							<span className="font-semibold">Der Top Abrechnungsservice</span>
 							<span className="mx-2 hidden h-4 w-px bg-primary/20 md:block" />
-							<span className="hidden text-muted-foreground md:block">für Taxi- & Krankentransporte</span>
+							<span className="hidden text-muted-foreground md:block">
+								für Taxi- & Krankentransporte
+							</span>
 						</div>
 
 						{/* Headline */}
@@ -169,8 +184,9 @@ export default function Home() {
 
 						{/* Subheadline */}
 						<p className="max-w-2xl text-lg text-muted-foreground leading-relaxed md:text-xl">
-							Die bequeme, schnelle und sichere Abrechnung von Krankenfahrten. Konzentrieren Sie sich auf Ihr
-							Kerngeschäft - wir kümmern uns um den Rest.
+							Die bequeme, schnelle und sichere Abrechnung von Krankenfahrten.
+							Konzentrieren Sie sich auf Ihr Kerngeschäft - wir kümmern uns um
+							den Rest.
 						</p>
 
 						{/* CTA & Social Proof */}
@@ -178,7 +194,8 @@ export default function Home() {
 							<Link href="/kontakt" className="w-full sm:w-auto">
 								<Button
 									size="lg"
-									className="h-14 w-full px-8 font-semibold text-base shadow-lg transition-all hover:scale-105">
+									className="h-14 w-full px-8 font-semibold text-base shadow-lg transition-all hover:scale-105"
+								>
 									Jetzt unverbindlich anfragen
 									<ArrowRight className="ml-2 size-5" />
 								</Button>
@@ -189,14 +206,22 @@ export default function Home() {
 						<div className="mt-2 flex flex-col items-center gap-2">
 							<div className="flex items-center gap-1 text-yellow-400">
 								{[1, 2, 3, 4, 5].map((starId) => (
-									<svg key={`star-${starId}`} aria-hidden="true" className="size-5 fill-current" viewBox="0 0 24 24">
+									<svg
+										key={`star-${starId}`}
+										aria-hidden="true"
+										className="size-5 fill-current"
+										viewBox="0 0 24 24"
+									>
 										<path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
 									</svg>
 								))}
 							</div>
 							<p className="font-medium text-muted-foreground text-sm">
-								Vertraut von <strong className="font-semibold text-foreground">hunderten</strong> Unternehmen
-								deutschlandweit
+								Vertraut von{" "}
+								<strong className="font-semibold text-foreground">
+									hunderten
+								</strong>{" "}
+								Unternehmen deutschlandweit
 							</p>
 						</div>
 					</FadeInUp>
@@ -205,7 +230,10 @@ export default function Home() {
 
 			{/* Partners / Social Proof Section */}
 			<section className="relative z-10 bg-background pt-8 pb-16 md:pb-24">
-				<FadeInUp delay={0.2} className="container mx-auto max-w-6xl px-4 text-center">
+				<FadeInUp
+					delay={0.2}
+					className="container mx-auto max-w-6xl px-4 text-center"
+				>
 					<p className="mb-8 hidden font-medium text-muted-foreground text-sm uppercase tracking-widest md:block">
 						Offizielle Partner & Schnittstellen
 					</p>
@@ -218,7 +246,9 @@ export default function Home() {
 								width={180}
 								height={50}
 								className={`w-auto object-contain transition-transform hover:scale-105 ${
-									partner.name === "Sozialfactoring" ? "h-12 md:h-14" : "h-8 md:h-10"
+									partner.name === "Sozialfactoring"
+										? "h-12 md:h-14"
+										: "h-8 md:h-10"
 								} ${partner.name === "1159 Finance" ? "invert dark:invert-0" : "dark:brightness-0 dark:invert"}`}
 							/>
 						))}
@@ -249,13 +279,18 @@ export default function Home() {
 									{promises.map((promise, _idx) => (
 										<Card
 											key={promise.content}
-											className="border-primary/10 bg-background shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+											className="border-primary/10 bg-background shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+										>
 											<CardContent className="flex flex-col items-center gap-3 p-5 text-center md:p-6">
 												<div className="rounded-full bg-primary/10 p-3 ring-1 ring-primary/20">
 													<promise.icon className="size-6 text-primary" />
 												</div>
-												<h3 className="font-semibold text-sm md:text-base">{promise.content}</h3>
-												<p className="text-muted-foreground text-xs leading-relaxed">{promise.hover}</p>
+												<h3 className="font-semibold text-sm md:text-base">
+													{promise.content}
+												</h3>
+												<p className="text-muted-foreground text-xs leading-relaxed">
+													{promise.hover}
+												</p>
 											</CardContent>
 										</Card>
 									))}
@@ -271,27 +306,33 @@ export default function Home() {
 				<div className="container mx-auto max-w-6xl px-4">
 					<div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
 						<FadeInUp>
-							<h2 className="mb-4 font-bold text-2xl md:text-3xl">Abrechnung von Krankenfahrten</h2>
-							<p className="mb-6 font-medium text-lg text-primary">Unsere Erfahrung - Ihr Vorteil</p>
+							<h2 className="mb-4 font-bold text-2xl md:text-3xl">
+								Abrechnung von Krankenfahrten
+							</h2>
+							<p className="mb-6 font-medium text-lg text-primary">
+								Unsere Erfahrung - Ihr Vorteil
+							</p>
 							<div className="space-y-4 text-muted-foreground">
 								<p>
-									Sie haben viel zu tun, wenig Zeit und keine Lust, sich mit der Abrechnung von Krankenfahrten zu
-									befassen?
+									Sie haben viel zu tun, wenig Zeit und keine Lust, sich mit der
+									Abrechnung von Krankenfahrten zu befassen?
 								</p>
 								<p className="font-medium text-foreground">
-									Unser Service ist die Lösung. Das Kerngeschäft ist das Wichtigste!
+									Unser Service ist die Lösung. Das Kerngeschäft ist das
+									Wichtigste!
 								</p>
 								<p>
-									Dank unserer eigenen Software-Entwicklung und jahrelanger Erfahrung begleiten wir Sie bei allen Themen
-									rund um Ihre Abrechnung.
+									Dank unserer eigenen Software-Entwicklung und jahrelanger
+									Erfahrung begleiten wir Sie bei allen Themen rund um Ihre
+									Abrechnung.
 								</p>
 								<p>
-									Wir ersparen Ihnen Personal- und Verwaltungskosten durch schnelle und unkomplizierte Abwicklung Ihrer
-									Krankenfahrten.
+									Wir ersparen Ihnen Personal- und Verwaltungskosten durch
+									schnelle und unkomplizierte Abwicklung Ihrer Krankenfahrten.
 								</p>
 								<p>
-									Verbessern Sie Ihre Liquidität durch individuelle Zahlungsziele und warten Sie nicht wochenlang auf
-									ihr Geld.
+									Verbessern Sie Ihre Liquidität durch individuelle
+									Zahlungsziele und warten Sie nicht wochenlang auf ihr Geld.
 								</p>
 							</div>
 						</FadeInUp>
@@ -328,7 +369,9 @@ export default function Home() {
 			<section className="py-16 md:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
 					<FadeInUp className="mb-12 text-center">
-						<h2 className="mb-4 font-bold text-2xl md:text-3xl">Die passende Lösung</h2>
+						<h2 className="mb-4 font-bold text-2xl md:text-3xl">
+							Die passende Lösung
+						</h2>
 						<p className="mx-auto max-w-2xl text-lg text-muted-foreground">
 							Schnelle, unkomplizierte und verlässliche Abrechnung von:
 						</p>
@@ -348,7 +391,8 @@ export default function Home() {
 											{services.map((service) => (
 												<li
 													key={service}
-													className="group flex items-start gap-3 rounded-lg p-2 transition-colors hover:bg-primary/5">
+													className="group flex items-start gap-3 rounded-lg p-2 transition-colors hover:bg-primary/5"
+												>
 													<CheckCircle className="mt-0.5 size-5 shrink-0 text-primary transition-transform group-hover:scale-110 group-hover:text-primary/80" />
 													<span className="font-medium text-sm transition-colors group-hover:text-primary">
 														{service}
@@ -367,9 +411,12 @@ export default function Home() {
 											{vehicles.map((item) => (
 												<li
 													key={item}
-													className="group flex items-start gap-3 rounded-lg p-2 transition-colors hover:bg-primary/5">
+													className="group flex items-start gap-3 rounded-lg p-2 transition-colors hover:bg-primary/5"
+												>
 													<CheckCircle className="mt-0.5 size-5 shrink-0 text-primary transition-transform group-hover:scale-110 group-hover:text-primary/80" />
-													<span className="font-medium text-sm transition-colors group-hover:text-primary">{item}</span>
+													<span className="font-medium text-sm transition-colors group-hover:text-primary">
+														{item}
+													</span>
 												</li>
 											))}
 										</ul>
@@ -384,9 +431,12 @@ export default function Home() {
 											{serviceFeatures.map((item) => (
 												<li
 													key={item}
-													className="group flex items-start gap-3 rounded-lg p-2 transition-colors hover:bg-primary/5">
+													className="group flex items-start gap-3 rounded-lg p-2 transition-colors hover:bg-primary/5"
+												>
 													<CheckCircle className="mt-0.5 size-5 shrink-0 text-primary transition-transform group-hover:scale-110 group-hover:text-primary/80" />
-													<span className="font-medium text-sm transition-colors group-hover:text-primary">{item}</span>
+													<span className="font-medium text-sm transition-colors group-hover:text-primary">
+														{item}
+													</span>
 												</li>
 											))}
 										</ul>
@@ -399,9 +449,12 @@ export default function Home() {
 						<Card className="mx-auto inline-block border-primary/20 shadow-sm">
 							<CardContent className="px-6 py-8 md:px-12">
 								<p className="mb-4 font-semibold text-foreground text-lg md:text-xl">
-									Wir sind Ihr spezialisierter Partner für die Abrechnung von Krankenfahrten mit allen Kostenträgern!
+									Wir sind Ihr spezialisierter Partner für die Abrechnung von
+									Krankenfahrten mit allen Kostenträgern!
 								</p>
-								<p className="md:text-lg">Ob Krankenfahrten mit dem Taxi, Mietwagen, KTW oder BTW.</p>
+								<p className="md:text-lg">
+									Ob Krankenfahrten mit dem Taxi, Mietwagen, KTW oder BTW.
+								</p>
 							</CardContent>
 						</Card>
 					</FadeInUp>
@@ -416,14 +469,17 @@ export default function Home() {
 						<FadeInUp>
 							<div className="mb-4 flex items-center gap-2 text-primary">
 								<Building className="size-5" />
-								<span className="w-fit font-medium text-sm uppercase tracking-widest">Für Genossenschaften</span>
+								<span className="w-fit font-medium text-sm uppercase tracking-widest">
+									Für Genossenschaften
+								</span>
 							</div>
 							<h2 className="mb-4 font-bold text-2xl md:text-3xl lg:text-4xl">
 								Unternehmerabrechnung für Taxigenossenschaften und Funkzentralen
 							</h2>
 							<p className="mb-6 text-lg text-muted-foreground">
-								Wir übernehmen die komplette und komplexe Abrechnung zwischen Funkzentrale und Unternehmern.
-								Verabschieden Sie sich von unübersichtlichen Tabellen und manuellen Prozessen.
+								Wir übernehmen die komplette und komplexe Abrechnung zwischen
+								Funkzentrale und Unternehmern. Verabschieden Sie sich von
+								unübersichtlichen Tabellen und manuellen Prozessen.
 							</p>
 							<ul className="mb-8 space-y-3">
 								{genossenschaftenFeatures.map((feature) => (
@@ -441,7 +497,10 @@ export default function Home() {
 										<Building2 className="size-6 text-primary" />
 										So funktioniert es
 									</CardTitle>
-									<CardDescription>Unser 5-Schritte-Workflow für eine effiziente Unternehmerabrechnung</CardDescription>
+									<CardDescription>
+										Unser 5-Schritte-Workflow für eine effiziente
+										Unternehmerabrechnung
+									</CardDescription>
 								</CardHeader>
 								<CardContent className="pt-6">
 									<div className="space-y-6">
@@ -452,7 +511,9 @@ export default function Home() {
 												</div>
 												<div>
 													<h4 className="font-semibold">{step.title}</h4>
-													<p className="text-muted-foreground text-sm">{step.description}</p>
+													<p className="text-muted-foreground text-sm">
+														{step.description}
+													</p>
 												</div>
 											</div>
 										))}
@@ -466,5 +527,5 @@ export default function Home() {
 
 			<CTA />
 		</div>
-	)
+	);
 }
