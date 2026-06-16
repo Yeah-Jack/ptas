@@ -112,7 +112,7 @@ const partners = [
 	{ name: "1159 Finance", logo: "/1159-Finance.svg" },
 	{ name: "Sozialfactoring", logo: "/Sozial-Factoring.svg" },
 	// { name: "Bridgetec", icon: Handshake },
-	// { name: "GVN Fördermitglied", logo: "/GVN.png" },
+	{ name: "GVN Fördermitglied", logo: "/GVN.png" },
 	// { name: "Bayern-Deal (T&M)", icon: BadgeCheck },
 	// { name: "VSPV Mitglied", icon: BadgeCheck },
 ] as const;
@@ -246,7 +246,8 @@ export default function Home() {
 								width={180}
 								height={50}
 								className={`w-auto object-contain transition-transform hover:scale-105 ${
-									partner.name === "Sozialfactoring"
+									partner.name === "Sozialfactoring" ||
+									partner.name === "GVN Fördermitglied"
 										? "h-12 md:h-14"
 										: "h-8 md:h-10"
 								} ${partner.name === "1159 Finance" ? "invert dark:invert-0" : "dark:brightness-0 dark:invert"}`}
