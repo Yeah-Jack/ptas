@@ -25,13 +25,55 @@ const testimonials: TestimonialItem[] = [
 		content:
 			"Wir möchten die hervorragende Zusammenarbeit mit der Firma PTAS ausdrücklich empfehlen. Durch ihre Zuverlässigkeit, ihre Innovationskraft und ihr professionelles Vorgehen im Personentransport-Abrechnungsservice haben sie unsere Abrechnungen maßgeblich vorangebracht. Wir sind überzeugt, dass die Firma PTAS auch in der Zukunft ein wertvoller Partner für jedes Unternehmen sein wird. Wir als Taxigenossenschaft fühlen uns auf ganzer Linie in unseren Belangen bestens unterstützt!",
 	},
-	// {
-	// 	name: "Garrett Lewis",
-	// 	company: "Taxi 24",
-	// 	avatar: "https://randomuser.me/api/portraits/men/27.jpg",
-	// 	content:
-	// 		"Mit PTAS kann ich meine Abrechnungen ganz einfach im Blick behalten und in Echtzeit sehen, wie sie sich entwickeln.",
-	// },
+	{
+		name: "",
+		company: "Taxi Landskron",
+		avatar: "",
+		content:
+			"Ich mache schon seit einiger Zeit meine Krankentransport Abrechnungen mit der Fa. Daniel Software GmbH und muss sagen, dass ich von dieser Dienstleistung mehr wie begeistert bin.\n Ein Top Team, alle super nett und zuverlässig, dazu auch natürlich mega professionell.\n\n Transportscheine werden sorgfältig, ordentlich und zu meiner vollsten Zufriedenheit bearbeitet.\n Besser kann's nicht einmal Chuck Norris.\n Liebe Grüße gehen raus an Herrn Daniel und Herrn Bartels.",
+	},
+	{
+		name: "Rayan A.",
+		company: "",
+		avatar: "",
+		content:
+			"Ich arbeite seit über einem Jahr mit der Daniel Software GmbH zusammen und bin absolut begeistert. Es gab nie ein Problem; das Team ist stets freundlich und hilfsbereit. Die Kommunikation läuft reibungslos, und ich fühle mich immer gut betreut. Alles in allem kann ich diese Firma uneingeschränkt weiterempfehlen!.",
+	},
+	{
+		name: "Ina M.",
+		company: "",
+		avatar: "",
+		content:
+			"Wir sind jetzt seit fast einem 3/4 Jahr dabei und ich kann nur sagen, dass ich sehr froh bin bei Daniel Software gelandet zu sein.\n Die Mitarbeiter haben immer ein offenes Ohr und kümmern sich sofort um meine Anliegen. Daumen hoch.",
+	},
+	{
+		name: "Annette B.",
+		company: "Bergischer Fahrten Service",
+		avatar: "",
+		content:
+			"Seit dem ersten Kontakt vor 5 Monaten und der darauf folgenden Zusammenarbeit, wissen wir die Zusammenarbeit sehr zu schätzen. Schnelligkeit, Erreichbarkeit und Freundlichkeit sind die herausstechenden Punkte im Kontext mit der Dienstleistung. Gerne weiter so.",
+	},
+	{
+		name: "Ali M.",
+		company: "Taxi & Mietwagen Güvercin",
+		avatar: "",
+		content:
+			"Ein super organisiertes Team! Wir arbeiten jetzt seit ein paar Monaten mit der Abrechnungsfirma zusammen und hatten bisher echt keine Probleme!!",
+	},
+	{
+		name: "Martin M.",
+		company: "",
+		avatar: "",
+		content:
+			"Ich rechne seit ca 2 Jahren über Daniel Software ab. Bisher wurde alles schnell und korrekt abgerechnet. Toll!",
+	},
+	{
+		name: "Foued B.",
+		company: "",
+		avatar: "",
+		content:
+			"Ich bin sehr zufrieden mit dem Abrechnungsservice. Wenige Kürzungen und immer jemand den man erreicht.",
+	},
 ] as const;
 
 export default function Testimonial() {
@@ -50,7 +92,7 @@ export default function Testimonial() {
 			<div className="relative px-8 sm:px-12">
 				<CarouselContent className="sm:-ml-6">
 					{testimonials.map((testimonial) => (
-						<CarouselItem key={testimonial.company} className="sm:pl-6">
+						<CarouselItem key={testimonial.content} className="sm:pl-6">
 							<div className="flex flex-col gap-10">
 								<div className="space-y-2">
 									<p className="h-14 text-8xl">&ldquo;</p>
