@@ -15,6 +15,7 @@ import {
 	Users,
 	Zap,
 } from "lucide-react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FadeInUp } from "@/components/animations/fade-in-up";
@@ -29,6 +30,18 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+export const metadata: Metadata = {
+	title: "PTAS - Personentransport-Abrechnungsservice",
+	description:
+		"Professionelle Abrechnung für Kranken-, Rollstuhl- und Tragestuhltransporte. Konzentrieren Sie sich auf Ihr Geschäft, wir übernehmen die Abrechnung.",
+	openGraph: {
+		title: "PTAS - Personentransport-Abrechnungsservice",
+		description:
+			"Professionelle Abrechnung für Kranken-, Rollstuhl- und Tragestuhltransporte. Konzentrieren Sie sich auf Ihr Geschäft, wir übernehmen die Abrechnung.",
+		url: "https://ptas.de",
+	},
+};
 
 const benefits = [
 	{
