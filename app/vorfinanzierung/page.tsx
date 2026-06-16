@@ -10,6 +10,7 @@ import {
 	Send,
 	ShieldCheck,
 } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { FadeInUp } from "@/components/animations/fade-in-up";
 import CTA from "@/components/cta";
@@ -21,6 +22,18 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+
+export const metadata: Metadata = {
+	title: "Vorfinanzierung für Krankenfahrten | PTAS",
+	description:
+		"Schnellere Auszahlung für Ihre Krankenfahrten. Sichern Sie Ihre Liquidität und erhalten Sie Zahlungen schneller als die regulären 6 Wochen mit unserer Vorfinanzierung.",
+	openGraph: {
+		title: "Vorfinanzierung für Krankenfahrten | PTAS",
+		description:
+			"Schnellere Auszahlung für Ihre Krankenfahrten. Sichern Sie Ihre Liquidität und erhalten Sie Zahlungen schneller als die regulären 6 Wochen mit unserer Vorfinanzierung.",
+		url: "https://ptas.de/vorfinanzierung",
+	},
+};
 
 const benefits = [
 	{

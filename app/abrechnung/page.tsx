@@ -11,6 +11,7 @@ import {
 	Send,
 	Users,
 } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { FadeInUp } from "@/components/animations/fade-in-up";
 import CTA from "@/components/cta";
@@ -22,6 +23,18 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+
+export const metadata: Metadata = {
+	title: "Abrechnung von Krankentransporten - leicht gemacht | PTAS",
+	description:
+		"PTAS übernimmt die komplette Abrechnung Ihrer Krankentransporte. Von der Kommunikation mit den Krankenkassen bis zur Rückläufer-Bearbeitung. So haben Sie den Kopf frei für Ihr Kerngeschäft!",
+	openGraph: {
+		title: "Abrechnung von Krankentransporten - leicht gemacht | PTAS",
+		description:
+			"PTAS übernimmt die komplette Abrechnung Ihrer Krankentransporte. Von der Kommunikation mit den Krankenkassen bis zur Rückläufer-Bearbeitung. So haben Sie den Kopf frei für Ihr Kerngeschäft!",
+		url: "https://ptas.de/abrechnung",
+	},
+};
 
 const accomplishments = [
 	{
