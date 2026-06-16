@@ -45,6 +45,10 @@ export default function RootLayout({
 		>
 			<head>
 				<Script
+					strategy="beforeInteractive"
+					src="https://cloud.ccm19.de/app.js?apiKey=295cd4d0334f21415c578a0a1683af21ebe840cccf666d7f&amp;domain=6a3151492f75bfecf00d9be2"
+				/>
+				<Script
 					strategy="afterInteractive"
 					src="https://www.googletagmanager.com/gtag/js?id=AW-10795425279"
 				/>
