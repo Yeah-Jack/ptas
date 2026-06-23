@@ -14,9 +14,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-	title: "PTAS - Personentransport-Abrechnungsservice",
+	metadataBase: new URL("https://ptas.de"),
+	title: {
+		default: "PTAS - Personentransport-Abrechnungsservice",
+		template: "%s | PTAS",
+	},
 	description:
-		"Günstige Abrechnung von Krankenfahrt-Belegen mit allen Kostenträgern. Schnell, zuverlässig und sicher.",
+		"Professionelle Abrechnung für Kranken-, Rollstuhl- und Tragestuhltransporte. Konzentrieren Sie sich auf Ihr Geschäft, wir übernehmen die Abrechnung.",
+	openGraph: {
+		title: "PTAS - Personentransport-Abrechnungsservice",
+		description:
+			"Professionelle Abrechnung für Kranken-, Rollstuhl- und Tragestuhltransporte. Konzentrieren Sie sich auf Ihr Geschäft, wir übernehmen die Abrechnung.",
+		url: "https://ptas.de",
+		siteName: "PTAS",
+		images: [{ url: "https://ptas.de/icon.svg" }],
+		locale: "de_DE",
+	},
 };
 
 export default function RootLayout({
@@ -31,6 +44,10 @@ export default function RootLayout({
 			className={cn("h-full antialiased", inter.variable)}
 		>
 			<head>
+				<Script
+					strategy="beforeInteractive"
+					src="https://cloud.ccm19.de/app.js?apiKey=295cd4d0334f21415c578a0a1683af21ebe840cccf666d7f&amp;domain=6a3151492f75bfecf00d9be2"
+				/>
 				<Script
 					strategy="afterInteractive"
 					src="https://www.googletagmanager.com/gtag/js?id=AW-10795425279"

@@ -1,6 +1,5 @@
 import {
-	Ambulance,
-	// ArrowRight,
+	ArrowRight,
 	Building,
 	Building2,
 	Calculator,
@@ -12,11 +11,11 @@ import {
 	Network,
 	PhoneCall,
 	Receipt,
-	Send,
 	ShieldCheck,
 	Users,
 	Zap,
 } from "lucide-react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FadeInUp } from "@/components/animations/fade-in-up";
@@ -30,12 +29,19 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import {
-	HoverCard,
-	HoverCardContent,
-	HoverCardTrigger,
-} from "@/components/ui/hover-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+export const metadata: Metadata = {
+	title: "PTAS - Personentransport-Abrechnungsservice",
+	description:
+		"Professionelle Abrechnung für Kranken-, Rollstuhl- und Tragestuhltransporte. Konzentrieren Sie sich auf Ihr Geschäft, wir übernehmen die Abrechnung.",
+	openGraph: {
+		title: "PTAS - Personentransport-Abrechnungsservice",
+		description:
+			"Professionelle Abrechnung für Kranken-, Rollstuhl- und Tragestuhltransporte. Konzentrieren Sie sich auf Ihr Geschäft, wir übernehmen die Abrechnung.",
+		url: "https://ptas.de",
+	},
+};
 
 const benefits = [
 	{
@@ -165,105 +171,146 @@ export default function Home() {
 	return (
 		<div className="flex flex-col">
 			{/* Hero Section */}
-			<section className="relative overflow-hidden bg-linear-to-br from-primary/5 via-background to-primary/10 py-16 md:py-24">
-				<div className="container mx-auto max-w-6xl px-4">
-					<div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-						<FadeInUp className="flex flex-col gap-4 md:gap-6">
-							<div className="flex items-center gap-2 text-primary">
-								<Ambulance className="size-5 md:size-6" />
-								<span className="font-medium text-sm uppercase tracking-wider">
-									Abrechnungsservice
-								</span>
-							</div>
-							<h1 className="font-bold text-3xl leading-tight tracking-tight md:text-4xl lg:text-5xl">
-								Günstige Abrechnung von{" "}
-								<span className="text-primary">Krankenfahrt-Belegen</span> mit
-								allen Kostenträgern
-							</h1>
-							<p className="max-w-lg text-lg text-muted-foreground">
-								Schnell, zuverlässig und sicher. Entscheiden Sie sich für mehr
-								Unabhängigkeit.
-							</p>
-							<div className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap">
-								<Link href="/kontakt">
-									<Button
-										size="lg"
-										className="w-full gap-2 shadow-sm transition-all hover:scale-[1.02] hover:shadow-md sm:w-auto"
+			<section className="relative overflow-hidden bg-background pt-16 pb-8 md:pt-24 md:pb-12 lg:pt-32">
+				{/* Background gradient */}
+				<div className="pointer-events-none absolute top-0 left-1/2 h-100 w-200 -translate-x-1/2 -translate-y-12 rounded-full bg-primary/20 blur-[100px]" />
+
+				<div className="container relative mx-auto flex max-w-5xl flex-col items-center px-4 text-center">
+					<FadeInUp className="flex flex-col items-center gap-6 md:gap-8">
+						{/* Top Badge */}
+						<div className="inline-flex cursor-default items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1.5 text-primary text-sm transition-colors hover:bg-primary/10">
+							<ShieldCheck className="mr-2 size-4" />
+							<span className="font-semibold">Der Top Abrechnungsservice</span>
+							<span className="mx-2 hidden h-4 w-px bg-primary/20 md:block" />
+							<span className="hidden text-muted-foreground md:block">
+								für Taxi- & Krankentransporte
+							</span>
+						</div>
+
+						{/* Headline */}
+						<h1 className="max-w-4xl font-bold text-4xl leading-[1.1] tracking-tight md:text-5xl lg:text-7xl">
+							Fahren Sie Ihre Patienten. <br className="hidden md:block" />
+							<span className="bg-linear-to-r from-primary to-primary/80 bg-clip-text text-primary">
+								Wir machen die Abrechnung.
+							</span>
+						</h1>
+
+						{/* Subheadline */}
+						<p className="max-w-2xl text-lg text-muted-foreground leading-relaxed md:text-xl">
+							Die bequeme, schnelle und sichere Abrechnung von Krankenfahrten.
+							Konzentrieren Sie sich auf Ihr Kerngeschäft - wir kümmern uns um
+							den Rest.
+						</p>
+
+						{/* CTA & Social Proof */}
+						<div className="flex w-full flex-col items-center justify-center gap-4 pt-4 sm:flex-row sm:gap-6">
+							<Link href="/kontakt" className="w-full sm:w-auto">
+								<Button
+									size="lg"
+									className="h-14 w-full px-8 font-semibold text-base shadow-lg transition-all hover:scale-105"
+								>
+									Jetzt unverbindlich anfragen
+									<ArrowRight className="ml-2 size-5" />
+								</Button>
+							</Link>
+						</div>
+
+						{/* Ratings */}
+						<div className="mt-2 flex flex-col items-center gap-2">
+							<div className="flex items-center gap-1 text-yellow-400">
+								{[1, 2, 3, 4, 5].map((starId) => (
+									<svg
+										key={`star-${starId}`}
+										aria-hidden="true"
+										className="size-5 fill-current"
+										viewBox="0 0 24 24"
 									>
-										<Send className="size-4" />
-										Unverbindliche Anfrage
-									</Button>
-								</Link>
-								{/* <Link href="/abrechnung">
-									<Button
-										variant="outline"
-										size="lg"
-										className="group w-full gap-2 transition-colors hover:bg-primary/5 sm:w-auto"
-									>
-										Mehr erfahren
-										<ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-									</Button>
-								</Link> */}
-							</div>
-						</FadeInUp>
-						<FadeInUp delay={0.1} className="relative mt-8 md:mt-0">
-							<div className="absolute inset-0 hidden rounded-full bg-primary/10 blur-3xl md:block" />
-							<div className="relative grid grid-cols-2 gap-3 md:gap-4">
-								{promises.map((promise, idx) => (
-									<FadeInUp key={promise.content} delay={idx * 0.1}>
-										<Card className="border-primary/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-											<CardContent className="flex flex-col items-center gap-3 px-3 py-5 text-center md:px-4 md:py-8">
-												<div className="mb-1 rounded-full bg-primary/10 p-3">
-													<promise.icon className="size-6 text-primary md:size-8" />
-												</div>
-												<HoverCard openDelay={0} closeDelay={100}>
-													<HoverCardTrigger className="font-semibold text-xs transition-colors hover:text-primary md:text-sm">
-														{promise.content}
-													</HoverCardTrigger>
-													<HoverCardContent className="text-sm shadow-xl">
-														{promise.hover}
-													</HoverCardContent>
-												</HoverCard>
-											</CardContent>
-										</Card>
-									</FadeInUp>
+										<path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+									</svg>
 								))}
 							</div>
-						</FadeInUp>
-					</div>
+							<p className="font-medium text-muted-foreground text-sm">
+								Vertraut von{" "}
+								<strong className="font-semibold text-foreground">
+									hunderten
+								</strong>{" "}
+								Unternehmen deutschlandweit
+							</p>
+						</div>
+					</FadeInUp>
 				</div>
 			</section>
 
-			{/* Partners Section */}
-			<section className="border-b bg-background py-8 md:py-12">
+			{/* Partners / Social Proof Section */}
+			<section className="relative z-10 bg-background pt-8 pb-16 md:pb-24">
 				<FadeInUp
 					delay={0.2}
 					className="container mx-auto max-w-6xl px-4 text-center"
 				>
-					<p className="mb-6 font-medium text-muted-foreground text-sm uppercase tracking-widest">
-						Unterstützt durch unsere Partner & Verbände
+					<p className="mb-8 hidden font-medium text-muted-foreground text-sm uppercase tracking-widest md:block">
+						Offizielle Partner & Schnittstellen
 					</p>
-					<div className="flex flex-wrap justify-center gap-4 md:gap-8">
-						{partners.map((partner, idx) => (
-							<FadeInUp
+					<div className="flex flex-wrap items-center justify-center gap-8 opacity-70 transition-all hover:opacity-100 md:gap-12">
+						{partners.map((partner, _idx) => (
+							<Image
 								key={partner.name}
-								delay={idx * 0.1}
-								className="flex items-center gap-2 rounded-full border bg-muted/30 px-4 py-2"
-							>
-								<Image
-									src={partner.logo}
-									alt={partner.name}
-									width={160}
-									height={40}
-									className={`w-auto ${
-										partner.name === "Sozialfactoring" ||
-										partner.name === "GVN Fördermitglied"
-											? "h-10 sm:h-12"
-											: "h-6"
-									} ${partner.name === "1159 Finance" ? "invert dark:invert-0" : "dark:brightness-0 dark:invert"}`}
-								/>
-							</FadeInUp>
+								src={partner.logo}
+								alt={partner.name}
+								width={180}
+								height={50}
+								className={`w-auto object-contain transition-transform hover:scale-105 ${
+									partner.name === "Sozialfactoring" ||
+									partner.name === "GVN Fördermitglied"
+										? "h-12 md:h-14"
+										: "h-8 md:h-10"
+								} ${partner.name === "1159 Finance" ? "invert dark:invert-0" : "dark:brightness-0 dark:invert"}`}
+							/>
 						))}
+					</div>
+				</FadeInUp>
+			</section>
+
+			{/* Feature / UI Mockup Replacement */}
+			<section className="relative z-20 -mt-8 border-b pb-16 md:-mt-12 md:pb-24">
+				<FadeInUp delay={0.3} className="container mx-auto max-w-5xl px-4">
+					<div className="rounded-2xl border bg-background/40 p-2 shadow-2xl ring-1 ring-primary/5 backdrop-blur-xl md:p-4">
+						<div className="overflow-hidden rounded-xl border bg-card shadow-sm">
+							{/* Mac-like Window Chrome */}
+							<div className="flex items-center border-b bg-muted/40 px-4 py-3">
+								<div className="flex gap-1.5">
+									<div className="size-3 rounded-full bg-red-500/20 ring-1 ring-red-500/50" />
+									<div className="size-3 rounded-full bg-yellow-500/20 ring-1 ring-yellow-500/50" />
+									<div className="size-3 rounded-full bg-green-500/20 ring-1 ring-green-500/50" />
+								</div>
+								<div className="mx-auto flex h-6 w-full max-w-50 items-center justify-center rounded-md bg-background px-3 font-medium text-[10px] text-muted-foreground shadow-sm ring-1 ring-border">
+									PTAS Portal
+								</div>
+							</div>
+
+							{/* Content area showcasing the 4 promises */}
+							<div className="bg-muted/10 p-4 md:p-8">
+								<div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
+									{promises.map((promise, _idx) => (
+										<Card
+											key={promise.content}
+											className="border-primary/10 bg-background shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+										>
+											<CardContent className="flex flex-col items-center gap-3 p-5 text-center md:p-6">
+												<div className="rounded-full bg-primary/10 p-3 ring-1 ring-primary/20">
+													<promise.icon className="size-6 text-primary" />
+												</div>
+												<h3 className="font-semibold text-sm md:text-base">
+													{promise.content}
+												</h3>
+												<p className="text-muted-foreground text-xs leading-relaxed">
+													{promise.hover}
+												</p>
+											</CardContent>
+										</Card>
+									))}
+								</div>
+							</div>
+						</div>
 					</div>
 				</FadeInUp>
 			</section>
@@ -324,25 +371,25 @@ export default function Home() {
 
 			{/* Testimonial Section */}
 			<section className="py-8 sm:py-16 lg:py-24">
-				<div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-11 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
+				<FadeInUp className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-11 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
 					<h2 className="font-semibold text-2xl sm:text-3xl lg:text-4xl">
 						Mehr als 100 Unternehmen nutzen PTAS für ihre Abrechnung.
 					</h2>
 					<Testimonial />
-				</div>
+				</FadeInUp>
 			</section>
 
 			{/* Services Section */}
 			<section className="py-16 md:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
-					<div className="mb-12 text-center">
+					<FadeInUp className="mb-12 text-center">
 						<h2 className="mb-4 font-bold text-2xl md:text-3xl">
 							Die passende Lösung
 						</h2>
 						<p className="mx-auto max-w-2xl text-lg text-muted-foreground">
 							Schnelle, unkomplizierte und verlässliche Abrechnung von:
 						</p>
-					</div>
+					</FadeInUp>
 					<FadeInUp className="mx-auto max-w-3xl">
 						<Tabs defaultValue="fahrten" className="w-full">
 							<TabsList className="mb-6 grid w-full grid-cols-3 bg-primary/5">
@@ -413,13 +460,13 @@ export default function Home() {
 						</Tabs>
 					</FadeInUp>
 					<FadeInUp delay={0.2} className="mt-12 text-center">
-						<Card className="mx-auto inline-block border-primary/20 bg-linear-to-br from-primary/10 to-transparent shadow-sm">
+						<Card className="mx-auto inline-block border-primary/20 shadow-sm">
 							<CardContent className="px-6 py-8 md:px-12">
 								<p className="mb-4 font-semibold text-foreground text-lg md:text-xl">
 									Wir sind Ihr spezialisierter Partner für die Abrechnung von
 									Krankenfahrten mit allen Kostenträgern!
 								</p>
-								<p className="md:font-extralight md:text-lg">
+								<p className="md:text-lg">
 									Ob Krankenfahrten mit dem Taxi, Mietwagen, KTW oder BTW.
 								</p>
 							</CardContent>
