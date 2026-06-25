@@ -43,7 +43,7 @@ export default function RootLayout({
 			suppressHydrationWarning
 			className={cn("h-full antialiased", inter.variable)}
 		>
-			<head>
+			<body>
 				<Script
 					strategy="beforeInteractive"
 					src="https://cloud.ccm19.de/app.js?apiKey=295cd4d0334f21415c578a0a1683af21ebe840cccf666d7f&amp;domain=6a3151492f75bfecf00d9be2"
@@ -60,8 +60,6 @@ export default function RootLayout({
 						gtag('config', 'AW-10795425279');
 					`}
 				</Script>
-			</head>
-			<body>
 				<Providers>
 					<div className="flex min-h-full flex-col">
 						<Header />
