@@ -2,6 +2,7 @@
 
 import { useForm } from "@tanstack/react-form";
 import { Clock, Mail, Phone, Send } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { FadeInUp } from "@/components/animations/fade-in-up";
 import { Button } from "@/components/ui/button";
@@ -33,6 +34,8 @@ type FormData = {
 };
 
 export default function KontaktPage() {
+	const router = useRouter();
+
 	const defaultValues: FormData = {
 		name: "",
 		unternehmen: "",
@@ -50,7 +53,7 @@ export default function KontaktPage() {
 
 	const form = useForm({
 		defaultValues,
-		onSubmit: async ({ value, formApi }) => {
+		onSubmit: async ({ value }) => {
 			const promise = fetch("/api/contact", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
@@ -71,7 +74,7 @@ export default function KontaktPage() {
 
 			try {
 				await promise;
-				formApi.reset();
+				router.push("/kontakt/danke");
 			} catch (_) {}
 		},
 	});
