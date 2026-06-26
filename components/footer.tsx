@@ -60,13 +60,14 @@ export default function Footer() {
 						</h3>
 						<nav className="flex flex-col gap-2">
 							{legalLinks.map(({ to, label }) => (
-								<a
+								<Link
 									key={to}
 									href={to}
+									prefetch={false}
 									className="text-muted-foreground text-sm transition-colors hover:text-foreground"
 								>
 									{label}
-								</a>
+								</Link>
 							))}
 						</nav>
 					</div>
@@ -77,10 +78,11 @@ export default function Footer() {
 							Kontakt
 						</h3>
 						<div className="flex flex-col gap-3 text-muted-foreground text-sm">
-							<a
+							<Link
 								href="https://www.google.com/maps/place/Am+Holzweg+26,+65830+Kriftel,+Deutschland"
 								target="_blank"
 								rel="noopener noreferrer"
+								prefetch={false}
 								className="flex items-center gap-2 transition-colors hover:text-foreground"
 							>
 								<MapPin className="mt-0.5 size-4 shrink-0 text-primary" />
@@ -89,21 +91,23 @@ export default function Footer() {
 									<br />
 									65830 Kriftel
 								</span>
-							</a>
-							<a
+							</Link>
+							<Link
 								href="tel:+4961929391752"
+								prefetch={false}
 								className="flex items-center gap-2 transition-colors hover:text-foreground"
 							>
 								<Phone className="size-4 shrink-0 text-primary" />
 								(06192) 9391 752
-							</a>
-							<a
+							</Link>
+							<Link
 								href="mailto:info@ptas.de"
+								prefetch={false}
 								className="flex items-center gap-2 transition-colors hover:text-foreground"
 							>
 								<Mail className="size-4 shrink-0 text-primary" />
 								info@ptas.de
-							</a>
+							</Link>
 						</div>
 					</div>
 				</div>
@@ -116,10 +120,10 @@ export default function Footer() {
 						© {new Date().getFullYear()} Personentransport-Abrechnungsservice.
 						Alle Rechte vorbehalten.
 					</p>
-					<p>
+					<Link href="https://github.com/Yeah-Jack" prefetch={false}>
 						Mit <span className="text-primary">♥</span> entwickelt in
 						Deutschland
-					</p>
+					</Link>
 				</div>
 			</div>
 		</footer>
