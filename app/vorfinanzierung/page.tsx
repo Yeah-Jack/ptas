@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 const benefits = [
 	{
 		icon: Clock,
-		title: "Schnnelle Auszahlung",
+		title: "Schnelle Auszahlung",
 		description:
 			"Erhalten Sie Ihre Zahlungen schneller als die regulären 6 Wochen!",
 	},

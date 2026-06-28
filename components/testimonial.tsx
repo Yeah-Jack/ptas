@@ -37,7 +37,7 @@ const testimonials: TestimonialItem[] = [
 		company: "",
 		avatar: "",
 		content:
-			"Ich arbeite seit über einem Jahr mit der Daniel Software GmbH zusammen und bin absolut begeistert. Es gab nie ein Problem; das Team ist stets freundlich und hilfsbereit. Die Kommunikation läuft reibungslos, und ich fühle mich immer gut betreut. Alles in allem kann ich diese Firma uneingeschränkt weiterempfehlen!.",
+			"Ich arbeite seit über einem Jahr mit der Daniel Software GmbH zusammen und bin absolut begeistert. Es gab nie ein Problem; das Team ist stets freundlich und hilfsbereit. Die Kommunikation läuft reibungslos, und ich fühle mich immer gut betreut. Alles in allem kann ich diese Firma uneingeschränkt weiterempfehlen!",
 	},
 	{
 		name: "Ina M.",
@@ -58,7 +58,7 @@ const testimonials: TestimonialItem[] = [
 		company: "Taxi & Mietwagen Güvercin",
 		avatar: "",
 		content:
-			"Ein super organisiertes Team! Wir arbeiten jetzt seit ein paar Monaten mit der Abrechnungsfirma zusammen und hatten bisher echt keine Probleme!!",
+			"Ein super organisiertes Team! Wir arbeiten jetzt seit ein paar Monaten mit der Abrechnungsfirma zusammen und hatten bisher echt keine Probleme!",
 	},
 	{
 		name: "Martin M.",
