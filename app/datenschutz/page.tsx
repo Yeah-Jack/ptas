@@ -3,7 +3,6 @@ export default function DatenschutzPage() {
 		<>
 			<script
 				src="https://app.alfright.eu/hosted/dps/alfidcl.js"
-				defer
 				alfidcl-script=""
 			/>
 			<div
