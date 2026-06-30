@@ -1,4 +1,7 @@
+"use client";
+
 import type { Metadata } from "next";
+import Script from "next/script";
 
 export const metadata: Metadata = {
 	title: "Datenschutz | PTAS",
@@ -8,13 +11,18 @@ export const metadata: Metadata = {
 
 export default function DatenschutzPage() {
 	return (
-		<iframe
-			src="https://app.alfright.eu/ext/dps/alfright_schutzteam/9c149affe36a46e692a8b0167410f4ae?lang=de-de&headercolor=%23131F64&headerfont=Arial&headersize=21px&subheadersize=18px&fontcolor=%23333333&textfont=Arial&textsize=14px&background=%23ffffff&linkcolor=%23337ab7"
-			width="100%"
-			height={5000}
-			style={{ border: 0 }}
-			loading="lazy"
-			title="Datenschutzhinweise"
-		/>
+		<>
+			<Script
+				src="https://app.alfright.eu/hosted/dps/alfidcl.js"
+				strategy="afterInteractive"
+				alfidcl-script=""
+			/>
+			<div
+				data-alfidcl-type="dps"
+				data-alfidcl-tenant="alfright_schutzteam"
+				data-alfidcl-lang="de-de"
+				data-alfidcl-key="9c149affe36a46e692a8b0167410f4ae"
+			/>
+		</>
 	);
 }
