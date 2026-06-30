@@ -1,13 +1,6 @@
 "use client";
 
-import type { Metadata } from "next";
 import Script from "next/script";
-
-export const metadata: Metadata = {
-	title: "Datenschutz | PTAS",
-	description:
-		"Datenschutzhinweise der PTAS Personentransport-Abrechnungsservice",
-};
 
 export default function DatenschutzPage() {
 	return (
