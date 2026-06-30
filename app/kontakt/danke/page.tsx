@@ -23,12 +23,8 @@ export default function DankePage() {
 		<>
 			<Script id="gtag-conversion" strategy="afterInteractive">
 				{`
-          gtag('event', 'conversion', {
-            'send_to': 'AW-10795425279/ENTER_CONVERSION_LABEL_HERE', 					// TODO
-            'value': 100.0,
-            'currency': 'EUR'
-          });
-        `}
+				gtag('event', 'conversion', {'send_to': 'AW-10795425279/BSmhCOWwiMgcEP-71Jso'});
+				`}
 			</Script>
 
 			<div className="flex flex-col items-center justify-center py-24">
