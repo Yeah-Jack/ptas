@@ -4,7 +4,6 @@ import { Menu, Send, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import icon from "@/app/icon.svg";
 import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
 
@@ -27,7 +26,14 @@ export default function Header() {
 					href="/"
 					className="transition-opacity hover:opacity-80 active:scale-95"
 				>
-					<Image src={icon} width={128} alt="PTAS Logo" />
+					<Image
+						src={"/icon.svg"}
+						unoptimized
+						width={128}
+						height={64}
+						loading="eager"
+						alt="PTAS Logo"
+					/>
 				</Link>
 
 				{/* Desktop Navigation */}
