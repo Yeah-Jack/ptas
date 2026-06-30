@@ -1,13 +1,9 @@
-"use client";
-
-import Script from "next/script";
-
 export default function DatenschutzPage() {
 	return (
 		<>
-			<Script
+			<script
 				src="https://app.alfright.eu/hosted/dps/alfidcl.js"
-				strategy="afterInteractive"
+				defer
 				alfidcl-script=""
 			/>
 			<div
