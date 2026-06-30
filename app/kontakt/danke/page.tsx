@@ -6,11 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-	title: "Vielen Dank | PTAS",
+	title: "Vielen Dank",
 	description:
 		"Danke für Ihre Anfrage! Wir haben Ihre Nachricht erhalten und melden uns schnellstmöglich bei Ihnen - in der Regel innerhalb eines Werktages.",
 	openGraph: {
-		title: "Vielen Dank | PTAS",
+		title: "Vielen Dank",
 		description:
 			"Danke für Ihre Anfrage! Wir haben Ihre Nachricht erhalten und melden uns schnellstmöglich bei Ihnen - in der Regel innerhalb eines Werktages.",
 		url: "https://ptas.de/kontakt/danke",

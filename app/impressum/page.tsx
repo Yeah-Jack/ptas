@@ -1,7 +1,7 @@
 import { FadeInUp } from "@/components/animations/fade-in-up";
 
 export const metadata = {
-	title: "Impressum | PTAS",
+	title: "Impressum",
 	description: "Impressum der Daniel Software GmbH.",
 };
 

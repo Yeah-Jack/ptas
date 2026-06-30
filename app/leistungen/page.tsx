@@ -27,11 +27,11 @@ import {
 } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-	title: "Abrechnung von Krankenfahrten zu geringen Kosten | PTAS",
+	title: "Abrechnung von Krankenfahrten zu geringen Kosten",
 	description:
 		"Wir übernehmen den kompletten Bearbeitungs-Ablauf für Ihre Transportscheine. Von der Erfassung der Krankenfahrten bis hin zur Rechnungsstellung.",
 	openGraph: {
-		title: "Abrechnung von Krankenfahrten zu geringen Kosten | PTAS",
+		title: "Abrechnung von Krankenfahrten zu geringen Kosten",
 		description:
 			"Wir übernehmen den kompletten Bearbeitungs-Ablauf für Ihre Transportscheine. Von der Erfassung der Krankenfahrten bis hin zur Rechnungsstellung.",
 		url: "https://ptas.de/leistungen",
