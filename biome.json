@@ -41,7 +41,8 @@
 			"!**/wrangler.jsonc",
 			"!**/.source",
 			"!**/convex/_generated",
-			"!**/components/ui"
+			"!**/components/ui",
+			"!**/*.svg"
 		]
 	},
 	"formatter": {
