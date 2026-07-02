@@ -30,11 +30,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Git Hooks and Formatting
 
-- Format and lint fix: `bun run check`
+- Format and lint fix: `bun run lint`
 
 ## Available Scripts
 
 - `bun run dev`: Start in development mode
 - `bun run build`: Build for production
 - `bun run start`: Start in production mode
-- `bun run check`: Run Biome formatting and linting
+- `bun run lint`: Run Biome formatting and linting
