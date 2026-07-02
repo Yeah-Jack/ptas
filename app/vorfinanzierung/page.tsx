@@ -24,67 +24,67 @@ import {
 } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-	title: "Vorfinanzierung für Krankenfahrten",
 	description:
 		"Schnellere Auszahlung für Ihre Krankenfahrten. Sichern Sie Ihre Liquidität und erhalten Sie Zahlungen schneller als die regulären 6 Wochen mit unserer Vorfinanzierung.",
 	openGraph: {
-		title: "Vorfinanzierung für Krankenfahrten",
 		description:
 			"Schnellere Auszahlung für Ihre Krankenfahrten. Sichern Sie Ihre Liquidität und erhalten Sie Zahlungen schneller als die regulären 6 Wochen mit unserer Vorfinanzierung.",
+		title: "Vorfinanzierung für Krankenfahrten",
 		url: "https://ptas.de/vorfinanzierung",
 	},
+	title: "Vorfinanzierung für Krankenfahrten",
 };
 
 const benefits = [
 	{
-		icon: Clock,
-		title: "Schnelle Auszahlung",
 		description:
 			"Erhalten Sie Ihre Zahlungen schneller als die regulären 6 Wochen!",
+		icon: Clock,
+		title: "Schnelle Auszahlung",
 	},
 	{
-		icon: HandCoins,
-		title: "Flexible Tarife",
 		description:
 			"Verschiedene Tarife und Zahlungsziele. Ganz nach Ihren Vorstellungen!",
+		icon: HandCoins,
+		title: "Flexible Tarife",
 	},
 	{
-		icon: ShieldCheck,
-		title: "Liquidität gesichert",
 		description:
 			"Ihre Liquidität und die rechtzeitige Bezahlung der Mitarbeiter ist gesichert.",
+		icon: ShieldCheck,
+		title: "Liquidität gesichert",
 	},
 	{
-		icon: Handshake,
-		title: "Erfahrener Partner",
 		description:
 			"Setzen Sie auf einen Finanzierungspartner mit langjähriger Erfahrung und den nötigen Ressourcen!",
+		icon: Handshake,
+		title: "Erfahrener Partner",
 	},
 ] as const;
 
 const steps = [
 	{
-		number: "1",
-		title: "Anmeldung",
 		description:
 			"Wenn Sie die Vorfinanzierung für Krankenfahrten wünschen, melden wir Sie dafür an.",
+		number: "1",
+		title: "Anmeldung",
 	},
 	{
-		number: "2",
-		title: "Datenübertragung",
 		description:
 			"Wir übertragen zusätzlich Informationen aus den Abrechnungen an SozialFactoring.",
+		number: "2",
+		title: "Datenübertragung",
 	},
 	{
-		number: "3",
-		title: "Auszahlung",
 		description:
 			"Je nach vereinbartem Zahlungsziel erhalten Sie das Geld ausgezahlt.",
+		number: "3",
+		title: "Auszahlung",
 	},
 	{
+		description: "Der laufende Rechnungsabschluss erfolgt dann nach 60 Tagen.",
 		number: "4",
 		title: "Rechnungsabschluss",
-		description: "Der laufende Rechnungsabschluss erfolgt dann nach 60 Tagen.",
 	},
 ] as const;
 
@@ -116,16 +116,16 @@ export default function VorfinanzierungPage() {
 						</p>
 						<div className="flex w-full flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
 							<Link href="/kontakt">
-								<Button size="lg" className="w-full gap-2 sm:w-auto">
+								<Button className="w-full gap-2 sm:w-auto" size="lg">
 									<Send className="size-4" />
 									Jetzt anfragen
 								</Button>
 							</Link>
 							<Link href="/abrechnung">
 								<Button
-									variant="outline"
-									size="lg"
 									className="w-full gap-2 sm:w-auto"
+									size="lg"
+									variant="outline"
 								>
 									Zur Abrechnung
 									<ArrowRight className="size-4" />
@@ -150,7 +150,7 @@ export default function VorfinanzierungPage() {
 
 					<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 						{benefits.map((benefit, idx) => (
-							<FadeInUp key={benefit.title} delay={0.1 * idx}>
+							<FadeInUp delay={0.1 * idx} key={benefit.title}>
 								<Card className="h-full">
 									<CardHeader className="text-center">
 										<benefit.icon className="mx-auto mb-2 size-10 text-primary" />
@@ -178,9 +178,9 @@ export default function VorfinanzierungPage() {
 
 					<div className="grid items-stretch gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
 						{steps.map((step, index) => (
-							<div key={step.title} className="relative h-full">
+							<div className="relative h-full" key={step.title}>
 								<div className="absolute top-8 right-0 hidden h-0.5 w-full translate-x-1/2 bg-border lg:block" />
-								<FadeInUp delay={0.1 * index} className="h-full">
+								<FadeInUp className="h-full" delay={0.1 * index}>
 									<Card className="relative h-full">
 										<CardHeader>
 											<div className="mb-2 flex size-12 items-center justify-center rounded-full bg-primary font-bold text-lg text-primary-foreground">
@@ -263,7 +263,7 @@ export default function VorfinanzierungPage() {
 					</p>
 					<div className="flex flex-wrap justify-center gap-4">
 						<Link href="/leistungen">
-							<Button variant="outline" className="gap-2">
+							<Button className="gap-2" variant="outline">
 								Leistungs-Pakete ansehen
 								<ArrowRight className="size-4" />
 							</Button>

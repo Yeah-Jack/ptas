@@ -93,16 +93,16 @@ export async function POST(req: Request) {
 			Messages: [
 				{
 					From: { Email: "info@ptas.de", Name: "PTAS Website" },
-					To: [{ Email: toEmail, Name: "PTAS Info" }],
+					HTMLPart: htmlContent,
 					ReplyTo: { Email: email, Name: name },
 					Subject: `Neue Kontaktanfrage von ${name}`,
-					HTMLPart: htmlContent,
 					TextPart: `Neue Kontaktanfrage von ${name}. E-Mail: ${email}`,
+					To: [{ Email: toEmail, Name: "PTAS Info" }],
 				},
 			],
 		});
 
-		return NextResponse.json({ success: true, data: request.body });
+		return NextResponse.json({ data: request.body, success: true });
 	} catch (error) {
 		const err = error as { statusCode?: number; message?: string };
 		console.error("Mailjet API Error:", err.statusCode, err.message);

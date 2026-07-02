@@ -27,67 +27,67 @@ import {
 } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-	title: "Abrechnung von Krankenfahrten zu geringen Kosten",
 	description:
 		"Wir übernehmen den kompletten Bearbeitungs-Ablauf für Ihre Transportscheine. Von der Erfassung der Krankenfahrten bis hin zur Rechnungsstellung.",
 	openGraph: {
-		title: "Abrechnung von Krankenfahrten zu geringen Kosten",
 		description:
 			"Wir übernehmen den kompletten Bearbeitungs-Ablauf für Ihre Transportscheine. Von der Erfassung der Krankenfahrten bis hin zur Rechnungsstellung.",
+		title: "Abrechnung von Krankenfahrten zu geringen Kosten",
 		url: "https://ptas.de/leistungen",
 	},
+	title: "Abrechnung von Krankenfahrten zu geringen Kosten",
 };
 
 const processSteps = [
 	{
+		description: "Sie schicken uns Ihre Verordnungen zu.",
 		icon: FileText,
 		title: "Belege zusenden",
-		description: "Sie schicken uns Ihre Verordnungen zu.",
 	},
 	{
-		icon: Shield,
-		title: "Prüfung & Erfassung",
 		description:
 			"Nach Prüfung und Erfassung der Belege fakturieren wir die Forderungen an die Kostenträger.",
+		icon: Shield,
+		title: "Prüfung & Erfassung",
 	},
 	{
-		icon: Zap,
-		title: "Datenträgeraustausch",
 		description:
 			"Per Datenträgeraustausch nach §302 SGB - schnelle Bearbeitung, keine Rechnungskürzungen.",
+		icon: Zap,
+		title: "Datenträgeraustausch",
 	},
 	{
-		icon: PiggyBank,
-		title: "Auszahlung",
 		description:
 			"Auszahlung über unseren Factoring-Partner oder direkt von den Kostenträgern.",
+		icon: PiggyBank,
+		title: "Auszahlung",
 	},
 ] as const;
 
 const benefits = [
 	{
-		icon: Clock,
-		title: "Zeitersparnis",
 		description:
 			"Wir ersparen wertvolle Zeit, da wir die komplette Abwicklung übernehmen.",
+		icon: Clock,
+		title: "Zeitersparnis",
 	},
 	{
-		icon: HandCoins,
-		title: "Kostenersparnis",
 		description:
 			"Hohe Verwaltungs- und Personalkosten können damit gespart werden.",
+		icon: HandCoins,
+		title: "Kostenersparnis",
 	},
 	{
-		icon: Package,
-		title: "Keine Vorbereitung",
 		description:
 			"Es ist keine Vorbereitung oder Aufbereitung der Unterlagen erforderlich.",
+		icon: Package,
+		title: "Keine Vorbereitung",
 	},
 	{
-		icon: Zap,
-		title: "Zügige Auszahlung",
 		description:
 			"Wir gewährleisten einen unkomplizierten Ablauf und zügige Auszahlung Ihres Guthabens.",
+		icon: Zap,
+		title: "Zügige Auszahlung",
 	},
 ] as const;
 
@@ -146,7 +146,7 @@ export default function LeistungenPage() {
 
 					<div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
 						{processSteps.map((step, index) => (
-							<div key={step.title} className="relative">
+							<div className="relative" key={step.title}>
 								{index < processSteps.length - 1 && (
 									<div className="absolute top-10 right-0 hidden h-0.5 w-[calc(100%-3rem)] translate-x-1/2 bg-linear-to-r from-primary/30 to-background xl:block" />
 								)}
@@ -262,7 +262,7 @@ export default function LeistungenPage() {
 
 					<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 						{benefits.map((benefit, idx) => (
-							<FadeInUp key={benefit.title} delay={0.1 * idx}>
+							<FadeInUp delay={0.1 * idx} key={benefit.title}>
 								<Card className="h-full border-transparent bg-background/50 transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:bg-background hover:shadow-md">
 									<CardHeader className="flex flex-col items-center text-center">
 										<div className="mb-4 w-fit rounded-xl bg-primary/10 p-3 shadow-inner">
@@ -323,7 +323,7 @@ export default function LeistungenPage() {
 								<CardContent className="flex-1">
 									<ul className="space-y-3">
 										{abrechnungFeatures.map((feature) => (
-											<li key={feature} className="flex items-start gap-3">
+											<li className="flex items-start gap-3" key={feature}>
 												<CheckCircle className="mt-0.5 size-5 shrink-0 text-primary" />
 												<span>{feature}</span>
 											</li>
@@ -331,8 +331,8 @@ export default function LeistungenPage() {
 									</ul>
 								</CardContent>
 								<CardFooter>
-									<Link href="/abrechnung" className="w-full">
-										<Button variant="outline" className="w-full gap-2">
+									<Link className="w-full" href="/abrechnung">
+										<Button className="w-full gap-2" variant="outline">
 											Mehr erfahren
 											<ArrowRight className="size-4" />
 										</Button>
@@ -342,7 +342,7 @@ export default function LeistungenPage() {
 						</FadeInUp>
 
 						{/* Abrechnung mit Vorfinanzierung Package */}
-						<FadeInUp delay={0.2} className="flex flex-col">
+						<FadeInUp className="flex flex-col" delay={0.2}>
 							<Card className="relative flex h-full flex-col overflow-hidden border-primary/30 bg-primary/5">
 								<div className="absolute top-0 right-0 rounded-bl-lg bg-primary px-3 py-1 font-medium text-primary-foreground text-xs">
 									Top-Kombination!
@@ -358,7 +358,7 @@ export default function LeistungenPage() {
 								<CardContent className="flex-1">
 									<ul className="space-y-3">
 										{vorfinanzierungFeatures.map((feature) => (
-											<li key={feature} className="flex items-start gap-3">
+											<li className="flex items-start gap-3" key={feature}>
 												<CheckCircle className="mt-0.5 size-5 shrink-0 text-primary" />
 												<span>{feature}</span>
 											</li>
@@ -366,7 +366,7 @@ export default function LeistungenPage() {
 									</ul>
 								</CardContent>
 								<CardFooter>
-									<Link href="/vorfinanzierung" className="w-full">
+									<Link className="w-full" href="/vorfinanzierung">
 										<Button className="w-full gap-2">
 											Mehr erfahren
 											<ArrowRight className="size-4" />
@@ -379,8 +379,8 @@ export default function LeistungenPage() {
 
 					{/* Legal Notice */}
 					<FadeInUp
-						delay={0.3}
 						className="mx-auto mt-12 max-w-3xl rounded-lg border bg-muted/30 p-6 text-center text-muted-foreground text-sm"
+						delay={0.3}
 					>
 						<p>
 							Unsere Angebote richten sich nur an Unternehmer (§14 BGB), also an

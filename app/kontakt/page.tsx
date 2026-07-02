@@ -18,46 +18,46 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
-type FormData = {
-	name: string;
-	unternehmen: string;
-	adresse: string;
-	plz: string;
-	ort: string;
-	email: string;
-	telefon: string;
+interface FormData {
 	abrechnungInteresse: boolean;
-	vorfinanzierungInteresse: boolean;
 	abrechnungsvolumen: string;
-	problem: string;
+	adresse: string;
+	email: string;
 	nachricht: string;
-};
+	name: string;
+	ort: string;
+	plz: string;
+	problem: string;
+	telefon: string;
+	unternehmen: string;
+	vorfinanzierungInteresse: boolean;
+}
 
 export default function KontaktPage() {
 	const router = useRouter();
 
 	const defaultValues: FormData = {
-		name: "",
-		unternehmen: "",
-		adresse: "",
-		plz: "",
-		ort: "",
-		email: "",
-		telefon: "",
 		abrechnungInteresse: false,
-		vorfinanzierungInteresse: false,
 		abrechnungsvolumen: "",
-		problem: "",
+		adresse: "",
+		email: "",
 		nachricht: "",
+		name: "",
+		ort: "",
+		plz: "",
+		problem: "",
+		telefon: "",
+		unternehmen: "",
+		vorfinanzierungInteresse: false,
 	};
 
 	const form = useForm({
 		defaultValues,
 		onSubmit: async ({ value }) => {
 			const promise = fetch("/api/contact", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(value),
+				headers: { "Content-Type": "application/json" },
+				method: "POST",
 			}).then(async (res) => {
 				if (!res.ok) {
 					const error = await res.json();
@@ -67,9 +67,9 @@ export default function KontaktPage() {
 			});
 
 			toast.promise(promise, {
+				error: (err) => err.message || "Es ist ein Fehler aufgetreten.",
 				loading: "Nachricht wird gesendet...",
 				success: "Nachricht erfolgreich gesendet!",
-				error: (err) => err.message || "Es ist ein Fehler aufgetreten.",
 			});
 
 			try {
@@ -112,8 +112,8 @@ export default function KontaktPage() {
 									<CardTitle>E-Mail</CardTitle>
 									<CardDescription>
 										<a
-											href="mailto:info@ptas.de"
 											className="text-foreground hover:text-primary"
+											href="mailto:info@ptas.de"
 										>
 											info@ptas.de
 										</a>
@@ -128,8 +128,8 @@ export default function KontaktPage() {
 									<CardTitle>Telefon</CardTitle>
 									<CardDescription>
 										<a
-											href="tel:+4961929391752"
 											className="text-foreground hover:text-primary"
+											href="tel:+4961929391752"
 										>
 											+49 6192 9391 752
 										</a>
@@ -159,12 +159,12 @@ export default function KontaktPage() {
 							</CardHeader>
 							<CardContent>
 								<form
+									className="space-y-6"
 									onSubmit={(e) => {
 										e.preventDefault();
 										e.stopPropagation();
 										form.handleSubmit();
 									}}
-									className="space-y-6"
 								>
 									<div className="grid gap-4 md:grid-cols-2">
 										<form.Field
@@ -183,10 +183,10 @@ export default function KontaktPage() {
 													<Input
 														id={field.name}
 														name={field.name}
-														placeholder="Name oder Ansprechpartner..."
-														value={field.state.value}
 														onBlur={field.handleBlur}
 														onChange={(e) => field.handleChange(e.target.value)}
+														placeholder="Name oder Ansprechpartner..."
+														value={field.state.value}
 													/>
 													{field.state.meta.errors ? (
 														<p className="text-[0.8rem] text-destructive">
@@ -204,10 +204,10 @@ export default function KontaktPage() {
 													<Input
 														id={field.name}
 														name={field.name}
-														placeholder="Unternehmen..."
-														value={field.state.value}
 														onBlur={field.handleBlur}
 														onChange={(e) => field.handleChange(e.target.value)}
+														placeholder="Unternehmen..."
+														value={field.state.value}
 													/>
 												</div>
 											)}
@@ -221,10 +221,10 @@ export default function KontaktPage() {
 												<Input
 													id={field.name}
 													name={field.name}
-													placeholder="Adresse..."
-													value={field.state.value}
 													onBlur={field.handleBlur}
 													onChange={(e) => field.handleChange(e.target.value)}
+													placeholder="Adresse..."
+													value={field.state.value}
 												/>
 											</div>
 										)}
@@ -238,10 +238,10 @@ export default function KontaktPage() {
 													<Input
 														id={field.name}
 														name={field.name}
-														placeholder="PLZ..."
-														value={field.state.value}
 														onBlur={field.handleBlur}
 														onChange={(e) => field.handleChange(e.target.value)}
+														placeholder="PLZ..."
+														value={field.state.value}
 													/>
 												</div>
 											)}
@@ -254,10 +254,10 @@ export default function KontaktPage() {
 													<Input
 														id={field.name}
 														name={field.name}
-														placeholder="Ort..."
-														value={field.state.value}
 														onBlur={field.handleBlur}
 														onChange={(e) => field.handleChange(e.target.value)}
+														placeholder="Ort..."
+														value={field.state.value}
 													/>
 												</div>
 											)}
@@ -285,11 +285,11 @@ export default function KontaktPage() {
 													<Input
 														id={field.name}
 														name={field.name}
-														type="email"
-														placeholder="E-Mail-Adresse..."
-														value={field.state.value}
 														onBlur={field.handleBlur}
 														onChange={(e) => field.handleChange(e.target.value)}
+														placeholder="E-Mail-Adresse..."
+														type="email"
+														value={field.state.value}
 													/>
 													{field.state.meta.errors ? (
 														<p className="text-[0.8rem] text-destructive">
@@ -307,11 +307,11 @@ export default function KontaktPage() {
 													<Input
 														id={field.name}
 														name={field.name}
-														type="tel"
-														placeholder="Telefon..."
-														value={field.state.value}
 														onBlur={field.handleBlur}
 														onChange={(e) => field.handleChange(e.target.value)}
+														placeholder="Telefon..."
+														type="tel"
+														value={field.state.value}
 													/>
 												</div>
 											)}
@@ -325,15 +325,15 @@ export default function KontaktPage() {
 												{(field) => (
 													<div className="flex items-center gap-2">
 														<Checkbox
-															id={field.name}
 															checked={field.state.value}
+															id={field.name}
 															onCheckedChange={(checked) =>
 																field.handleChange(checked === true)
 															}
 														/>
 														<Label
-															htmlFor={field.name}
 															className="cursor-pointer font-normal"
+															htmlFor={field.name}
 														>
 															Abrechnung
 														</Label>
@@ -344,15 +344,15 @@ export default function KontaktPage() {
 												{(field) => (
 													<div className="flex items-center gap-2">
 														<Checkbox
-															id={field.name}
 															checked={field.state.value}
+															id={field.name}
 															onCheckedChange={(checked) =>
 																field.handleChange(checked === true)
 															}
 														/>
 														<Label
-															htmlFor={field.name}
 															className="cursor-pointer font-normal"
+															htmlFor={field.name}
 														>
 															Abrechnung mit Vorfinanzierung
 														</Label>
@@ -371,10 +371,10 @@ export default function KontaktPage() {
 												<Input
 													id={field.name}
 													name={field.name}
-													placeholder="z.B. 50.000 €"
-													value={field.state.value}
 													onBlur={field.handleBlur}
 													onChange={(e) => field.handleChange(e.target.value)}
+													placeholder="z.B. 50.000 €"
+													value={field.state.value}
 												/>
 											</div>
 										)}
@@ -389,11 +389,11 @@ export default function KontaktPage() {
 												<Textarea
 													id={field.name}
 													name={field.name}
-													placeholder="Beschreiben Sie Ihre größte Herausforderung..."
-													value={field.state.value}
 													onBlur={field.handleBlur}
 													onChange={(e) => field.handleChange(e.target.value)}
+													placeholder="Beschreiben Sie Ihre größte Herausforderung..."
 													rows={3}
+													value={field.state.value}
 												/>
 											</div>
 										)}
@@ -406,11 +406,11 @@ export default function KontaktPage() {
 												<Textarea
 													id={field.name}
 													name={field.name}
-													placeholder="Schreiben Sie uns eine Nachricht..."
-													value={field.state.value}
 													onBlur={field.handleBlur}
 													onChange={(e) => field.handleChange(e.target.value)}
+													placeholder="Schreiben Sie uns eine Nachricht..."
 													rows={5}
+													value={field.state.value}
 												/>
 											</div>
 										)}
@@ -426,10 +426,10 @@ export default function KontaktPage() {
 									>
 										{([canSubmit, isSubmitting]) => (
 											<Button
-												type="submit"
-												size="lg"
 												className="w-full gap-2"
 												disabled={!canSubmit || isSubmitting}
+												size="lg"
+												type="submit"
 											>
 												<Send className="size-4" />
 												{isSubmitting ? "Senden..." : "Nachricht senden"}

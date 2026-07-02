@@ -6,16 +6,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-	title: "Vielen Dank",
 	description:
 		"Danke für Ihre Anfrage! Wir haben Ihre Nachricht erhalten und melden uns schnellstmöglich bei Ihnen - in der Regel innerhalb eines Werktages.",
 	openGraph: {
-		title: "Vielen Dank",
 		description:
 			"Danke für Ihre Anfrage! Wir haben Ihre Nachricht erhalten und melden uns schnellstmöglich bei Ihnen - in der Regel innerhalb eines Werktages.",
+		title: "Vielen Dank",
 		url: "https://ptas.de/kontakt/danke",
 	},
-	robots: { index: false, follow: false },
+	robots: { follow: false, index: false },
+	title: "Vielen Dank",
 };
 
 export default function DankePage() {

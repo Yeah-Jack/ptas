@@ -32,64 +32,64 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export const metadata: Metadata = {
-	title: "PTAS - Personentransport-Abrechnungsservice",
 	description:
 		"Professionelle Abrechnung für Kranken-, Rollstuhl- und Tragestuhltransporte. Konzentrieren Sie sich auf Ihr Geschäft, wir übernehmen die Abrechnung.",
 	openGraph: {
-		title: "PTAS - Personentransport-Abrechnungsservice",
 		description:
 			"Professionelle Abrechnung für Kranken-, Rollstuhl- und Tragestuhltransporte. Konzentrieren Sie sich auf Ihr Geschäft, wir übernehmen die Abrechnung.",
+		title: "PTAS - Personentransport-Abrechnungsservice",
 		url: "https://ptas.de",
 	},
+	title: "PTAS - Personentransport-Abrechnungsservice",
 };
 
 const benefits = [
 	{
-		icon: Clock,
-		title: "Zeitersparnis",
 		description:
 			"Konzentrieren Sie sich auf Ihr Kerngeschäft - wir übernehmen die Abrechnung.",
+		icon: Clock,
+		title: "Zeitersparnis",
 	},
 	{
-		icon: HandCoins,
-		title: "Kostenersparnis",
 		description:
 			"Reduzieren Sie Personal- und Verwaltungskosten durch unsere effiziente Abwicklung.",
+		icon: HandCoins,
+		title: "Kostenersparnis",
 	},
 	{
-		icon: Zap,
-		title: "Schnelle Auszahlung",
 		description:
 			"Verbessern Sie Ihre Liquidität durch individuelle Zahlungsziele.",
+		icon: Zap,
+		title: "Schnelle Auszahlung",
 	},
 	{
-		icon: ShieldCheck,
-		title: "Zuverlässig & Sicher",
 		description:
 			"Profitieren Sie von unserer jahrelangen Erfahrung und eigener Software-Entwicklung.",
+		icon: ShieldCheck,
+		title: "Zuverlässig & Sicher",
 	},
 ] as const;
 
 const promises = [
 	{
-		icon: HeartPulse,
 		content: "Alle Kostenträger",
 		hover: "Wir bearbeiten Abrechnungen für alle Kostenträger.",
+		icon: HeartPulse,
 	},
 	{
-		icon: Clock,
 		content: "Schnelle Abwicklung",
 		hover: "Wir garantieren eine schnelle und unkomplizierte Abwicklung.",
+		icon: Clock,
 	},
 	{
-		icon: ShieldCheck,
 		content: "Sichere Verarbeitung",
 		hover: "Wir stellen sicher, dass Ihre Daten geschützt sind.",
+		icon: ShieldCheck,
 	},
 	{
-		icon: Users,
 		content: "Persönlicher Service",
 		hover: "Wir bieten individuelle Betreuung und Unterstützung.",
+		icon: Users,
 	},
 ];
 
@@ -122,10 +122,10 @@ const serviceFeatures = [
 ] as const;
 
 const partners = [
-	{ name: "1159 Finance", logo: "/1159-Finance.svg" },
-	{ name: "Sozialfactoring", logo: "/Sozial-Factoring.svg" },
+	{ logo: "/1159-Finance.svg", name: "1159 Finance" },
+	{ logo: "/Sozial-Factoring.svg", name: "Sozialfactoring" },
 	// { name: "Bridgetec", icon: Handshake },
-	{ name: "GVN Fördermitglied", logo: "/GVN.png" },
+	{ logo: "/GVN.png", name: "GVN Fördermitglied" },
 	// { name: "Bayern-Deal (T&M)", icon: BadgeCheck },
 	// { name: "VSPV Mitglied", icon: BadgeCheck },
 ] as const;
@@ -138,32 +138,32 @@ const genossenschaftenFeatures = [
 
 const workflowSteps = [
 	{
+		description: "Auftrag wird in der Zentrale erfasst und disponiert.",
 		icon: PhoneCall,
 		title: "1. Fahrtvermittlung",
-		description: "Auftrag wird in der Zentrale erfasst und disponiert.",
 	},
 	{
-		icon: Network,
-		title: "2. Automatische Zuordnung",
 		description:
 			"Fahrt wird automatisch dem ausführenden Unternehmer zugeordnet.",
+		icon: Network,
+		title: "2. Automatische Zuordnung",
 	},
 	{
-		icon: Calculator,
-		title: "3. Gebührenberechnung",
 		description:
 			"Umlagen, Mitgliedsbeiträge und Vermittlungsgebühren werden regelbasiert ermittelt.",
+		icon: Calculator,
+		title: "3. Gebührenberechnung",
 	},
 	{
-		icon: Receipt,
-		title: "4. Abrechnungserstellung",
 		description:
 			"Transparente, periodische Erstellung der Unternehmerabrechnung.",
+		icon: Receipt,
+		title: "4. Abrechnungserstellung",
 	},
 	{
+		description: "24/7 Online-Einsicht für Unternehmer und Zentrale.",
 		icon: Laptop,
 		title: "5. Portal-Zugang",
-		description: "24/7 Online-Einsicht für Unternehmer und Zentrale.",
 	},
 ] as const;
 
@@ -204,10 +204,10 @@ export default function Home() {
 
 						{/* CTA & Social Proof */}
 						<div className="flex w-full flex-col items-center justify-center gap-4 pt-4 sm:flex-row sm:gap-6">
-							<Link href="/kontakt" className="w-full sm:w-auto">
+							<Link className="w-full sm:w-auto" href="/kontakt">
 								<Button
-									size="lg"
 									className="h-14 w-full px-8 font-semibold text-base shadow-lg transition-all hover:scale-105"
+									size="lg"
 								>
 									Jetzt unverbindlich anfragen
 									<ArrowRight className="ml-2 size-5" />
@@ -220,9 +220,9 @@ export default function Home() {
 							<div className="flex items-center gap-1 text-yellow-400">
 								{[1, 2, 3, 4, 5].map((starId) => (
 									<svg
-										key={`star-${starId}`}
 										aria-hidden="true"
 										className="size-5 fill-current"
+										key={`star-${starId}`}
 										viewBox="0 0 24 24"
 									>
 										<path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
@@ -244,8 +244,8 @@ export default function Home() {
 			{/* Partners / Social Proof Section */}
 			<section className="relative z-10 bg-background pt-8 pb-16 md:pb-24">
 				<FadeInUp
-					delay={0.2}
 					className="container mx-auto max-w-6xl px-4 text-center"
+					delay={0.2}
 				>
 					<p className="mb-8 hidden font-medium text-muted-foreground text-sm uppercase tracking-widest md:block">
 						Offizielle Partner & Schnittstellen
@@ -253,17 +253,17 @@ export default function Home() {
 					<div className="flex flex-wrap items-center justify-center gap-8 opacity-70 transition-all hover:opacity-100 md:gap-12">
 						{partners.map((partner, _idx) => (
 							<Image
-								key={partner.name}
-								src={partner.logo}
 								alt={partner.name}
-								width={180}
-								height={50}
 								className={`w-auto object-contain transition-transform hover:scale-105 ${
 									partner.name === "Sozialfactoring" ||
 									partner.name === "GVN Fördermitglied"
 										? "h-12 md:h-14"
 										: "h-8 md:h-10"
 								} ${partner.name === "1159 Finance" ? "invert dark:invert-0" : "dark:brightness-0 dark:invert"}`}
+								height={50}
+								key={partner.name}
+								src={partner.logo}
+								width={180}
 							/>
 						))}
 					</div>
@@ -272,7 +272,7 @@ export default function Home() {
 
 			{/* Feature / UI Mockup Replacement */}
 			<section className="relative z-20 -mt-8 border-b pb-16 md:-mt-12 md:pb-24">
-				<FadeInUp delay={0.3} className="container mx-auto max-w-5xl px-4">
+				<FadeInUp className="container mx-auto max-w-5xl px-4" delay={0.3}>
 					<div className="rounded-2xl border bg-background/40 p-2 shadow-2xl ring-1 ring-primary/5 backdrop-blur-xl md:p-4">
 						<div className="overflow-hidden rounded-xl border bg-card shadow-sm">
 							{/* Mac-like Window Chrome */}
@@ -292,8 +292,8 @@ export default function Home() {
 								<div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
 									{promises.map((promise, _idx) => (
 										<Card
-											key={promise.content}
 											className="border-primary/10 bg-background shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+											key={promise.content}
 										>
 											<CardContent className="flex flex-col items-center gap-3 p-5 text-center md:p-6">
 												<div className="rounded-full bg-primary/10 p-3 ring-1 ring-primary/20">
@@ -352,7 +352,7 @@ export default function Home() {
 						</FadeInUp>
 						<div className="grid gap-4 sm:grid-cols-2">
 							{benefits.map((benefit, idx) => (
-								<FadeInUp key={benefit.title} delay={0.1 * idx}>
+								<FadeInUp delay={0.1 * idx} key={benefit.title}>
 									<Card className="h-full border-transparent bg-background/50 transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:bg-background hover:shadow-md">
 										<CardHeader>
 											<div className="mb-4 w-fit rounded-xl bg-primary/10 p-3 shadow-inner">
@@ -391,7 +391,7 @@ export default function Home() {
 						</p>
 					</FadeInUp>
 					<FadeInUp className="mx-auto max-w-3xl">
-						<Tabs defaultValue="fahrten" className="w-full">
+						<Tabs className="w-full" defaultValue="fahrten">
 							<TabsList className="mb-6 grid w-full grid-cols-3 bg-primary/5">
 								<TabsTrigger value="fahrten">Fahrten</TabsTrigger>
 								<TabsTrigger value="fahrzeuge">Fahrzeuge</TabsTrigger>
@@ -404,8 +404,8 @@ export default function Home() {
 										<ul className="grid gap-3 sm:grid-cols-2">
 											{services.map((service) => (
 												<li
-													key={service}
 													className="group flex items-start gap-3 rounded-lg p-2 transition-colors hover:bg-primary/5"
+													key={service}
 												>
 													<CheckCircle className="mt-0.5 size-5 shrink-0 text-primary transition-transform group-hover:scale-110 group-hover:text-primary/80" />
 													<span className="font-medium text-sm transition-colors group-hover:text-primary">
@@ -424,8 +424,8 @@ export default function Home() {
 										<ul className="grid gap-3 sm:grid-cols-2">
 											{vehicles.map((item) => (
 												<li
-													key={item}
 													className="group flex items-start gap-3 rounded-lg p-2 transition-colors hover:bg-primary/5"
+													key={item}
 												>
 													<CheckCircle className="mt-0.5 size-5 shrink-0 text-primary transition-transform group-hover:scale-110 group-hover:text-primary/80" />
 													<span className="font-medium text-sm transition-colors group-hover:text-primary">
@@ -444,8 +444,8 @@ export default function Home() {
 										<ul className="grid gap-3 sm:grid-cols-2">
 											{serviceFeatures.map((item) => (
 												<li
-													key={item}
 													className="group flex items-start gap-3 rounded-lg p-2 transition-colors hover:bg-primary/5"
+													key={item}
 												>
 													<CheckCircle className="mt-0.5 size-5 shrink-0 text-primary transition-transform group-hover:scale-110 group-hover:text-primary/80" />
 													<span className="font-medium text-sm transition-colors group-hover:text-primary">
@@ -459,7 +459,7 @@ export default function Home() {
 							</TabsContent>
 						</Tabs>
 					</FadeInUp>
-					<FadeInUp delay={0.2} className="mt-12 text-center">
+					<FadeInUp className="mt-12 text-center" delay={0.2}>
 						<Card className="mx-auto inline-block border-primary/20 shadow-sm">
 							<CardContent className="px-6 py-8 md:px-12">
 								<p className="mb-4 font-semibold text-foreground text-lg md:text-xl">
@@ -497,7 +497,7 @@ export default function Home() {
 							</p>
 							<ul className="mb-8 space-y-3">
 								{genossenschaftenFeatures.map((feature) => (
-									<li key={feature} className="flex items-start gap-3">
+									<li className="flex items-start gap-3" key={feature}>
 										<CheckCircle className="mt-1 size-5 text-primary" />
 										<span className="text-foreground">{feature}</span>
 									</li>
@@ -519,7 +519,7 @@ export default function Home() {
 								<CardContent className="pt-6">
 									<div className="space-y-6">
 										{workflowSteps.map((step) => (
-											<div key={step.title} className="flex gap-4">
+											<div className="flex gap-4" key={step.title}>
 												<div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
 													<step.icon className="size-5" />
 												</div>

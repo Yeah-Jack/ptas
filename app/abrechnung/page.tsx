@@ -25,53 +25,53 @@ import {
 } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-	title: "Abrechnung von Krankentransporten - leicht gemacht",
 	description:
 		"PTAS übernimmt die komplette Abrechnung Ihrer Krankentransporte. Von der Kommunikation mit den Krankenkassen bis zur Rückläufer-Bearbeitung. So haben Sie den Kopf frei für Ihr Kerngeschäft!",
 	openGraph: {
-		title: "Abrechnung von Krankentransporten - leicht gemacht",
 		description:
 			"PTAS übernimmt die komplette Abrechnung Ihrer Krankentransporte. Von der Kommunikation mit den Krankenkassen bis zur Rückläufer-Bearbeitung. So haben Sie den Kopf frei für Ihr Kerngeschäft!",
+		title: "Abrechnung von Krankentransporten - leicht gemacht",
 		url: "https://ptas.de/abrechnung",
 	},
+	title: "Abrechnung von Krankentransporten - leicht gemacht",
 };
 
 const accomplishments = [
 	{
+		desc: "Kommunikation mit Krankenkassen übernehmen wir",
 		icon: Scale,
 		title: "Keine Personalkosten",
-		desc: "Kommunikation mit Krankenkassen übernehmen wir",
 	},
 	{
+		desc: "Wir kümmern uns um alle Rückfragen",
 		icon: FileCheck,
 		title: "Rückläufer-Bearbeitung",
-		desc: "Wir kümmern uns um alle Rückfragen",
 	},
 	{
+		desc: "Schnelle Auszahlung durch Vorfinanzierung",
 		icon: Banknote,
 		title: "Planungssicherheit",
-		desc: "Schnelle Auszahlung durch Vorfinanzierung",
 	},
 ];
 
 const services = [
 	{
-		icon: Headphones,
-		title: "Persönlicher Support",
 		description:
 			"Hotline und persönlicher Ansprechpartner für alle Ihre Fragen",
+		icon: Headphones,
+		title: "Persönlicher Support",
 	},
 	{
-		icon: FileText,
-		title: "Digitale Belegerfassung",
 		description:
 			"Beratung zur Anschaffung eines geeigneten Dokumenten-Scanners für digitale Anlieferung",
+		icon: FileText,
+		title: "Digitale Belegerfassung",
 	},
 	{
-		icon: Banknote,
-		title: "Vorfinanzierung",
 		description:
 			"Für pünktlichen Geldeingang nutzen Sie unsere Vorfinanzierung für Krankentransporte",
+		icon: Banknote,
+		title: "Vorfinanzierung",
 	},
 ];
 
@@ -149,7 +149,7 @@ export default function AbrechnungPage() {
 						</FadeInUp>
 
 						{/* Selber machen Card */}
-						<FadeInUp delay={0.2} className="flex h-full flex-col">
+						<FadeInUp className="flex h-full flex-col" delay={0.2}>
 							<Card className="relative h-full overflow-hidden">
 								<CardHeader>
 									<div className="mb-2 flex items-center gap-2">
@@ -210,7 +210,7 @@ export default function AbrechnungPage() {
 						</FadeInUp>
 						<div className="grid gap-4">
 							{accomplishments.map((item, idx) => (
-								<FadeInUp key={item.title} delay={0.1 * (idx + 1)}>
+								<FadeInUp delay={0.1 * (idx + 1)} key={item.title}>
 									<Card>
 										<CardContent className="flex items-center gap-4 py-4">
 											<div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
@@ -317,7 +317,7 @@ export default function AbrechnungPage() {
 
 					<div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3">
 						{services.map((item, idx) => (
-							<FadeInUp key={item.title} delay={0.1 * idx}>
+							<FadeInUp delay={0.1 * idx} key={item.title}>
 								<Card className="h-full">
 									<CardHeader className="text-center">
 										<item.icon className="mx-auto mb-2 size-10 text-primary" />
@@ -330,18 +330,18 @@ export default function AbrechnungPage() {
 					</div>
 
 					<FadeInUp
-						delay={0.3}
 						className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 md:mt-12"
+						delay={0.3}
 					>
 						<Link href="/vorfinanzierung">
-							<Button variant="outline" className="gap-2">
+							<Button className="gap-2" variant="outline">
 								<Banknote className="size-4" />
 								Vorfinanzierung
 								<ArrowRight className="size-4" />
 							</Button>
 						</Link>
 						<Link href="/leistungen">
-							<Button variant="outline" className="gap-2">
+							<Button className="gap-2" variant="outline">
 								<Package className="size-4" />
 								Leistungs-Pakete
 								<ArrowRight className="size-4" />

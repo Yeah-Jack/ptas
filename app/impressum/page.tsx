@@ -1,8 +1,8 @@
 import { FadeInUp } from "@/components/animations/fade-in-up";
 
 export const metadata = {
-	title: "Impressum",
 	description: "Impressum der Daniel Software GmbH.",
+	title: "Impressum",
 };
 
 export default function ImpressumPage() {
@@ -59,8 +59,8 @@ export default function ImpressumPage() {
 									<br />
 									E-Mail:{" "}
 									<a
-										href="mailto:info@ptas.de"
 										className="text-primary hover:underline"
+										href="mailto:info@ptas.de"
 									>
 										info@ptas.de
 									</a>

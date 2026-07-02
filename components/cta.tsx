@@ -15,9 +15,9 @@ export default function CTA() {
 				</p>
 				<Link href="/kontakt">
 					<Button
-						variant="secondary"
-						size="lg"
 						className="gap-2 bg-background text-foreground hover:bg-background/90"
+						size="lg"
+						variant="secondary"
 					>
 						<Send className="size-4" />
 						Erste Abrechnung erstellen

@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml encoding="UTF-8" standalone="no" version="1.0" ?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   id="Ebene_1"
    data-name="Ebene 1"
-   viewBox="0 0 1620 809.99998"
-   version="1.1"
-   sodipodi:docname="ptas.svg"
-   width="1620"
    height="810"
-   inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
+   id="Ebene_1"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)"
+   sodipodi:docname="ptas.svg"
+   version="1.1"
+   viewBox="0 0 1620 809.99998"
+   width="1620"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:svg="http://www.w3.org/2000/svg">
   <metadata
      id="metadata50">
     <rdf:RDF>
@@ -30,35 +30,35 @@
   <defs
      id="defs48" />
   <sodipodi:namedview
-     pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1"
-     objecttolerance="10"
      gridtolerance="10000"
      guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1774"
-     inkscape:window-height="1010"
      id="namedview46"
-     showgrid="true"
-     inkscape:snap-global="true"
-     inkscape:object-nodes="true"
-     inkscape:snap-grids="true"
-     inkscape:snap-to-guides="true"
-     inkscape:zoom="0.68358679"
+     inkscape:current-layer="Ebene_1"
      inkscape:cx="771.665"
      inkscape:cy="391.54"
+     inkscape:document-rotation="0"
+     inkscape:object-nodes="true"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:snap-global="true"
+     inkscape:snap-grids="true"
+     inkscape:snap-to-guides="true"
+     inkscape:window-height="1010"
+     inkscape:window-maximized="0"
+     inkscape:window-width="1774"
      inkscape:window-x="173"
      inkscape:window-y="55"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="Ebene_1"
-     inkscape:document-rotation="0">
+     inkscape:zoom="0.68358679"
+     objecttolerance="10"
+     pagecolor="#ffffff"
+     showgrid="true">
     <inkscape:grid
-       type="xygrid"
        id="grid52"
        spacingx="32"
-       spacingy="32" />
+       spacingy="32" 
+       type="xygrid"/>
   </sodipodi:namedview>
   <style
      id="style31">
@@ -75,13 +75,13 @@
   <path
      class="logo__letter-punch"
      d="m 427.61,515.89 c 0,-41.37 -20.69,-62.06 -61.44,-62.06 h -89 v 123.49 h 84.63 c 43.87,0.68 65.81,-20.05 65.81,-61.43 z"
-     transform="translate(-188.78,-148.79)"
-     id="path33" />
+     id="path33" 
+     transform="translate(-188.78,-148.79)"/>
   <!-- A (punch) -->
   <polygon
      class="logo__letter-punch"
-     points="1052.34,142.56 889.8,443.28 1043.25,443.28 "
-     id="polygon35" />
+     id="polygon35" 
+     points="1052.34,142.56 889.8,443.28 1043.25,443.28 "/>
   <!-- P -->
   <path
      class="logo__letter-pts"

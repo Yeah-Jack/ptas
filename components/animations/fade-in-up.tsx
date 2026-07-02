@@ -19,16 +19,16 @@ export function FadeInUp({
 }: FadeInUpProps) {
 	return (
 		<motion.div
-			initial={{ opacity: 0, y: 20 }}
-			whileInView={viewport ? { opacity: 1, y: 0 } : undefined}
 			animate={!viewport ? { opacity: 1, y: 0 } : undefined}
-			viewport={viewport ? { once: true, margin: "-100px" } : undefined}
+			className={cn(className)}
+			initial={{ opacity: 0, y: 20 }}
 			transition={{
-				duration: 0.5,
 				delay,
+				duration: 0.5,
 				ease: [0.21, 0.47, 0.32, 0.98],
 			}}
-			className={cn(className)}
+			viewport={viewport ? { margin: "-100px", once: true } : undefined}
+			whileInView={viewport ? { opacity: 1, y: 0 } : undefined}
 		>
 			{children}
 		</motion.div>

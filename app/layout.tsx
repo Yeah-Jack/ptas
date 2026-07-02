@@ -8,27 +8,27 @@ import Providers from "@/components/providers";
 import { cn } from "@/lib/utils";
 
 const inter = Inter({
-	subsets: ["latin"],
 	display: "swap",
+	subsets: ["latin"],
 	variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
+	description:
+		"Professionelle Abrechnung für Kranken-, Rollstuhl- und Tragestuhltransporte. Konzentrieren Sie sich auf Ihr Geschäft, wir übernehmen die Abrechnung.",
 	metadataBase: new URL("https://ptas.de"),
+	openGraph: {
+		description:
+			"Professionelle Abrechnung für Kranken-, Rollstuhl- und Tragestuhltransporte. Konzentrieren Sie sich auf Ihr Geschäft, wir übernehmen die Abrechnung.",
+		images: [{ url: "https://ptas.de/icon.svg" }],
+		locale: "de_DE",
+		siteName: "PTAS",
+		title: "PTAS - Personentransport-Abrechnungsservice",
+		url: "https://ptas.de",
+	},
 	title: {
 		default: "PTAS - Personentransport-Abrechnungsservice",
 		template: "%s | PTAS",
-	},
-	description:
-		"Professionelle Abrechnung für Kranken-, Rollstuhl- und Tragestuhltransporte. Konzentrieren Sie sich auf Ihr Geschäft, wir übernehmen die Abrechnung.",
-	openGraph: {
-		title: "PTAS - Personentransport-Abrechnungsservice",
-		description:
-			"Professionelle Abrechnung für Kranken-, Rollstuhl- und Tragestuhltransporte. Konzentrieren Sie sich auf Ihr Geschäft, wir übernehmen die Abrechnung.",
-		url: "https://ptas.de",
-		siteName: "PTAS",
-		images: [{ url: "https://ptas.de/icon.svg" }],
-		locale: "de_DE",
 	},
 };
 
@@ -39,18 +39,18 @@ export default function RootLayout({
 }>) {
 	return (
 		<html
+			className={cn("h-full antialiased", inter.variable)}
 			lang="de"
 			suppressHydrationWarning
-			className={cn("h-full antialiased", inter.variable)}
 		>
 			<body>
 				<Script
-					strategy="beforeInteractive"
 					src="https://cloud.ccm19.de/app.js?apiKey=295cd4d0334f21415c578a0a1683af21ebe840cccf666d7f&amp;domain=6a3151492f75bfecf00d9be2"
+					strategy="beforeInteractive"
 				/>
 				<Script
-					strategy="afterInteractive"
 					src="https://www.googletagmanager.com/gtag/js?id=AW-10795425279"
+					strategy="afterInteractive"
 				/>
 				<Script id="google-ads-tag" strategy="afterInteractive">
 					{`

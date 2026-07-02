@@ -2,16 +2,16 @@ import { Ambulance, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 
 const navigationLinks = [
-	{ to: "/", label: "Startseite" },
-	{ to: "/leistungen", label: "Leistungen" },
-	{ to: "/abrechnung", label: "Abrechnung" },
-	{ to: "/vorfinanzierung", label: "Vorfinanzierung" },
-	{ to: "/kontakt", label: "Kontakt" },
+	{ label: "Startseite", to: "/" },
+	{ label: "Leistungen", to: "/leistungen" },
+	{ label: "Abrechnung", to: "/abrechnung" },
+	{ label: "Vorfinanzierung", to: "/vorfinanzierung" },
+	{ label: "Kontakt", to: "/kontakt" },
 ] as const;
 
 const legalLinks = [
-	{ to: "/impressum", label: "Impressum" },
-	{ to: "/datenschutz", label: "Datenschutz" },
+	{ label: "Impressum", to: "/impressum" },
+	{ label: "Datenschutz", to: "/datenschutz" },
 ] as const;
 
 export default function Footer() {
@@ -22,8 +22,8 @@ export default function Footer() {
 					{/* Brand */}
 					<div className="flex flex-col gap-4">
 						<Link
-							href="/"
 							className="flex items-center gap-2 font-bold text-lg text-primary"
+							href="/"
 						>
 							<Ambulance className="size-5" />
 							PTAS
@@ -43,9 +43,9 @@ export default function Footer() {
 						<nav className="flex flex-col gap-2">
 							{navigationLinks.map(({ to, label }) => (
 								<Link
-									key={to}
-									href={to}
 									className="text-muted-foreground text-sm transition-colors hover:text-foreground"
+									href={to}
+									key={to}
 								>
 									{label}
 								</Link>
@@ -61,10 +61,10 @@ export default function Footer() {
 						<nav className="flex flex-col gap-2">
 							{legalLinks.map(({ to, label }) => (
 								<Link
-									key={to}
-									href={to}
-									prefetch={false}
 									className="text-muted-foreground text-sm transition-colors hover:text-foreground"
+									href={to}
+									key={to}
+									prefetch={false}
 								>
 									{label}
 								</Link>
@@ -79,11 +79,11 @@ export default function Footer() {
 						</h3>
 						<div className="flex flex-col gap-3 text-muted-foreground text-sm">
 							<Link
-								href="https://www.google.com/maps/place/Am+Holzweg+26,+65830+Kriftel,+Deutschland"
-								target="_blank"
-								rel="noopener noreferrer"
-								prefetch={false}
 								className="flex items-center gap-2 transition-colors hover:text-foreground"
+								href="https://www.google.com/maps/place/Am+Holzweg+26,+65830+Kriftel,+Deutschland"
+								prefetch={false}
+								rel="noopener noreferrer"
+								target="_blank"
 							>
 								<MapPin className="mt-0.5 size-4 shrink-0 text-primary" />
 								<span>
@@ -93,17 +93,17 @@ export default function Footer() {
 								</span>
 							</Link>
 							<Link
+								className="flex items-center gap-2 transition-colors hover:text-foreground"
 								href="tel:+4961929391752"
 								prefetch={false}
-								className="flex items-center gap-2 transition-colors hover:text-foreground"
 							>
 								<Phone className="size-4 shrink-0 text-primary" />
 								(06192) 9391 752
 							</Link>
 							<Link
+								className="flex items-center gap-2 transition-colors hover:text-foreground"
 								href="mailto:info@ptas.de"
 								prefetch={false}
-								className="flex items-center gap-2 transition-colors hover:text-foreground"
 							>
 								<Mail className="size-4 shrink-0 text-primary" />
 								info@ptas.de

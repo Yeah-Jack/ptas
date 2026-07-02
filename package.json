@@ -1,14 +1,4 @@
 {
-	"name": "ptas",
-	"version": "0.0.1",
-	"type": "module",
-	"private": true,
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"check": "biome check --write ."
-	},
 	"dependencies": {
 		"@tanstack/react-form": "^1.33.0",
 		"babel-plugin-react-compiler": "^1.0.0",
@@ -37,9 +27,19 @@
 		"@types/node": "^26.0.0",
 		"@types/react": "^19.2.17",
 		"@types/react-dom": "^19.2.3",
+		"lefthook": "^2.1.9",
 		"postcss": "^8.5.15",
 		"tailwindcss": "^4.3.1",
-		"typescript": "^6.0.3",
-		"lefthook": "^2.1.9"
-	}
+		"typescript": "^6.0.3"
+	},
+	"name": "ptas",
+	"private": true,
+	"scripts": {
+		"build": "next build",
+		"dev": "next dev",
+		"lint": "biome check --write .",
+		"start": "next start"
+	},
+	"type": "module",
+	"version": "0.0.1"
 }
