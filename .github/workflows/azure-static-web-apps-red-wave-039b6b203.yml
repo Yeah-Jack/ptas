@@ -70,6 +70,13 @@ jobs:
           submodules: true
           lfs: false
 
+      - name: Cache Next.js Build
+        uses: actions/cache@v6
+        with:
+          path: .next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
       - name: Get Id Token
         uses: actions/github-script@v9
         id: idtoken
