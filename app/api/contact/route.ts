@@ -45,9 +45,8 @@ export async function POST(req: Request) {
 
 		const publicKey = process.env.MAILJET_APIKEY_PUBLIC;
 		const privateKey = process.env.MAILJET_APIKEY_PRIVATE;
-		const toEmail = process.env.MAILJET_TO_EMAIL;
 
-		if (!publicKey || !privateKey || !toEmail) {
+		if (!publicKey || !privateKey) {
 			console.error("Mailjet env vars missing.");
 			return NextResponse.json(
 				{ error: "Server-Konfigurationsfehler: E-Mail-Dienst nicht bereit." },
@@ -97,7 +96,10 @@ export async function POST(req: Request) {
 					ReplyTo: { Email: email, Name: name },
 					Subject: `Neue Kontaktanfrage von ${name}`,
 					TextPart: `Neue Kontaktanfrage von ${name}. E-Mail: ${email}`,
-					To: [{ Email: toEmail, Name: "PTAS Info" }],
+					To: [
+						{ Email: "info@ptas.de", Name: "PTAS Info" },
+						{ Email: "andre.bartels@ptas.de", Name: "Andre Bartels" },
+					],
 				},
 			],
 		});
