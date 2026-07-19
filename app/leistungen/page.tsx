@@ -347,13 +347,10 @@ export default function LeistungenPage() {
 								<div className="absolute top-0 right-0 rounded-bl-lg bg-primary px-3 py-1 font-medium text-primary-foreground text-xs">
 									Top-Kombination!
 								</div>
-								<CardHeader className="pt-8">
+								<CardHeader className="pt-6">
 									<CardTitle className="text-2xl">
 										Abrechnung mit Vorfinanzierung
 									</CardTitle>
-									<CardDescription className="text-base">
-										Testen Sie uns!
-									</CardDescription>
 								</CardHeader>
 								<CardContent className="flex-1">
 									<ul className="space-y-3">
