@@ -102,7 +102,7 @@
 					}
 				}
 			},
-			"includes": ["package.json"]
+			"includes": ["package.json", "bun.lock"]
 		}
 	],
 	"vcs": {
