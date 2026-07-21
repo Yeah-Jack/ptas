@@ -36,10 +36,11 @@
 		"next-env.d.ts",
 		"**/*.ts",
 		"**/*.tsx",
+		"**/*.mts",
+		"**/*.mdx",
 		".next/types/**/*.ts",
 		".next/dev/types/**/*.ts",
-		"next.config.ts",
-		"**/*.mts"
+		"next.config.ts"
 	],
 	"types": ["node"]
 }
