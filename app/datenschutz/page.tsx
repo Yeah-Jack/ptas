@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default async function DatenschutzPage() {
 	const html = await fs.readFile(
-		path.join(process.cwd(), "public", "datenschutz.html"),
+		path.join(process.cwd(), "content", "legal", "datenschutz.html"),
 		"utf-8",
 	);
 
