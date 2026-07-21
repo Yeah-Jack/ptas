@@ -103,6 +103,16 @@
 				}
 			},
 			"includes": ["package.json", "bun.lock"]
+		},
+		{
+			"includes": ["public/datenschutz.html"],
+			"linter": {
+				"rules": {
+					"complexity": {
+						"noImportantStyles": "off"
+					}
+				}
+			}
 		}
 	],
 	"vcs": {
