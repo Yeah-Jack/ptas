@@ -98,7 +98,7 @@ export default function Footer() {
 								prefetch={false}
 							>
 								<Phone className="size-4 shrink-0 text-primary" />
-								(06192) 9391 752
+								06192 9391 752
 							</Link>
 							<Link
 								className="flex items-center gap-2 transition-colors hover:text-foreground"

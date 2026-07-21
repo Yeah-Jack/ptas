@@ -131,7 +131,7 @@ export default function KontaktPage() {
 											className="text-foreground hover:text-primary"
 											href="tel:+4961929391752"
 										>
-											+49 6192 9391 752
+											06192 9391 752
 										</a>
 									</CardDescription>
 								</CardHeader>
