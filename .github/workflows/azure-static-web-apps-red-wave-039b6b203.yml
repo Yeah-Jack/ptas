@@ -94,6 +94,7 @@ jobs:
           app_location: /
           api_location: ''
           output_location: ''
+          github_id_token: ${{ steps.idtoken.outputs.result }}
         env:
           MAILJET_APIKEY_PUBLIC: ${{ secrets.MAILJET_APIKEY_PUBLIC }}
           MAILJET_APIKEY_PRIVATE: ${{ secrets.MAILJET_APIKEY_PRIVATE }}
