@@ -336,9 +336,9 @@ export default function Home() {
 									Wichtigste!
 								</p>
 								<p>
-									Dank unserer eigenen Software-Entwicklung und jahrelanger
-									Erfahrung begleiten wir Sie bei allen Themen rund um Ihre
-									Abrechnung.
+									Dank unserer eigenen Software-Entwicklung und{" "}
+									{new Date().getFullYear() - 1997}-jähriger Erfahrung begleiten
+									wir Sie bei allen Themen rund um Ihre Abrechnung.
 								</p>
 								<p>
 									Wir ersparen Ihnen Personal- und Verwaltungskosten durch
