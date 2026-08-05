@@ -117,8 +117,8 @@ export default function Footer() {
 			<div className="border-t bg-background/50">
 				<div className="container mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-4 text-center text-muted-foreground text-xs sm:flex-row sm:text-left">
 					<p>
-						© {new Date().getFullYear()} Personentransport-Abrechnungsservice.
-						Alle Rechte vorbehalten.
+						© 1997 - {new Date().getFullYear()}{" "}
+						Personentransport-Abrechnungsservice. Alle Rechte vorbehalten.
 					</p>
 					<Link href="https://github.com/Yeah-Jack" prefetch={false}>
 						Mit <span className="text-primary">♥</span> entwickelt in
