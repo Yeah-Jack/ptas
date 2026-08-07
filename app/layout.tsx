@@ -30,6 +30,11 @@ export const metadata: Metadata = {
 		default: "PTAS - Personentransport-Abrechnungsservice",
 		template: "%s | PTAS",
 	},
+	verification: {
+		other: {
+			"msvalidate.01": "D9D3718C0124D4601CF8474A8E8BF3E8",
+		},
+	},
 };
 
 export default function RootLayout({
