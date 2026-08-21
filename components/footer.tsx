@@ -120,7 +120,11 @@ export default function Footer() {
 						© 1997 - {new Date().getFullYear()}{" "}
 						Personentransport-Abrechnungsservice. Alle Rechte vorbehalten.
 					</p>
-					<Link href="https://github.com/Yeah-Jack" prefetch={false}>
+					<Link
+						href="https://github.com/Yeah-Jack"
+						prefetch={false}
+						title="Mit Herz von Frederik Bauer in Deutschland entwickelt"
+					>
 						Mit <span className="text-primary">♥</span> entwickelt in
 						Deutschland
 					</Link>
