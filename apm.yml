@@ -1,0 +1,22 @@
+name: PTAS Website
+version: 1.0.0
+description: APM project for the PTAS Website
+author: Yeah Jack
+# Which agent platforms to deploy to.
+# Resolution order: --target flag > this field > auto-detect from filesystem.
+# Accepted values: agent-skills, antigravity, claude, codex, copilot, cursor, gemini, grok-build, hermes, kiro, opencode, vscode, windsurf
+targets:
+  - copilot
+dependencies:
+  apm:
+    - anthropics/skills/skills/frontend-design
+    - anthropics/skills/skills/theme-factory
+    - shadcn-ui/ui/skills/shadcn
+    - vercel-labs/agent-skills
+    - mattpocock/skills
+    - coreyhaines31/marketingskills
+    - ibelick/ui-skills
+    - nextlevelbuilder/ui-ux-pro-max-skill
+  mcp: []
+includes: auto
+scripts: {}

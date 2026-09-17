@@ -62,6 +62,10 @@ coverage
 # TypeScript
 *.tsbuildinfo
 
+# AI
+.agents
+apm_modules/
+
 # Misc
 *.tgz
 .cache
