@@ -27,6 +27,8 @@
 			"!.next",
 			"!dist",
 			"!build",
+			"!.agents",
+			"!apm_modules",
 			"!**/.turbo",
 			"!**/dev-dist",
 			"!**/.zed",

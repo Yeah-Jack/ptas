@@ -31,7 +31,7 @@
 		"target": "ESNext",
 		"verbatimModuleSyntax": true
 	},
-	"exclude": ["node_modules"],
+	"exclude": ["node_modules", "apm_modules"],
 	"include": [
 		"next-env.d.ts",
 		"**/*.ts",
