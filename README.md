@@ -20,6 +20,12 @@ First, install the dependencies:
 bun install
 ```
 
+Optionally, install AI coding dependencies:
+
+```bash
+apm install
+```
+
 Then, run the development server:
 
 ```bash
