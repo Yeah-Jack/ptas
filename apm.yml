@@ -17,6 +17,7 @@ dependencies:
     - coreyhaines31/marketingskills
     - ibelick/ui-skills
     - nextlevelbuilder/ui-ux-pro-max-skill
+    - vercel/turborepo
   mcp: []
 includes: auto
 scripts: {}
