@@ -1,15 +1,6 @@
 {
 	"$schema": "https://turborepo.dev/schema.json",
 	"globalDependencies": [".env*", "apps/*/.env*", "packages/*/.env*"],
-	"globalEnv": [
-		"CI",
-		"NODE_ENV",
-		"VERCEL",
-		"VERCEL_ENV",
-		"VERCEL_PROJECT_PRODUCTION_URL",
-		"VERCEL_URL",
-		"_VARLOCK_ENV_KEY"
-	],
 	"tasks": {
 		"build": {
 			"dependsOn": ["^build"],
