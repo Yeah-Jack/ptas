@@ -43,5 +43,11 @@
 		"tailwindcss": "^4.3.3",
 		"turbo": "^2.11.5",
 		"typescript": "^7.0.2"
+	},
+	"devEngines": {
+		"packageManager": {
+			"name": "bun",
+			"version": "1.4.2"
+		}
 	}
 }
