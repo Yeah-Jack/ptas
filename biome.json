@@ -68,7 +68,10 @@
 				"noSvgWithoutTitle": "off"
 			},
 			"correctness": {
-				"useExhaustiveDependencies": "info"
+				"noBeforeInteractiveScriptOutsideDocument": "error",
+				"noNextAsyncClientComponent": "error",
+				"useExhaustiveDependencies": "info",
+				"useInlineScriptId": "error"
 			},
 			"nursery": {
 				"useSortedClasses": {
@@ -79,8 +82,12 @@
 					}
 				}
 			},
+			"performance": {
+				"noImgElement": "error"
+			},
 			"preset": "recommended",
 			"style": {
+				"noHeadElement": "error",
 				"noInferrableTypes": "error",
 				"noParameterAssign": "error",
 				"noUnusedTemplateLiteral": "error",
@@ -92,6 +99,10 @@
 				"useNumberNamespace": "error",
 				"useSelfClosingElements": "error",
 				"useSingleVarDeclarator": "error"
+			},
+			"suspicious": {
+				"noDocumentImportInPage": "error",
+				"noHeadImportInDocument": "error"
 			}
 		}
 	},
@@ -107,7 +118,7 @@
 			"includes": ["package.json", "bun.lock"]
 		},
 		{
-			"includes": ["public/datenschutz.html"],
+			"includes": ["content/legal/datenschutz.html"],
 			"linter": {
 				"rules": {
 					"complexity": {
