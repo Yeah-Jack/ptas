@@ -1,52 +1,64 @@
-# PTAS
-
-<!-- BEGIN:nextjs-agent-rules -->
-## This is NOT the Next.js you know
-
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
-<!-- END:nextjs-agent-rules -->
+# PTAS Websites
 
 ## Project Overview
 
-PTAS (Personentransport-Abrechnungsservice) is a German B2B website for a patient transport billing service. The site is built with Next.js 16 and Tailwind CSS.
+Turborepo monorepo (Bun workspaces) for two German B2B websites, both built with Next.js 16 and Tailwind CSS 4:
+
+- **ptas.de**: PTAS (Personentransport-Abrechnungsservice), billing service for patient transport
+- **taxiware.de**: Taxiware, a new product (site in early setup)
 
 ## Architecture
 
 ```text
-ptas/           # Next.js 16 frontend (port 3000)
-├── app/        # App Router pages (German routes)
-├── components/ # React components
-│   └── ui/     # shadcn/ui components
-└── lib/        # Utilities (cn function)
+apps/
+├── ptas/           # ptas.de (port 3000)
+│   ├── app/        # App Router pages (German routes)
+│   ├── components/ # PTAS-specific React components
+│   └── content/    # Legal texts loaded at build time
+└── taxiware/       # taxiware.de (port 3001)
+packages/
+└── ui/             # @repo/ui: shared shadcn/ui components, cn(), base theme
+    └── src/
+        ├── components/
+        ├── lib/utils.ts
+        └── styles/globals.css
 ```
+
+Keep brand-specific code (header, footer, pages, metadata, analytics, legal texts) in the app. Only move code to `packages/` once both sites need it.
 
 ## Key Commands
 
+Run from the repo root:
+
 ```bash
-bun install              # Install dependencies
-bun run dev              # Start dev server (localhost:3000)
-bun run build            # Build for production
-bun run start            # Start in production mode
-bun run lint            # Format & lint with Biome (auto-fix)
+bun install                            # Install dependencies for all workspaces
+bun run dev                            # Start both dev servers (3000 and 3001)
+bunx turbo run dev --filter=ptas       # Start a single app
+bun run build                          # Build all apps (cached by Turborepo)
+bun run check-types                    # Type check all workspaces
+bun run lint                           # Format & lint with Biome (auto-fix)
 ```
 
 ## Code Patterns
 
 ### UI Components
 
-- Use shadcn/ui components from `@/components/ui/*`
+- Use shadcn/ui components from `@repo/ui/components/*`
 - Icons: `lucide-react`
-- Class merging: `cn()` from `@/lib/utils`
+- Class merging: `cn()` from `@repo/ui/lib/utils`
+- `@/*` points to the current app's own folder
 
 ```tsx
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import { Button } from "@repo/ui/components/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@repo/ui/components/card";
+import { cn } from "@repo/ui/lib/utils";
 ```
 
 ### Styling Conventions
 
 - Tailwind CSS 4
+- Shared theme tokens live in `packages/ui/src/styles/globals.css`
+- Each app's `app/global.css` imports `@repo/ui/globals.css` and overrides brand colors (`--primary`, ...)
 
 ### Language
 
@@ -56,8 +68,38 @@ import { cn } from "@/lib/utils";
 
 ## Adding shadcn Components
 
+Run the CLI from the app that needs the component:
+
 ```bash
+cd apps/ptas
 bunx --bun shadcn@latest add [component]
 ```
 
-Components are installed to `components/ui`.
+UI primitives are installed to `packages/ui/src/components`, composed blocks to the app's `components/`.
+
+## Deployment
+
+Each app is its own Azure Static Web App with its own Azure-generated workflow (`.github/workflows/azure-static-web-apps-<adjective>-<noun>-<hex>.yml`; ptas.de is `...-red-wave-039b6b203.yml`).
+
+- Never rename these files or move them out of `.github/workflows/`. Azure identifies the target app from the filename in the GitHub OIDC token.
+- Don't move the deploy step into a reusable workflow (`workflow_call`), since that changes the workflow named in the token.
+- Shared build steps live in the composite action `.github/actions/build-standalone`. It builds one app with Turborepo and flattens the Next.js standalone output.
+- Each deploy workflow is filtered to paths that affect its app.
+- `ci.yml` lints, type checks and builds everything.
+
+<!-- BEGIN:nextjs-agent-rules -->
+## This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
+<!-- END:nextjs-agent-rules -->
+
+<!-- BEGIN:turborepo-agent-rules -->
+
+# This is NOT the Turborepo you know
+
+Turborepo configuration, task behavior, and CLI commands can vary between installed versions and may differ from your training data. Resolve the `turbo` package from this file's directory or relevant workspace; in monorepos, it may not be visible from the repository root. For example, run `node -p "require.resolve('turbo/package.json')"` from a workspace that depends on `turbo`.
+
+Read `docs/README.md` inside that installed package first, then read the relevant pages from its `docs/` directory before changing Turborepo configuration or commands. Heed deprecation notices. These bundled docs match the installed package version and are available without network access.
+
+This block is written and re-added by `turbo` before repository-scoped commands when an AI agent is detected. In the Turborepo source repository, its template is defined in `crates/turborepo-cli/src/cli/agent_guidance.rs`. Removing the managed block while updates are enabled means a later qualifying invocation will add it again. Set `"agentGuidance": false` in the root `turbo.json` or `turbo.jsonc` to opt out; this does not remove an existing block. Keep the block committed with your work to avoid an uncommitted change on the next agent invocation.
+<!-- END:turborepo-agent-rules -->

@@ -1,0 +1,10 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"compilerOptions": {
+		"paths": {
+			"@repo/ui/*": ["./src/*"]
+		}
+	},
+	"extends": "../../tsconfig.base.json",
+	"include": ["src"]
+}

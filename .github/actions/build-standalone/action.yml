@@ -1,0 +1,52 @@
+name: Build standalone Next.js app
+description: >
+  Builds one app under apps/ with Turborepo and lays out .next/standalone the
+  way Azure Static Web Apps expects. Shared by every site's deploy workflow.
+  This is a composite action (not a reusable workflow) so the deploy job keeps
+  running in the Azure-generated workflow file, which Azure checks via OIDC.
+
+inputs:
+  app:
+    description: Folder name under apps/ (also the workspace package name)
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Setup Bun
+      uses: oven-sh/setup-bun@v2
+      with:
+        bun-version-file: package.json
+
+    - name: Install dependencies
+      shell: bash
+      run: bun install --frozen-lockfile
+
+    - name: Cache Next.js build
+      uses: actions/cache@v6
+      with:
+        path: apps/${{ inputs.app }}/.next/cache
+        key: ${{ runner.os }}-nextjs-${{ inputs.app }}-${{ hashFiles('bun.lock') }}-${{ github.sha }}
+        restore-keys: |
+          ${{ runner.os }}-nextjs-${{ inputs.app }}-${{ hashFiles('bun.lock') }}-
+
+    - name: Build
+      shell: bash
+      run: bunx turbo run build --filter="$APP"
+      env:
+        APP: ${{ inputs.app }}
+        NEXT_TELEMETRY_DISABLED: 1
+
+    # Next.js traces from the monorepo root, so the server lands in
+    # .next/standalone/apps/<app>. Static Web Apps expects server.js at the
+    # top of .next/standalone, next to the traced node_modules.
+    - name: Prepare standalone output
+      shell: bash
+      working-directory: apps/${{ inputs.app }}
+      env:
+        APP: ${{ inputs.app }}
+      run: |
+        cp -r .next/static ".next/standalone/apps/$APP/.next/"
+        if [ -d public ]; then cp -r public ".next/standalone/apps/$APP/"; fi
+        cp -r ".next/standalone/apps/$APP/." .next/standalone/
+        rm -rf .next/standalone/apps

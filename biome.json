@@ -23,10 +23,10 @@
 		"ignoreUnknown": false,
 		"includes": [
 			"**",
-			"!node_modules",
-			"!.next",
-			"!dist",
-			"!build",
+			"!**/node_modules",
+			"!**/.next",
+			"!**/dist",
+			"!**/build",
 			"!.agents",
 			"!apm_modules",
 			"!**/.turbo",
@@ -44,7 +44,7 @@
 			"!**/wrangler.jsonc",
 			"!**/.source",
 			"!**/convex/_generated",
-			"!**/components/ui",
+			"!packages/ui/src/components",
 			"!**/*.svg"
 		]
 	},
@@ -115,10 +115,10 @@
 					}
 				}
 			},
-			"includes": ["package.json", "bun.lock"]
+			"includes": ["**/package.json", "bun.lock"]
 		},
 		{
-			"includes": ["content/legal/datenschutz.html"],
+			"includes": ["apps/*/content/legal/*.html"],
 			"linter": {
 				"rules": {
 					"complexity": {
