@@ -1,0 +1,97 @@
+name: Azure Static Web App
+
+# Reusable deploy for one Next.js app under apps/. Each site has its own
+# Static Web App resource and calls this from a small deploy-<app>.yml.
+on:
+  workflow_call:
+    inputs:
+      app:
+        description: Folder name under apps/ (also the workspace package name)
+        required: true
+        type: string
+    secrets:
+      azure_static_web_apps_api_token:
+        required: true
+
+jobs:
+  build_and_deploy:
+    if: github.event_name != 'pull_request' || github.event.action != 'closed'
+    runs-on: ubuntu-latest
+    name: Build and Deploy
+    permissions:
+      contents: read
+      id-token: write
+      issues: write
+      pull-requests: write
+    env:
+      APP: ${{ inputs.app }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7
+        with:
+          submodules: true
+          lfs: false
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: package.json
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Cache Next.js build
+        uses: actions/cache@v6
+        with:
+          path: apps/${{ inputs.app }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ inputs.app }}-${{ hashFiles('bun.lock') }}-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ inputs.app }}-${{ hashFiles('bun.lock') }}-
+
+      - name: Build
+        run: bunx turbo run build --filter="$APP"
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
+
+      # Next.js traces from the monorepo root, so the server lands in
+      # .next/standalone/apps/<app>. Static Web Apps expects server.js at the
+      # top of .next/standalone, next to the traced node_modules.
+      - name: Prepare standalone output
+        working-directory: apps/${{ inputs.app }}
+        run: |
+          cp -r .next/static ".next/standalone/apps/$APP/.next/"
+          if [ -d public ]; then cp -r public ".next/standalone/apps/$APP/"; fi
+          cp -r ".next/standalone/apps/$APP/." .next/standalone/
+          rm -rf .next/standalone/apps
+
+      - name: Get Id Token
+        uses: actions/github-script@v9
+        id: idtoken
+        with:
+          script: return await core.getIDToken()
+          result-encoding: string
+
+      - name: Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.azure_static_web_apps_api_token }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: upload
+          app_location: apps/${{ inputs.app }}
+          api_location: ''
+          output_location: ''
+          skip_app_build: true
+          github_id_token: ${{ steps.idtoken.outputs.result }}
+
+  close_pull_request:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    name: Close Pull Request
+    steps:
+      - name: Close Pull Request
+        id: closepullrequest
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.azure_static_web_apps_api_token }}
+          action: close

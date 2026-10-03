@@ -1,0 +1,12 @@
+@import "@repo/ui/globals.css";
+
+/* PTAS brand colors on top of the shared theme */
+:root {
+	--primary: oklch(37% 0.152 29.2);
+	--primary-foreground: oklch(0.985 0 0);
+}
+
+.dark {
+	--primary: oklch(56.3% 0.231 29.2);
+	--primary-foreground: oklch(0.985 0 0);
+}

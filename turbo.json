@@ -1,11 +1,12 @@
 {
 	"$schema": "https://turborepo.dev/schema.json",
-	"globalDependencies": [".env*", "apps/*/.env*", "packages/*/.env*"],
+	"globalDependencies": ["tsconfig.base.json"],
+	"globalPassThroughEnv": ["NEXT_TELEMETRY_DISABLED"],
 	"tasks": {
 		"build": {
 			"dependsOn": ["^build"],
 			"inputs": ["$TURBO_DEFAULT$", ".env*"],
-			"outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+			"outputs": [".next/**", "!.next/cache/**", "!.next/dev/**"]
 		},
 		"check-types": {
 			"dependsOn": ["^check-types"]
@@ -14,8 +15,10 @@
 			"cache": false,
 			"persistent": true
 		},
-		"lint": {
-			"dependsOn": ["^lint"]
+		"start": {
+			"cache": false,
+			"dependsOn": ["build"],
+			"persistent": true
 		}
 	},
 	"ui": "tui"
