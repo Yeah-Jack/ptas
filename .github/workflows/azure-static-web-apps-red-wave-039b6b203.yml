@@ -1,0 +1,96 @@
+# Deploys ptas.de. Do not rename this file: Azure Static Web Apps identifies
+# the target app from this Azure-generated filename via the GitHub OIDC token.
+name: Deploy ptas.de
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - apps/ptas/**
+      - packages/**
+      - package.json
+      - bun.lock
+      - bunfig.toml
+      - turbo.json
+      - tsconfig.base.json
+      - .github/actions/build-standalone/**
+      - .github/workflows/azure-static-web-apps-red-wave-039b6b203.yml
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - closed
+    branches:
+      - main
+    paths:
+      - apps/ptas/**
+      - packages/**
+      - package.json
+      - bun.lock
+      - bunfig.toml
+      - turbo.json
+      - tsconfig.base.json
+      - .github/actions/build-standalone/**
+      - .github/workflows/azure-static-web-apps-red-wave-039b6b203.yml
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  build_and_deploy:
+    if: github.event_name != 'pull_request' || github.event.action != 'closed'
+    runs-on: ubuntu-latest
+    name: Build and Deploy
+    permissions:
+      contents: read
+      id-token: write
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7
+        with:
+          submodules: true
+          lfs: false
+
+      - name: Build
+        uses: ./.github/actions/build-standalone
+        with:
+          app: ptas
+
+      - name: Get Id Token
+        uses: actions/github-script@v9
+        id: idtoken
+        with:
+          script: return await core.getIDToken()
+          result-encoding: string
+
+      - name: Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_RED_WAVE_039B6B203 }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: upload
+          app_location: apps/ptas
+          api_location: ''
+          output_location: ''
+          skip_app_build: true
+          github_id_token: ${{ steps.idtoken.outputs.result }}
+
+  close_pull_request:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    name: Close Pull Request
+    steps:
+      - name: Close Pull Request
+        id: closepullrequest
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_RED_WAVE_039B6B203 }}
+          action: close

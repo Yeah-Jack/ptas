@@ -79,7 +79,13 @@ UI primitives are installed to `packages/ui/src/components`, composed blocks to 
 
 ## Deployment
 
-Each app is its own Azure Static Web App. `.github/workflows/azure-static-web-app.yml` is a reusable workflow that builds one app with Turborepo, flattens the Next.js standalone output, and uploads it. `deploy-<app>.yml` calls it with the app name and that site's deployment token, filtered to paths that affect the app. `ci.yml` lints, type checks and builds everything.
+Each app is its own Azure Static Web App with its own Azure-generated workflow (`.github/workflows/azure-static-web-apps-<adjective>-<noun>-<hex>.yml`; ptas.de is `...-red-wave-039b6b203.yml`).
+
+- Never rename these files or move them out of `.github/workflows/`. Azure identifies the target app from the filename in the GitHub OIDC token.
+- Don't move the deploy step into a reusable workflow (`workflow_call`), since that changes the workflow named in the token.
+- Shared build steps live in the composite action `.github/actions/build-standalone`. It builds one app with Turborepo and flattens the Next.js standalone output.
+- Each deploy workflow is filtered to paths that affect its app.
+- `ci.yml` lints, type checks and builds everything.
 
 <!-- BEGIN:nextjs-agent-rules -->
 ## This is NOT the Next.js you know
