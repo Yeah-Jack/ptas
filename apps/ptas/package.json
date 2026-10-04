@@ -7,7 +7,7 @@
 		"build": "next build",
 		"check-types": "tsc --noEmit",
 		"dev": "next dev --port 3000",
-		"start": "next start --port 3000"
+		"start": "cp -R .next/static .next/standalone/apps/ptas/.next/ && cp -R public .next/standalone/apps/ptas/ && PORT=3000 node --env-file-if-exists=.env.local .next/standalone/apps/ptas/server.js"
 	},
 	"dependencies": {
 		"@repo/ui": "workspace:*",
