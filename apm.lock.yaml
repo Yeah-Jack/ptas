@@ -2095,6 +2095,20 @@ dependencies:
     .agents/skills/web-design-guidelines/SKILL.md: sha256:f4647ca866a3accf763777f83e7682954f0187cd6bea7eea0399796652414e8f
     .agents/skills/writing-guidelines/SKILL.md: sha256:89a5f581193289b80af58b980090aeed535047c8df2b55ccbaae0de40283a99d
   content_hash: sha256:1461f7c592c2c92b10a931825b4e3db02c6cacebc7ac1b106c54960b007196a8
+- repo_url: vercel/turborepo
+  name: turborepo
+  host: github.com
+  resolved_commit: 66dbdb377cae04107ef03e155ad1bd55c5a479ac
+  version: unknown
+  virtual_path: skills/turborepo
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/turborepo
+  - .agents/skills/turborepo/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/turborepo/SKILL.md: sha256:e475e520f1822f0de4ca5fbbfd37906949db67d35b038f2b8a76ef4c95c13c53
+  content_hash: sha256:c83a6ff75c62092f71da91408164ed3426f11749b032fd23ecc855e27c2fb538
 deployments:
 - kind: project-relative
   target: copilot
@@ -8396,6 +8410,24 @@ deployments:
   - mattpocock/skills
   active_owner: mattpocock/skills
   content_hash: sha256:2e683717720cf456d165d0bb1a68bb600d0b6a8ccb61841c172e50d26f95351c
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/turborepo
+  runtime: null
+  scope: project
+  owners:
+  - vercel/turborepo/skills/turborepo
+  active_owner: vercel/turborepo/skills/turborepo
+  content_hash: null
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/turborepo/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - vercel/turborepo/skills/turborepo
+  active_owner: vercel/turborepo/skills/turborepo
+  content_hash: sha256:e475e520f1822f0de4ca5fbbfd37906949db67d35b038f2b8a76ef4c95c13c53
 - kind: project-relative
   target: copilot
   value: .agents/skills/ui-skills-root
