@@ -172,6 +172,63 @@ const workflowSteps = [
 	},
 ] as const;
 
+const testimonials = [
+	{
+		company: "Taxi & Mietwagengenossenschaft Magdeburg",
+		content:
+			"Wir möchten die hervorragende Zusammenarbeit mit der Firma PTAS ausdrücklich empfehlen. Durch ihre Zuverlässigkeit, ihre Innovationskraft und ihr professionelles Vorgehen im Personentransport-Abrechnungsservice haben sie unsere Abrechnungen maßgeblich vorangebracht. Wir sind überzeugt, dass die Firma PTAS auch in der Zukunft ein wertvoller Partner für jedes Unternehmen sein wird. Wir als Taxigenossenschaft fühlen uns auf ganzer Linie in unseren Belangen bestens unterstützt!",
+		name: "Kerstin B.",
+	},
+	{
+		company: "Taxi Landskron",
+		content:
+			"Ich mache schon seit einiger Zeit meine Krankentransport Abrechnungen mit der Fa. Daniel Software GmbH und muss sagen, dass ich von dieser Dienstleistung mehr wie begeistert bin.\n Ein Top Team, alle super nett und zuverlässig, dazu auch natürlich mega professionell.\n\n Transportscheine werden sorgfältig, ordentlich und zu meiner vollsten Zufriedenheit bearbeitet.\n Besser kann's nicht einmal Chuck Norris.\n Liebe Grüße gehen raus an Herrn Daniel und Herrn Bartels.",
+		name: "",
+	},
+	{
+		company: "",
+		content:
+			"Wir arbeiten seit einiger Zeit mit der Daniel Software GmbH zusammen und können wirklich nur Positives berichten. Für uns ist das mit Abstand einer der zuverlässigsten und professionellsten Partner im Bereich Abrechnung.\n Gerade bei komplexeren Fällen merkt man schnell, wie wichtig Erfahrung, Erreichbarkeit und saubere Abläufe sind. Genau das bekommen wir hier. Rückfragen werden schnell beantwortet, Probleme werden nicht einfach weitergeschoben, sondern tatsächlich gelöst, und man hat jederzeit das Gefühl, einen kompetenten Ansprechpartner an seiner Seite zu haben.\n Besonders hervorheben möchten wir die unkomplizierte Kommunikation und die enorme Hilfsbereitschaft. Auch wenn es einmal schnell gehen muss oder ein Fall etwas komplizierter ist, wird sich darum gekümmert. Die Abrechnung läuft strukturiert, nachvollziehbar und für uns im Alltag extrem entlastend.\n Man merkt einfach, dass hier Leute arbeiten, die ihre Branche verstehen und wissen, worauf es bei Krankenbeförderungsunternehmen wirklich ankommt. Genau so stellt man sich eine gute Zusammenarbeit vor.",
+		name: "C. B.",
+	},
+	{
+		company: "",
+		content:
+			"Ich arbeite seit über einem Jahr mit der Daniel Software GmbH zusammen und bin absolut begeistert. Es gab nie ein Problem; das Team ist stets freundlich und hilfsbereit. Die Kommunikation läuft reibungslos, und ich fühle mich immer gut betreut. Alles in allem kann ich diese Firma uneingeschränkt weiterempfehlen!",
+		name: "Rayan A.",
+	},
+	{
+		company: "",
+		content:
+			"Wir sind jetzt seit fast einem ¾ Jahr dabei und ich kann nur sagen, dass ich sehr froh bin bei Daniel Software gelandet zu sein.\n Die Mitarbeiter haben immer ein offenes Ohr und kümmern sich sofort um meine Anliegen. Daumen hoch.",
+		name: "Ina M.",
+	},
+	{
+		company: "Bergischer Fahrten Service",
+		content:
+			"Seit dem ersten Kontakt vor 5 Monaten und der darauf folgenden Zusammenarbeit, wissen wir die Zusammenarbeit sehr zu schätzen. Schnelligkeit, Erreichbarkeit und Freundlichkeit sind die herausstechenden Punkte im Kontext mit der Dienstleistung. Gerne weiter so.",
+		name: "Annette B.",
+	},
+	{
+		company: "Taxi & Mietwagen Güvercin",
+		content:
+			"Ein super organisiertes Team! Wir arbeiten jetzt seit ein paar Monaten mit der Abrechnungsfirma zusammen und hatten bisher echt keine Probleme!",
+		name: "Ali M.",
+	},
+	{
+		company: "",
+		content:
+			"Ich rechne seit ca. 2 Jahren über Daniel Software ab. Bisher wurde alles schnell und korrekt abgerechnet. Toll!",
+		name: "Martin S.",
+	},
+	{
+		company: "",
+		content:
+			"Ich bin sehr zufrieden mit dem Abrechnungsservice. Wenige Kürzungen und immer jemand den man erreicht.",
+		name: "Foued B.",
+	},
+] as const;
+
 export default function Home() {
 	return (
 		<div className="flex flex-col">
@@ -376,11 +433,11 @@ export default function Home() {
 
 			{/* Testimonial Section */}
 			<section className="py-8 sm:py-16 lg:py-24">
-				<FadeInUp className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-11 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
+				<FadeInUp className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-11 px-4 sm:px-6 lg:px-8">
 					<h2 className="font-semibold text-2xl sm:text-3xl lg:text-4xl">
 						Mehr als 100 Unternehmen nutzen PTAS für ihre Abrechnung.
 					</h2>
-					<Testimonial />
+					<Testimonial testimonials={testimonials} />
 				</FadeInUp>
 			</section>
 
