@@ -5,7 +5,7 @@ export function Eyebrow({ className, ...props }: React.ComponentProps<"p">) {
 	return (
 		<p
 			className={cn(
-				"font-semibold text-cobalt text-xs uppercase leading-[1.4] tracking-[0.09em] sm:text-[0.8125rem]",
+				"font-semibold text-cobalt text-xs leading-[1.4] tracking-[0.09em] sm:text-[0.8125rem]",
 				className,
 			)}
 			{...props}

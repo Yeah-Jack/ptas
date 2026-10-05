@@ -56,7 +56,7 @@ export function Logo({
 			{wordmark ? (
 				<span
 					className={cn(
-						"whitespace-nowrap text-[length:calc(var(--logo-size)*0.62)] tracking-[-0.02em]",
+						"whitespace-nowrap text-[calc(var(--logo-size)*0.62)]",
 						palette.text,
 					)}
 				>

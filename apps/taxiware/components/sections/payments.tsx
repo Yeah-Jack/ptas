@@ -9,7 +9,7 @@ const payments: {
 	label: string;
 	text?: string;
 }[] = [
-	{ amount: 4812.4, bar: "bg-ok", label: "Bezahlt" },
+	{ amount: 4812.4, bar: "bg-ok", label: "Bezahlt", text: "text-ok" },
 	{ amount: 1106.2, bar: "bg-cobalt", label: "Offen" },
 	{ amount: 246.8, bar: "bg-err", label: "Abgesetzt", text: "text-err" },
 ];
@@ -36,7 +36,7 @@ export default function Payments() {
 						<div className={bar} key={label} style={{ flexGrow: amount }} />
 					))}
 				</div>
-				<dl className="grid grid-cols-3 gap-3 text-[0.9375rem] tabular-nums">
+				<dl className="grid grid-cols-3 gap-3 tabular-nums">
 					{payments.map(({ amount, label, text }) => (
 						<div className="grid gap-0.5" key={label}>
 							<dt className="text-muted-foreground">{label}</dt>

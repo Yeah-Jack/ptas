@@ -20,7 +20,7 @@ export default function Pricing() {
 		>
 			<div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
 				<SectionTitle>Preise</SectionTitle>
-				<p className="text-[0.9375rem] text-muted-foreground">
+				<p className="text-muted-foreground">
 					Alle Preise zzgl. MwSt. · Monatlich kündbar
 				</p>
 			</div>
@@ -40,7 +40,7 @@ export default function Pricing() {
 						</div>
 						<p className="font-bold text-[2.25rem] tracking-[-0.02em]">
 							– €
-							<span className="font-normal text-[0.9375rem] text-muted-foreground">
+							<span className="font-normal text-muted-foreground">
 								{" "}
 								/ Monat
 							</span>

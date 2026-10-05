@@ -10,7 +10,7 @@ export function Sign({
 	return (
 		<Badge
 			className={cn(
-				"h-auto gap-1.5 rounded-[8px_8px_3px_3px] border-0 bg-taxi px-3 py-1 font-bold text-[0.78rem] text-ink uppercase leading-[1.4] tracking-[0.06em]",
+				"h-auto gap-1.5 rounded-4 border-0 bg-taxi px-3 py-1 font-bold text-[0.78rem] text-ink uppercase leading-[1.4] tracking-[0.06em]",
 				className,
 			)}
 			{...props}

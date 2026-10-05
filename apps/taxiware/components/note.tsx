@@ -15,7 +15,7 @@ export function Note({
 	return (
 		<div
 			className={cn(
-				"rounded-[10px] px-4 py-3.5 text-[0.95rem] leading-[1.55]",
+				"rounded-[10px] px-4 py-3.5 leading-[1.55]",
 				tones[tone],
 				className,
 			)}

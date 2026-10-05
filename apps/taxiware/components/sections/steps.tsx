@@ -73,7 +73,7 @@ export default function Steps() {
 				</div>
 
 				{/* The dashed route runs through the centers of the station tiles */}
-				<ol className="relative grid gap-6 before:absolute before:inset-y-10 before:left-[25px] before:border-taxi before:border-l-[5px] before:border-dashed lg:before:left-[37px] lg:before:border-l-6">
+				<ol className="relative grid gap-6 before:absolute before:inset-y-10 before:left-6.25 before:border-taxi before:border-l-[5px] before:border-dashed lg:before:left-9.25 lg:before:border-l-6">
 					{steps.map(({ icon: Icon, media, text, tile, title }, index) => (
 						<li
 							className="relative grid grid-cols-[3.5rem_minmax(0,1fr)] items-center gap-4 lg:grid-cols-[5rem_minmax(0,1fr)] lg:gap-8"
