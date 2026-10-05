@@ -1,3 +1,51 @@
 @import "@repo/ui/globals.css";
 
-/* Taxiware brand colors go here, on top of the shared theme (see apps/ptas) */
+/* TaxiWare brand (Designvorgabe v1.1) on top of the shared theme */
+@theme {
+	--color-cobalt: #0a5bd3;
+	--color-cobalt-700: #0848a8;
+	--color-cobalt-50: #e7f0fe;
+	--color-taxi: #ffc21a;
+	--color-taxi-600: #f0ae00;
+	--color-ink: #1c1f26;
+	--color-ink-line: #2f343e;
+	--color-ok: #10794f;
+	--color-ok-50: #e3f3eb;
+	--color-err: #b3261e;
+	--color-err-50: #fbe9e7;
+	--color-on-cobalt-kicker: #d6e5ff;
+	--color-on-cobalt-sub: #e3edff;
+	--color-on-cobalt-label: #b8d0fa;
+	--color-on-cobalt-border: #9cc0fa;
+	--color-on-ink-muted: #c9cdd4;
+}
+
+:root {
+	--background: #f6f6f3;
+	--foreground: #1c1f26;
+	--card: #ffffff;
+	--card-foreground: #1c1f26;
+	--popover: #ffffff;
+	--popover-foreground: #1c1f26;
+	--primary: #0a5bd3;
+	--primary-foreground: #ffffff;
+	--secondary: #e7f0fe;
+	--secondary-foreground: #0848a8;
+	--muted: #e7f0fe;
+	--muted-foreground: #555b66;
+	--accent: #e7f0fe;
+	--accent-foreground: #1c1f26;
+	--destructive: #b3261e;
+	--border: #dde1e7;
+	--input: #dde1e7;
+	/* Focus outline color; dark surfaces set it to white */
+	--ring: #1c1f26;
+	--radius: 0.5rem;
+}
+
+@layer base {
+	:focus-visible {
+		outline: 3px solid var(--ring);
+		outline-offset: 2px;
+	}
+}
