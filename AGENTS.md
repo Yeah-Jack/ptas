@@ -79,9 +79,12 @@ UI primitives are installed to `packages/ui/src/components`, composed blocks to 
 
 ## Deployment
 
-Each app is its own Azure Static Web App with its own Azure-generated workflow (`.github/workflows/azure-static-web-apps-<adjective>-<noun>-<hex>.yml`; ptas.de is `...-red-wave-039b6b203.yml`).
+Each app is its own Azure Static Web App with its own Azure-generated workflow (`.github/workflows/azure-static-web-apps-<adjective>-<noun>-<hex>.yml`; ptas.de is `...-red-wave-039b6b203.yml`, taxiware.de is `...-nice-bay-081b6af03.yml`).
 
-- Never rename these files or move them out of `.github/workflows/`. Azure identifies the target app from the filename in the GitHub OIDC token.
+- The apps use different deployment authorization policies, and each workflow must match its app's policy, or Azure rejects the upload with "No matching Static Web App was found or the api key was invalid":
+  - ptas.de uses **GitHub** (OIDC): `id-token: write`, a "Get Id Token" step and `github_id_token` are required.
+  - taxiware.de uses **Deployment token**: only `azure_static_web_apps_api_token`. Don't add `github_id_token` unless the policy is switched to GitHub in the Azure portal (Settings → Configuration).
+- Never rename these files or move them out of `.github/workflows/`. Azure links each app to its workflow file, and with the GitHub policy it identifies the target app from the filename in the OIDC token.
 - Don't move the deploy step into a reusable workflow (`workflow_call`), since that changes the workflow named in the token.
 - Shared build steps live in the composite action `.github/actions/build-standalone`. It builds one app with Turborepo and flattens the Next.js standalone output.
 - Each deploy workflow is filtered to paths that affect its app.

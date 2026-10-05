@@ -1,5 +1,8 @@
-# Deploys taxiware.de. Do not rename this file: Azure Static Web Apps identifies
-# the target app from this Azure-generated filename via the GitHub OIDC token.
+# Deploys taxiware.de. Do not rename this Azure-generated file.
+# Unlike ptas.de, this Static Web App uses the "Deployment token" authorization
+# policy: it authenticates with the API token secret only. Passing
+# github_id_token makes Azure reject the upload ("No matching Static Web App
+# was found"), so only add it after switching the policy to GitHub in Azure.
 name: Deploy taxiware.de
 
 on:
@@ -46,11 +49,6 @@ jobs:
     if: github.event_name != 'pull_request' || github.event.action != 'closed'
     runs-on: ubuntu-latest
     name: Build and Deploy
-    permissions:
-      contents: read
-      id-token: write
-      issues: write
-      pull-requests: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v7
@@ -63,13 +61,6 @@ jobs:
         with:
           app: taxiware
 
-      - name: Get Id Token
-        uses: actions/github-script@v9
-        id: idtoken
-        with:
-          script: return await core.getIDToken()
-          result-encoding: string
-
       - name: Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
@@ -81,7 +72,6 @@ jobs:
           api_location: ''
           output_location: ''
           skip_app_build: true
-          github_id_token: ${{ steps.idtoken.outputs.result }}
 
   close_pull_request:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
