@@ -25,6 +25,7 @@ import { FadeInUp } from "@/components/animations/fade-in-up";
 import CTA from "@/components/cta";
 
 export const metadata: Metadata = {
+	alternates: { canonical: "/abrechnung" },
 	description:
 		"PTAS übernimmt die komplette Abrechnung Ihrer Krankentransporte. Von der Kommunikation mit den Krankenkassen bis zur Rückläufer-Bearbeitung. So haben Sie den Kopf frei für Ihr Kerngeschäft!",
 	openGraph: {

@@ -37,6 +37,7 @@ import CTA from "@/components/cta";
 import Testimonial from "@/components/testimonial";
 
 export const metadata: Metadata = {
+	alternates: { canonical: "/" },
 	description:
 		"Professionelle Abrechnung für Kranken-, Rollstuhl- und Tragestuhltransporte. Konzentrieren Sie sich auf Ihr Geschäft, wir übernehmen die Abrechnung.",
 	openGraph: {

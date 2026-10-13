@@ -11,6 +11,7 @@ import Link from "next/link";
 import Script from "next/script";
 
 export const metadata: Metadata = {
+	alternates: { canonical: "/kontakt/danke" },
 	description:
 		"Danke für Ihre Anfrage! Wir haben Ihre Nachricht erhalten und melden uns schnellstmöglich bei Ihnen - in der Regel innerhalb eines Werktages.",
 	openGraph: {

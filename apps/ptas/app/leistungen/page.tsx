@@ -26,6 +26,7 @@ import { FadeInUp } from "@/components/animations/fade-in-up";
 import CTA from "@/components/cta";
 
 export const metadata: Metadata = {
+	alternates: { canonical: "/leistungen" },
 	description:
 		"Wir übernehmen den kompletten Bearbeitungs-Ablauf für Ihre Transportscheine. Von der Erfassung der Krankenfahrten bis hin zur Rechnungsstellung.",
 	openGraph: {

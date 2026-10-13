@@ -24,6 +24,7 @@ import { FadeInUp } from "@/components/animations/fade-in-up";
 import CTA from "@/components/cta";
 
 export const metadata: Metadata = {
+	alternates: { canonical: "/vorfinanzierung" },
 	description:
 		"Schnellere Auszahlung für Ihre Krankenfahrten. Sichern Sie Ihre Liquidität und erhalten Sie Zahlungen schneller als die regulären 6 Wochen mit unserer Vorfinanzierung.",
 	openGraph: {

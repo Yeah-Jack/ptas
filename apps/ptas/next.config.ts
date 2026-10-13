@@ -7,9 +7,20 @@ const nextConfig: NextConfig = {
 	async redirects() {
 		return [
 			{
+				destination: "https://ptas.de/:path*",
+				has: [{ type: "host", value: "www.ptas.de" }],
+				permanent: true,
+				source: "/:path*",
+			},
+			{
 				destination: "/abrechnung",
 				permanent: true,
 				source: "/abrechnungssoftware",
+			},
+			{
+				destination: "/vorfinanzierung",
+				permanent: true,
+				source: "/abrechnung/vorfinanzierung",
 			},
 		];
 	},

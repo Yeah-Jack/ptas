@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import { FadeInUp } from "@/components/animations/fade-in-up";
 
-export const metadata = {
+export const metadata: Metadata = {
+	alternates: { canonical: "/impressum" },
 	description: "Impressum der Daniel Software GmbH.",
+	openGraph: {
+		description: "Impressum der Daniel Software GmbH.",
+		title: "Impressum",
+		url: "https://ptas.de/impressum",
+	},
 	title: "Impressum",
 };
 

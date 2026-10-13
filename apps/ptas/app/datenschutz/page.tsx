@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { FadeInUp } from "@/components/animations/fade-in-up";
 
 export const metadata: Metadata = {
+	alternates: { canonical: "/datenschutz" },
 	description:
 		"Datenschutzhinweise der PTAS Personentransport-Abrechnungsservice",
 	openGraph: {
